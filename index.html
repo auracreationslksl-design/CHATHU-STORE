@@ -17,18 +17,23 @@
             scroll-behavior: smooth;
         }
         body {
-            background-color: #050814;
+            /* Wallpaper Background with Dark Overlay */
+            background: linear-gradient(rgba(5, 8, 20, 0.90), rgba(5, 8, 20, 0.95)), url('images (3).jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #ffffff;
             overflow-x: hidden;
         }
 
         /* Top Bar & Header */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 2px solid #2563eb;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+            border-bottom: 2px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
             position: relative;
         }
         header h1 {
@@ -36,7 +41,7 @@
             font-size: 38px;
             font-weight: 800;
             letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
             margin-bottom: 5px;
         }
         header p {
@@ -47,8 +52,8 @@
 
         /* Navigation Bar */
         nav {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
             padding: 15px;
@@ -56,7 +61,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
         }
         nav a {
             color: #cbd5e1;
@@ -70,7 +75,7 @@
         }
         nav a:hover {
             color: #60a5fa;
-            text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
         }
 
         .container {
@@ -81,14 +86,14 @@
 
         /* Welcome Banner */
         .welcome-banner {
-            background: linear-gradient(135deg, #1d4ed8, #2563eb, #3b82f6);
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.85), rgba(37, 99, 235, 0.85), rgba(59, 130, 246, 0.85));
+            backdrop-filter: blur(10px);
             padding: 40px 20px;
             border-radius: 16px;
             text-align: center;
             margin-bottom: 35px;
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .welcome-banner h2 {
             font-size: 32px;
@@ -96,6 +101,7 @@
             margin-bottom: 10px;
             font-weight: 800;
             letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         .welcome-banner p {
             font-size: 17px;
@@ -117,12 +123,13 @@
 
         /* Animated Left Sidebar Services */
         .sidebar {
-            background: #0f172a;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             height: fit-content;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .sidebar h3 {
             color: #60a5fa;
@@ -138,7 +145,7 @@
         .animated-services-list li {
             padding: 12px 15px;
             margin-bottom: 10px;
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.8);
             border-radius: 10px;
             font-size: 14px;
             color: #e2e8f0;
@@ -159,7 +166,7 @@
             color: #ffffff;
             transform: translateX(8px);
             border-left: 3px solid #60a5fa;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
         .animated-services-list li:hover i {
             color: #ffffff;
@@ -176,6 +183,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         .section-title i {
             color: #3b82f6;
@@ -190,19 +198,21 @@
 
         /* Cards */
         .card {
-            background: #0f172a;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
         .card:hover {
             transform: translateY(-8px);
             border-color: #3b82f6;
-            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+            background: rgba(15, 23, 42, 0.95);
         }
         .card-icon {
             font-size: 35px;
@@ -241,19 +251,20 @@
         }
         .btn:hover {
             background: linear-gradient(135deg, #1d4ed8, #1e40af);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.7);
             transform: scale(1.02);
         }
 
         /* Payment Info Box */
         .payment-box {
-            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(10px);
             border: 2px dashed #3b82f6;
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 35px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .payment-box h3 {
             color: #60a5fa;
@@ -272,20 +283,21 @@
         .payment-box span {
             color: #38bdf8;
             font-weight: 700;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56, 189, 248, 0.15);
             padding: 3px 8px;
             border-radius: 6px;
         }
 
         /* Contact Section */
         .contact-section {
-            background: #0f172a;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             padding: 35px;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .contact-section h3 {
             color: #ffffff;
@@ -323,8 +335,8 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 8, 20, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(5, 8, 20, 0.90);
+            backdrop-filter: blur(10px);
             justify-content: center;
             align-items: center;
             z-index: 2000;
@@ -336,7 +348,7 @@
             width: 90%;
             max-width: 450px;
             border: 1px solid #3b82f6;
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.5);
             animation: modalPop 0.3s ease;
         }
         @keyframes modalPop {
@@ -362,7 +374,7 @@
         }
         .modal-content input:focus, .modal-content select:focus {
             border-color: #3b82f6;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
         }
         .close-btn {
             background: #ef4444;
@@ -534,7 +546,7 @@
 
         function sendOrder() {
             let name = document.getElementById("customerName").value;
-            let phone = document.getElementById("customerPhone").value;
+            let phone = document.getElementById("customerPhone.value").value || document.getElementById("customerPhone").value;
             let payment = document.getElementById("paymentMethod").value;
             let myWhatsApp = "94750565097"; 
 
