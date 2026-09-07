@@ -33,7 +33,6 @@
         }
 
         body {
-            /* Single consistent red/dark anime wallpaper for the whole page */
             background: linear-gradient(rgba(20, 5, 8, 0.82), rgba(5, 8, 20, 0.95)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
@@ -42,7 +41,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar (Tabs) */
+        /* Navigation Bar */
         nav {
             background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(12px);
@@ -75,28 +74,33 @@
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
         }
 
-        /* Full Page Hero Section (Home) */
+        /* Full Width Hero Section (Home) */
         .hero-section {
             height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            background-size: cover;
+            background-position: center;
         }
         .hero-content {
-            background: rgba(15, 23, 42, 0.88);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
-            padding: 50px 40px;
+            padding: 60px 40px;
             border-radius: 20px;
             border: 1px solid rgba(59, 130, 246, 0.4);
-            box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
-            max-width: 800px;
-            animation: zoomIn 0.8s ease;
+            box-shadow: 0 0 50px rgba(37, 99, 235, 0.6);
+            width: 90%;
+            max-width: 900px;
+            animation: zoomIn 1s ease;
         }
         .hero-content h1 {
-            font-size: 38px;
+            font-size: 42px;
             color: #ffffff;
             margin-bottom: 10px;
             font-weight: 800;
@@ -104,7 +108,7 @@
             text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
         }
         .hero-content h2 {
-            font-size: 28px;
+            font-size: 30px;
             color: #60a5fa;
             margin-bottom: 15px;
             font-weight: 700;
@@ -138,6 +142,17 @@
             max-width: 1250px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+
+        /* Scroll Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Main Layout */
@@ -422,7 +437,7 @@
         <a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a>
     </nav>
 
-    <!-- Full Page Hero Section (Home) -->
+    <!-- Full Width Hero Section (Home) -->
     <section class="hero-section" id="home">
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
@@ -435,7 +450,7 @@
     <div class="container">
         
         <!-- Payment Info Box -->
-        <div class="payment-box" id="payment">
+        <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-circle-check"></i> Payment Methods & Details</h3>
             <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
             <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
@@ -445,7 +460,7 @@
         <div class="main-layout">
             
             <!-- Left Sidebar Services -->
-            <div class="sidebar" id="services">
+            <div class="sidebar reveal" id="services">
                 <h3>Our Services</h3>
                 <ul class="animated-services-list">
                     <li onclick="location.href='#topup'"><i class="fa-solid fa-gem"></i> Free Fire Top-ups</li>
@@ -460,8 +475,8 @@
             <div class="content-area">
                 
                 <!-- Free Fire Top-ups -->
-                <div class="section-title" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Prices</div>
-                <div class="grid">
+                <div class="section-title reveal" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Prices</div>
+                <div class="grid reveal">
                     <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
                         <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
                         <h3>100 Diamonds</h3>
@@ -489,8 +504,8 @@
                 </div>
 
                 <!-- Gaming Accounts -->
-                <div class="section-title" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Prices</div>
-                <div class="grid">
+                <div class="section-title reveal" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Prices</div>
+                <div class="grid reveal">
                     <div class="card" onclick="openCheckout('FF Pro Account (Level 65+)', 'LKR 6,500')">
                         <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
                         <h3>Level 65+ Pro Account</h3>
@@ -506,8 +521,8 @@
                 </div>
 
                 <!-- Promotions & Marketing -->
-                <div class="section-title" id="promotions"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
-                <div class="grid">
+                <div class="section-title reveal" id="promotions"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
+                <div class="grid reveal">
                     <div class="card" onclick="openCheckout('TikTok Promotion Package', 'From LKR 500')">
                         <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
                         <h3>TikTok Growth</h3>
@@ -528,7 +543,7 @@
     </div>
 
     <!-- Bottom Contact Section -->
-    <div class="contact-section" id="contact">
+    <div class="contact-section reveal" id="contact">
         <h3>Get in Touch with Chathu Store</h3>
         <div class="contact-details">
             <p><i class="fa-solid fa-phone" style="color: #3b82f6;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
@@ -589,6 +604,24 @@
             
             window.open(url, '_blank');
         }
+
+        // Scroll Animation Observer
+        window.addEventListener('scroll', revealOnScroll);
+
+        function revealOnScroll() {
+            let reveals = document.querySelectorAll('.reveal');
+            for(let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 150;
+                if(elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        // Trigger once on load
+        revealOnScroll();
     </script>
 </body>
 </html>
