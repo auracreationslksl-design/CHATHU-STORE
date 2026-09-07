@@ -29,7 +29,7 @@
             border-radius: 4px;
         }
 
-        /* Light & Premium Pro Wallpaper Style */
+        /* Light & Premium Pro Wallpaper */
         body {
             background: linear-gradient(180deg, rgba(10, 15, 30, 0.65) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(10, 15, 30, 0.85) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
@@ -40,7 +40,7 @@
             overflow-x: hidden;
         }
 
-        /* Pro Navigation Bar matching CHATHU STORE style */
+        /* Pro Navigation Bar */
         nav {
             background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(15px);
@@ -90,20 +90,20 @@
             .nav-links { display: none; }
         }
 
-        /* Pro Hero Section */
+        /* Pro Hero Section with Left Aligned Welcome */
         .hero-section {
             min-height: 85vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 80px;
         }
         .hero-content {
             max-width: 850px;
-            animation: fadeInDown 1.2s ease;
+            animation: fadeInLeft 1.2s ease;
         }
         .hero-content h1 {
             font-size: 52px;
@@ -126,13 +126,16 @@
             line-height: 1.7;
         }
 
-        /* Big Pro Services Display Cards in Hero/Home */
+        @media (max-width: 768px) {
+            .hero-section { padding: 0 20px; align-items: center; text-align: center; }
+        }
+
+        /* Big Pro Services Display Cards */
         .services-showcase {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 900px;
-            margin: 0 auto;
         }
         .service-box-pro {
             background: rgba(15, 23, 42, 0.85);
@@ -401,17 +404,17 @@
             background: #dc2626;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Pro Navigation Bar -->
+    <!-- Pro Navigation Bar with CHATHU STORE -->
     <nav>
-        <a href="#home" class="nav-logo"><i class="fa-solid fa-gamepad"></i> AURA NET.LK</a>
+        <a href="#home" class="nav-logo"><i class="fa-solid fa-gamepad"></i> CHATHU STORE</a>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
             <li><a href="#diamond-store"><i class="fa-solid fa-gem"></i> Diamond Store</a></li>
@@ -421,7 +424,7 @@
         </ul>
     </nav>
 
-    <!-- Pro Hero Section with Big Service Buttons -->
+    <!-- Pro Hero Section with Left Aligned Content -->
     <section class="hero-section" id="home">
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
@@ -501,7 +504,7 @@
             </div>
         </div>
 
-        <!-- PAGE 2: ACCOUNT STORE (Normal Pricing Range LKR 4,000 - 150,000) -->
+        <!-- PAGE 2: ACCOUNT STORE -->
         <div id="account-store" style="margin-top: 120px;">
             <div class="section-header reveal"><i class="fa-solid fa-user-shield"></i> Pro Gaming Account Store (Price Range: LKR 4,000 - 150,000)</div>
             <div class="grid reveal">
