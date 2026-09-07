@@ -146,76 +146,47 @@
             transform: translateY(0);
         }
 
-        /* Main Layout */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 25px;
-        }
-
-        @media (max-width: 900px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-            .hero-section {
-                padding: 0 20px;
-                align-items: center;
-                text-align: center;
-            }
-            .hero-content h1 {
-                font-size: 32px;
-            }
-        }
-
-        /* Professional Sidebar Services */
-        .sidebar {
-            background: rgba(15, 23, 42, 0.88);
+        /* Text-style Services Bar (Services Out of Box) */
+        .services-text-bar {
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
-            padding: 18px;
-            border-radius: 14px;
             border: 1px solid rgba(59, 130, 246, 0.3);
-            height: fit-content;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            position: sticky;
-            top: 75px;
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
         }
-        .sidebar h3 {
+        .services-text-bar span {
             color: #60a5fa;
-            font-size: 16px;
-            margin-bottom: 15px;
             font-weight: 700;
-        }
-        .animated-services-list {
-            list-style: none;
-        }
-        .animated-services-list li {
-            padding: 10px 12px;
-            margin-bottom: 8px;
-            background: rgba(30, 41, 59, 0.8);
-            border-radius: 8px;
-            font-size: 13px;
-            color: #e2e8f0;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            font-size: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-left: 3px solid transparent;
+            gap: 8px;
         }
-        .animated-services-list li i {
-            color: #3b82f6;
+        .services-text-bar a {
+            color: #cbd5e1;
+            text-decoration: none;
             font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        .animated-services-list li:hover {
-            background: #1d4ed8;
-            color: #ffffff;
-            transform: translateX(6px);
-            border-left-color: #60a5fa;
+        .services-text-bar a:hover {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
         }
 
         /* Section Titles */
         .section-title {
-            margin: 40px 0 15px 0;
+            margin: 30px 0 15px 0;
             padding-left: 10px;
             font-size: 20px;
             color: #ffffff;
@@ -238,7 +209,7 @@
 
         /* BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE */
         .section-spacer {
-            height: 100px;
+            height: 120px;
         }
 
         .card {
@@ -458,138 +429,126 @@
 
     <div class="container">
         
-        <!-- Main Layout -->
-        <div class="main-layout">
-            
-            <!-- Professional Services Sidebar -->
-            <div class="sidebar reveal" id="services">
-                <h3><i class="fa-solid fa-layer-group"></i> Quick Navigation</h3>
-                <ul class="animated-services-list">
-                    <li onclick="location.href='#topup'"><i class="fa-solid fa-gem"></i> Diamond Store</li>
-                    <li onclick="location.href='#accounts'"><i class="fa-solid fa-user-shield"></i> Accounts (4k - 150k)</li>
-                    <li onclick="location.href='#promotions'"><i class="fa-brands fa-tiktok"></i> Social Promotions</li>
-                    <li onclick="location.href='#payment'"><i class="fa-solid fa-wallet"></i> EZ Cash Payments</li>
-                    <li onclick="location.href='#contact'"><i class="fa-solid fa-headset"></i> Contact Us</li>
-                </ul>
+        <!-- Services Text Bar (Services Out of Box) -->
+        <div class="services-text-bar reveal">
+            <span><i class="fa-solid fa-layer-group"></i> Our Services:</span>
+            <a href="#topup"><i class="fa-solid fa-gem"></i> Diamond Top-ups</a>
+            <a href="#accounts"><i class="fa-solid fa-shield-halved"></i> Pro Accounts (4k-150k)</a>
+            <a href="#promotions"><i class="fa-solid fa-rocket"></i> Social Promotions</a>
+            <a href="#payment"><i class="fa-solid fa-wallet"></i> EZ Cash Payments</a>
+        </div>
+
+        <!-- 1. Diamond Store Section -->
+        <div class="section-title reveal" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Store</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>100 Diamonds</h3>
+                    <p>LKR 250</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
-
-            <!-- Content Area -->
-            <div class="content-area">
-                
-                <!-- 1. Diamond Store Section -->
-                <div class="section-title reveal" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Store</div>
-                <div class="grid reveal">
-                    <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
-                        <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                        <div>
-                            <h3>100 Diamonds</h3>
-                            <p>LKR 250</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
-                        <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                        <div>
-                            <h3>310 Diamonds</h3>
-                            <p>LKR 750</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
-                        <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                        <div>
-                            <h3>520 Diamonds</h3>
-                            <p>LKR 1,250</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
-                        <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                        <div>
-                            <h3>Weekly Membership</h3>
-                            <p>LKR 480</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
-                        <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                        <div>
-                            <h3>Monthly Membership</h3>
-                            <p>LKR 1,850</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
-                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                        <div>
-                            <h3>Weekly Lite</h3>
-                            <p>LKR 150</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
+            <div class="card" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>310 Diamonds</h3>
+                    <p>LKR 750</p>
                 </div>
-
-                <!-- BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE -->
-                <div class="section-spacer"></div>
-
-                <!-- 2. Pro Gaming Accounts Store Section (4,000LKR - 150,000LKR) -->
-                <div class="section-title reveal" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Store (4,000LKR - 150,000LKR)</div>
-                <div class="grid reveal">
-                    <div class="card" onclick="openCheckout('FF Starter Pro Account', 'LKR 4,000')">
-                        <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
-                        <div>
-                            <h3>Starter Pro Account</h3>
-                            <p>LKR 4,000</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('FF Mid-Range Rare Account', 'LKR 25,000')">
-                        <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
-                        <div>
-                            <h3>Mid-Range Rare Account</h3>
-                            <p>LKR 25,000</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('FF Elite Collector Account', 'LKR 75,000')">
-                        <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
-                        <div>
-                            <h3>Elite Collector Account</h3>
-                            <p>LKR 75,000</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('FF Max Legendary Master Account', 'LKR 150,000')">
-                        <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                        <div>
-                            <h3>Max Legendary Master</h3>
-                            <p>LKR 150,000</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                    </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>520 Diamonds</h3>
+                    <p>LKR 1,250</p>
                 </div>
-
-                <!-- Social Media Promotions Section -->
-                <div class="section-title reveal" id="promotions" style="margin-top: 60px;"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
-                <div class="grid reveal">
-                    <div class="card" onclick="openCheckout('TikTok Promotion Package', 'From LKR 500')">
-                        <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
-                        <div>
-                            <h3>TikTok Growth Boost</h3>
-                            <p>From LKR 500</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
-                    </div>
-                    <div class="card" onclick="openCheckout('YouTube Promotion Package', 'From LKR 800')">
-                        <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
-                        <div>
-                            <h3>YouTube Views & Subs</h3>
-                            <p>From LKR 800</p>
-                        </div>
-                        <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
-                    </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
+                <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                    <h3>Weekly Membership</h3>
+                    <p>LKR 480</p>
                 </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
+                <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                <div>
+                    <h3>Monthly Membership</h3>
+                    <p>LKR 1,850</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h3>Weekly Lite</h3>
+                    <p>LKR 150</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+        </div>
 
+        <!-- BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE -->
+        <div class="section-spacer"></div>
+
+        <!-- 2. Pro Gaming Accounts Store Section (4,000LKR - 150,000LKR) -->
+        <div class="section-title reveal" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Store (4,000LKR - 150,000LKR)</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('FF Starter Pro Account', 'LKR 4,000')">
+                <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                <div>
+                    <h3>Starter Pro Account</h3>
+                    <p>LKR 4,000</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Mid-Range Rare Account', 'LKR 25,000')">
+                <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <div>
+                    <h3>Mid-Range Rare Account</h3>
+                    <p>LKR 25,000</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Elite Collector Account', 'LKR 75,000')">
+                <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
+                <div>
+                    <h3>Elite Collector Account</h3>
+                    <p>LKR 75,000</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Max Legendary Master Account', 'LKR 150,000')">
+                <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                <div>
+                    <h3>Max Legendary Master</h3>
+                    <p>LKR 150,000</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Social Media Promotions Section -->
+        <div class="section-title reveal" id="promotions" style="margin-top: 60px;"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('TikTok Promotion Package', 'From LKR 500')">
+                <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
+                <div>
+                    <h3>TikTok Growth Boost</h3>
+                    <p>From LKR 500</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('YouTube Promotion Package', 'From LKR 800')">
+                <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <h3>YouTube Views & Subs</h3>
+                    <p>From LKR 800</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
             </div>
         </div>
 
