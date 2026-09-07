@@ -17,8 +17,8 @@
             scroll-behavior: smooth;
         }
         body {
-            /* Wallpaper Background with Dark Overlay */
-            background: linear-gradient(rgba(5, 8, 20, 0.90), rgba(5, 8, 20, 0.95)), url('images (3).jpg');
+            /* මෙතන bg.jpg වෙනුවට ඔයාගේ පින්තූරයේ නම හරියටම දෙන්න (උදා: images.jpg) නැත්නම් Direct Link එකක් දාන්න */
+            background: linear-gradient(rgba(5, 8, 20, 0.88), rgba(5, 8, 20, 0.94)), url('bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -108,7 +108,7 @@
             color: #dbeafe;
         }
 
-        /* Main Layout (Left Sidebar + Right Content) */
+        /* Main Layout */
         .main-layout {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -546,7 +546,7 @@
 
         function sendOrder() {
             let name = document.getElementById("customerName").value;
-            let phone = document.getElementById("customerPhone.value").value || document.getElementById("customerPhone").value;
+            let phone = document.getElementById("customerPhone").value;
             let payment = document.getElementById("paymentMethod").value;
             let myWhatsApp = "94750565097"; 
 
