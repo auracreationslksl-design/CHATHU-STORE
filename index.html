@@ -33,36 +33,13 @@
         }
 
         body {
-            background: linear-gradient(rgba(20, 5, 8, 0.78), rgba(5, 8, 20, 0.92)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            /* Single consistent red/dark anime wallpaper for the whole page */
+            background: linear-gradient(rgba(20, 5, 8, 0.82), rgba(5, 8, 20, 0.95)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: #ffffff;
             overflow-x: hidden;
-        }
-
-        /* Top Bar & Header */
-        header {
-            background: rgba(15, 23, 42, 0.88);
-            backdrop-filter: blur(12px);
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 2px solid #3b82f6;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
-            position: relative;
-        }
-        header h1 {
-            color: #ffffff;
-            font-size: 35px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
-            margin-bottom: 5px;
-        }
-        header p {
-            color: #93c5fd;
-            font-size: 14px;
-            font-weight: 500;
         }
 
         /* Navigation Bar (Tabs) */
@@ -76,7 +53,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.4);
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
         nav a {
@@ -86,17 +62,15 @@
             font-size: 15px;
             padding: 8px 16px;
             border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(30, 41, 59, 0.6);
         }
         nav a:hover {
             color: #ffffff;
             background: #2563eb;
-            border-color: #60a5fa;
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
         }
@@ -110,30 +84,33 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 3px solid #3b82f6;
         }
         .hero-content {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.88);
             backdrop-filter: blur(15px);
             padding: 50px 40px;
             border-radius: 20px;
-            border: 2px solid rgba(59, 130, 246, 0.5);
-            box-shadow: 0 0 50px rgba(37, 99, 235, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
             max-width: 800px;
             animation: zoomIn 0.8s ease;
         }
-        .hero-content h2 {
-            font-size: 42px;
+        .hero-content h1 {
+            font-size: 38px;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 800;
+            letter-spacing: 2px;
             text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
         }
+        .hero-content h2 {
+            font-size: 28px;
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
         .hero-content p {
-            font-size: 18px;
+            font-size: 16px;
             color: #93c5fd;
             margin-bottom: 30px;
         }
@@ -153,8 +130,8 @@
         }
         .explore-btn:hover {
             background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.8);
             transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.8);
         }
 
         .container {
@@ -182,7 +159,7 @@
             backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             height: fit-content;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
@@ -190,8 +167,7 @@
             color: #60a5fa;
             font-size: 18px;
             margin-bottom: 20px;
-            border-left: 4px solid #3b82f6;
-            padding-left: 10px;
+            padding-left: 5px;
             font-weight: 700;
         }
         .animated-services-list {
@@ -209,7 +185,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            border-left: 3px solid transparent;
         }
         .animated-services-list li i {
             color: #3b82f6;
@@ -218,15 +193,13 @@
             background: #1d4ed8;
             color: #ffffff;
             transform: translateX(8px);
-            border-left: 3px solid #60a5fa;
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
 
         /* Content Area */
         .section-title {
             margin: 30px 0 15px 0;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
+            padding-left: 5px;
             font-size: 22px;
             color: #ffffff;
             font-weight: 700;
@@ -252,7 +225,7 @@
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             transition: all 0.4s ease;
             cursor: pointer;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -312,7 +285,7 @@
         .payment-box {
             background: rgba(15, 23, 42, 0.90);
             backdrop-filter: blur(10px);
-            border: 2px dashed #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.4);
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 35px;
@@ -344,7 +317,6 @@
             padding: 40px;
             border-radius: 16px;
             text-align: center;
-            border-top: 3px solid #3b82f6;
             margin-top: 60px;
             box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
         }
@@ -453,7 +425,8 @@
     <!-- Full Page Hero Section (Home) -->
     <section class="hero-section" id="home">
         <div class="hero-content">
-            <h2>Welcome to CHATHU STORE 🔥</h2>
+            <h1>CHATHU STORE</h1>
+            <h2>Welcome 🔥</h2>
             <p>Your Ultimate Hub for Fast Free Fire Diamond Top-ups, Pro Accounts & Professional Social Media Promotions!</p>
             <a href="#services" class="explore-btn"><i class="fa-solid fa-compass"></i> Explore Services</a>
         </div>
@@ -486,7 +459,7 @@
             <!-- Content Area -->
             <div class="content-area">
                 
-                <!-- Free Fire Top-ups (Popup on Touch/Click) -->
+                <!-- Free Fire Top-ups -->
                 <div class="section-title" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Prices</div>
                 <div class="grid">
                     <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
@@ -515,7 +488,7 @@
                     </div>
                 </div>
 
-                <!-- Gaming Accounts (Popup on Touch/Click) -->
+                <!-- Gaming Accounts -->
                 <div class="section-title" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Prices</div>
                 <div class="grid">
                     <div class="card" onclick="openCheckout('FF Pro Account (Level 65+)', 'LKR 6,500')">
