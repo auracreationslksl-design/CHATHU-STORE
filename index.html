@@ -29,9 +29,9 @@
             border-radius: 4px;
         }
 
-        /* Lighter Wallpaper for the Entire Website */
+        /* Single Unified Wallpaper for the Entire Website */
         body {
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(30, 41, 59, 0.55) 50%, rgba(15, 23, 42, 0.65) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            background: linear-gradient(180deg, rgba(5, 8, 20, 0.75) 0%, rgba(10, 15, 30, 0.85) 50%, rgba(5, 8, 20, 0.95) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -40,97 +40,98 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Bar (Tabs removed as requested) */
+        /* Navigation Bar */
         nav {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
-            padding: 18px;
+            flex-wrap: wrap;
+            padding: 12px;
+            gap: 12px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
-        .nav-brand {
-            color: #60a5fa;
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 1px;
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-decoration: none;
+            gap: 6px;
+            background: rgba(30, 41, 59, 0.6);
+        }
+        nav a:hover {
+            color: #ffffff;
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
         }
 
         /* Hero Section */
         .hero-section {
-            height: 85vh;
+            height: 90vh;
             width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 60px;
             background: transparent;
         }
         .hero-content {
-            max-width: 800px;
-            animation: fadeInDown 1.2s ease;
+            max-width: 650px;
+            animation: fadeInLeft 1.2s ease;
         }
         .hero-content h1 {
-            font-size: 50px;
+            font-size: 45px;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 800;
-            text-shadow: 0 0 30px rgba(59, 130, 246, 0.9);
+            letter-spacing: 1px;
+            text-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
         }
         .hero-content h2 {
-            font-size: 26px;
+            font-size: 24px;
             color: #60a5fa;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
         .hero-content p {
-            font-size: 17px;
-            color: #e2e8f0;
-            margin-bottom: 30px;
-            line-height: 1.6;
+            font-size: 16px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
-        
-        /* BIGGER & BOLDER SERVICES BUTTONS (Out of box text/buttons) */
-        .services-big-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .service-big-btn {
+        .explore-btn {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
-            padding: 16px 35px;
-            border-radius: 14px;
+            padding: 12px 30px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 18px;
-            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.7);
+            font-size: 15px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.6);
             transition: 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            border: 1px solid rgba(96, 165, 250, 0.4);
+            gap: 8px;
         }
-        .service-big-btn:hover {
-            transform: scale(1.06) translateY(-3px);
-            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.9);
+        .explore-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.9);
         }
 
         .container {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 15px;
         }
 
@@ -145,18 +146,55 @@
             transform: translateY(0);
         }
 
+        /* Text-style Services Bar (Services Out of Box) */
+        .services-text-bar {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+        .services-text-bar span {
+            color: #60a5fa;
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .services-text-bar a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .services-text-bar a:hover {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+        }
+
         /* Section Titles */
         .section-title {
-            margin: 40px 0 20px 0;
-            padding-left: 12px;
-            font-size: 24px;
+            margin: 30px 0 15px 0;
+            padding-left: 10px;
+            font-size: 20px;
             color: #ffffff;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
-            border-left: 5px solid #3b82f6;
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            gap: 10px;
+            border-left: 4px solid #3b82f6;
         }
         .section-title i {
             color: #3b82f6;
@@ -165,69 +203,74 @@
         /* Compact Grid Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        /* BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE */
+        .section-spacer {
+            height: 120px;
         }
 
         .card {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
-            border-radius: 16px;
-            padding: 22px 18px;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            padding: 18px 15px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             transition: all 0.3s ease;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
         .card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-6px) scale(1.02);
             border-color: #60a5fa;
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5);
-            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
+            background: rgba(15, 23, 42, 0.96);
         }
         .card-icon {
-            font-size: 35px;
+            font-size: 30px;
             color: #3b82f6;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             transition: 0.3s;
         }
         .card:hover .card-icon {
             color: #60a5fa;
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
         .card h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 6px;
             color: #f8fafc;
             font-weight: 600;
         }
         .card p {
             color: #60a5fa;
             font-weight: 700;
-            font-size: 17px;
-            margin-bottom: 16px;
+            font-size: 16px;
+            margin-bottom: 14px;
         }
 
         .btn {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
             border: none;
-            padding: 10px 15px;
-            border-radius: 9px;
+            padding: 9px 15px;
+            border-radius: 8px;
             cursor: pointer;
             width: 100%;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             transition: 0.3s;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 3px 10px rgba(37, 99, 235, 0.4);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         .btn:hover {
             background: linear-gradient(135deg, #1d4ed8, #3b82f6);
@@ -236,71 +279,71 @@
         /* Payment Info Box (EZ Cash) */
         .payment-box {
             background: rgba(15, 23, 42, 0.92);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(59, 130, 246, 0.4);
-            padding: 25px;
-            border-radius: 16px;
-            margin: 60px 0 30px 0;
+            padding: 22px;
+            border-radius: 14px;
+            margin: 50px 0 30px 0;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
         .payment-box h3 {
             color: #60a5fa;
-            margin-bottom: 12px;
-            font-size: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
         }
         .payment-box p {
-            font-size: 16px;
-            margin: 8px 0;
+            font-size: 15px;
+            margin: 6px 0;
             color: #cbd5e1;
         }
         .payment-box span {
             color: #38bdf8;
             font-weight: 700;
             background: rgba(56, 189, 248, 0.15);
-            padding: 4px 12px;
-            border-radius: 6px;
+            padding: 3px 10px;
+            border-radius: 5px;
         }
 
         /* Contact Section */
         .contact-section {
             background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 35px;
-            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 14px;
             text-align: center;
             margin-top: 40px;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 -8px 25px rgba(0,0,0,0.6);
             border: 1px solid rgba(59, 130, 246, 0.3);
         }
         .contact-section h3 {
             color: #ffffff;
-            margin-bottom: 12px;
-            font-size: 22px;
+            margin-bottom: 10px;
+            font-size: 20px;
         }
         .contact-details p {
-            font-size: 16px;
-            margin: 8px 0;
+            font-size: 15px;
+            margin: 6px 0;
             color: #cbd5e1;
         }
         .whatsapp-contact-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: #22c55e;
             color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
+            padding: 12px 25px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
-            margin-top: 18px;
+            font-size: 15px;
+            margin-top: 15px;
             transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
         }
         .whatsapp-contact-btn:hover {
             background: #16a34a;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         /* Popup Modal */
@@ -308,20 +351,20 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 8, 20, 0.9);
-            backdrop-filter: blur(14px);
+            background: rgba(5, 8, 20, 0.88);
+            backdrop-filter: blur(12px);
             justify-content: center;
             align-items: center;
             z-index: 2000;
         }
         .modal-content {
             background: #0f172a;
-            padding: 30px;
-            border-radius: 16px;
+            padding: 25px;
+            border-radius: 14px;
             width: 90%;
-            max-width: 420px;
+            max-width: 400px;
             border: 1px solid #3b82f6;
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.7);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
             animation: modalPop 0.3s ease;
         }
         @keyframes modalPop {
@@ -330,153 +373,182 @@
         }
         .modal-content h3 {
             color: #60a5fa;
-            margin-bottom: 10px;
-            font-size: 20px;
+            margin-bottom: 8px;
+            font-size: 19px;
         }
         .modal-content input, .modal-content select {
             width: 100%;
-            padding: 13px;
-            margin: 10px 0;
+            padding: 12px;
+            margin: 8px 0;
             background: #050814;
             border: 1px solid #334155;
             color: white;
-            border-radius: 9px;
-            font-size: 15px;
+            border-radius: 8px;
+            font-size: 14px;
             outline: none;
         }
         .modal-content input:focus {
             border-color: #3b82f6;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
         }
         .close-btn {
             background: #ef4444;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .close-btn:hover {
             background: #dc2626;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Brand Header (Tabs removed) -->
+    <!-- Top Navigation Tabs -->
     <nav>
-        <a href="#" class="nav-brand"><i class="fa-solid fa-gamepad"></i> CHATHU STORE</a>
+        <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#topup"><i class="fa-solid fa-gem"></i> Diamond Store</a>
+        <a href="#accounts"><i class="fa-solid fa-user-shield"></i> Pro Accounts</a>
+        <a href="#promotions"><i class="fa-solid fa-rocket"></i> Promotions</a>
+        <a href="#payment"><i class="fa-solid fa-wallet"></i> EZ Cash</a>
+        <a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a>
     </nav>
 
-    <!-- Hero Section with Big Services Buttons -->
+    <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
-            <h2>Ultimate Gaming & Digital Hub 🔥</h2>
-            <p>Fast Free Fire Diamond Top-ups & Verified Pro Gaming Accounts (Price Range: LKR 4,000 - 150,000). Choose your required service below:</p>
-            
-            <!-- Bigger Services Buttons Outside Box -->
-            <div class="services-big-container">
-                <a href="#diamond-store" class="service-big-btn"><i class="fa-solid fa-gem"></i> Diamond Store</a>
-                <a href="#account-store" class="service-big-btn"><i class="fa-solid fa-user-shield"></i> Account Store</a>
-            </div>
+            <h2>Welcome 🔥</h2>
+            <p>Your Ultimate Hub for Fast Free Fire Diamond Top-ups & Pro Gaming Accounts (4,000LKR - 150,000LKR)! Tap any package to buy instantly via WhatsApp.</p>
+            <a href="#topup" class="explore-btn"><i class="fa-solid fa-compass"></i> Explore Store</a>
         </div>
     </section>
 
     <div class="container">
         
-        <!-- PAGE 1: DIAMOND STORE SECTION -->
-        <div id="diamond-store">
-            <div class="section-title reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store</div>
-            <div class="grid reveal">
-                <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>100 Diamonds</h3>
-                        <p>LKR 250</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+        <!-- Services Text Bar (Services Out of Box) -->
+        <div class="services-text-bar reveal">
+            <span><i class="fa-solid fa-layer-group"></i> Our Services:</span>
+            <a href="#topup"><i class="fa-solid fa-gem"></i> Diamond Top-ups</a>
+            <a href="#accounts"><i class="fa-solid fa-shield-halved"></i> Pro Accounts (4k-150k)</a>
+            <a href="#promotions"><i class="fa-solid fa-rocket"></i> Social Promotions</a>
+            <a href="#payment"><i class="fa-solid fa-wallet"></i> EZ Cash Payments</a>
+        </div>
+
+        <!-- 1. Diamond Store Section -->
+        <div class="section-title reveal" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Store</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>100 Diamonds</h3>
+                    <p>LKR 250</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>310 Diamonds</h3>
-                        <p>LKR 750</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>310 Diamonds</h3>
+                    <p>LKR 750</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>520 Diamonds</h3>
-                        <p>LKR 1,250</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <div>
+                    <h3>520 Diamonds</h3>
+                    <p>LKR 1,250</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                    <div>
-                        <h3>Weekly Membership</h3>
-                        <p>LKR 480</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
+                <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div>
+                    <h3>Weekly Membership</h3>
+                    <p>LKR 480</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
-                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                    <div>
-                        <h3>Monthly Membership</h3>
-                        <p>LKR 1,850</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
+                <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                <div>
+                    <h3>Monthly Membership</h3>
+                    <p>LKR 1,850</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <div>
-                        <h3>Weekly Lite</h3>
-                        <p>LKR 150</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h3>Weekly Lite</h3>
+                    <p>LKR 150</p>
                 </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
             </div>
         </div>
 
-        <!-- PAGE 2: ACCOUNT STORE SECTION (Separate Page Layout with Normal Pricing LKR 4,000 - 150,000) -->
-        <div id="account-store" style="margin-top: 100px;">
-            <div class="section-title reveal"><i class="fa-solid fa-user-shield"></i> Pro Gaming Account Store (LKR 4,000 - 150,000)</div>
-            <div class="grid reveal">
-                <div class="card" onclick="openCheckout('Free Fire Account - Package 1', 'LKR 4,000')">
-                    <div class="card-icon"><i class="fa-solid fa-user"></i></div>
-                    <div>
-                        <h3>Account Package 1</h3>
-                        <p>LKR 4,000</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+        <!-- BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE -->
+        <div class="section-spacer"></div>
+
+        <!-- 2. Pro Gaming Accounts Store Section (4,000LKR - 150,000LKR) -->
+        <div class="section-title reveal" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Store (4,000LKR - 150,000LKR)</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('FF Starter Pro Account', 'LKR 4,000')">
+                <div class="card-icon"><i class="fa-solid fa-user-ninja"></i></div>
+                <div>
+                    <h3>Starter Pro Account</h3>
+                    <p>LKR 4,000</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire Account - Package 2', 'LKR 15,000')">
-                    <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
-                    <div>
-                        <h3>Account Package 2</h3>
-                        <p>LKR 15,000</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Mid-Range Rare Account', 'LKR 25,000')">
+                <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <div>
+                    <h3>Mid-Range Rare Account</h3>
+                    <p>LKR 25,000</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire Account - Package 3', 'LKR 50,000')">
-                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div>
-                        <h3>Account Package 3</h3>
-                        <p>LKR 50,000</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Elite Collector Account', 'LKR 75,000')">
+                <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
+                <div>
+                    <h3>Elite Collector Account</h3>
+                    <p>LKR 75,000</p>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire Account - Package 4', 'LKR 150,000')">
-                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                    <div>
-                        <h3>Account Package 4</h3>
-                        <p>LKR 150,000</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('FF Max Legendary Master Account', 'LKR 150,000')">
+                <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                <div>
+                    <h3>Max Legendary Master</h3>
+                    <p>LKR 150,000</p>
                 </div>
+                <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Social Media Promotions Section -->
+        <div class="section-title reveal" id="promotions" style="margin-top: 60px;"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
+        <div class="grid reveal">
+            <div class="card" onclick="openCheckout('TikTok Promotion Package', 'From LKR 500')">
+                <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
+                <div>
+                    <h3>TikTok Growth Boost</h3>
+                    <p>From LKR 500</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
+            </div>
+            <div class="card" onclick="openCheckout('YouTube Promotion Package', 'From LKR 800')">
+                <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <h3>YouTube Views & Subs</h3>
+                    <p>From LKR 800</p>
+                </div>
+                <button class="btn"><i class="fa-solid fa-paper-plane"></i> Order Now</button>
             </div>
         </div>
 
@@ -484,7 +556,7 @@
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
             <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
-            <p style="font-size: 14px; color: #94a3b8; margin-top: 8px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
+            <p style="font-size: 13px; color: #94a3b8; margin-top: 8px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
         </div>
 
     </div>
@@ -505,9 +577,9 @@
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <h3>Complete Your Order</h3>
-            <p id="selectedItemName" style="color: #60a5fa; margin: 10px 0; font-weight: 600; font-size: 15px;"></p>
+            <p id="selectedItemName" style="color: #60a5fa; margin: 8px 0; font-weight: 600; font-size: 14px;"></p>
             
-            <input type="text" id="customerName" placeholder="Your Name / In-Game UID">
+            <input type="text" id="customerName" placeholder="Your Name / In-Game UID / Social Link">
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
             
             <select id="paymentMethod">
@@ -546,7 +618,7 @@
                 return;
             }
 
-            let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem}%0A*Price:* ${currentPrice}%0A*UID / Name:* ${name}%0A*Contact Number:* ${phone}%0A*Payment Type:* ${payment}`;
+            let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem}%0A*Price:* ${currentPrice}%0A*UID / Link / Name:* ${name}%0A*Contact Number:* ${phone}%0A*Payment Type:* ${payment}`;
             let url = `https://wa.me/${myWhatsApp}?text=${message}`;
             
             window.open(url, '_blank');
