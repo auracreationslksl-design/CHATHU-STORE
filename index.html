@@ -17,8 +17,8 @@
             scroll-behavior: smooth;
         }
         body {
-            /* මෙතන bg.jpg වෙනුවට ඔයාගේ පින්තූරයේ නම හරියටම දෙන්න (උදා: images.jpg) නැත්නම් Direct Link එකක් දාන්න */
-            background: linear-gradient(rgba(5, 8, 20, 0.88), rgba(5, 8, 20, 0.94)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            /* Background changed from black tint to a glowing Red/Dark Red overlay */
+            background: linear-gradient(rgba(20, 5, 5, 0.75), rgba(10, 2, 2, 0.85)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -28,12 +28,12 @@
 
         /* Top Bar & Header */
         header {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(20, 5, 5, 0.85);
             backdrop-filter: blur(10px);
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 2px solid #3b82f6;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            border-bottom: 2px solid #ef4444;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
             position: relative;
         }
         header h1 {
@@ -41,18 +41,18 @@
             font-size: 38px;
             font-weight: 800;
             letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+            text-shadow: 0 0 20px rgba(239, 68, 68, 0.9);
             margin-bottom: 5px;
         }
         header p {
-            color: #93c5fd;
+            color: #fca5a5;
             font-size: 15px;
             font-weight: 500;
         }
 
         /* Navigation Bar */
         nav {
-            background: rgba(15, 23, 42, 0.92);
+            background: rgba(20, 5, 5, 0.92);
             backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
@@ -61,7 +61,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            border-bottom: 1px solid rgba(239, 68, 68, 0.3);
         }
         nav a {
             color: #cbd5e1;
@@ -74,8 +74,8 @@
             gap: 8px;
         }
         nav a:hover {
-            color: #60a5fa;
-            text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+            color: #f87171;
+            text-shadow: 0 0 10px rgba(248, 113, 113, 0.6);
         }
 
         .container {
@@ -86,13 +86,13 @@
 
         /* Welcome Banner */
         .welcome-banner {
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.85), rgba(37, 99, 235, 0.85), rgba(59, 130, 246, 0.85));
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.85), rgba(220, 38, 38, 0.85), rgba(239, 68, 68, 0.85));
             backdrop-filter: blur(10px);
             padding: 40px 20px;
             border-radius: 16px;
             text-align: center;
             margin-bottom: 35px;
-            box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .welcome-banner h2 {
@@ -105,7 +105,7 @@
         }
         .welcome-banner p {
             font-size: 17px;
-            color: #dbeafe;
+            color: #fee2e2;
         }
 
         /* Main Layout */
@@ -123,19 +123,19 @@
 
         /* Animated Left Sidebar Services */
         .sidebar {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(20, 5, 5, 0.85);
             backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             height: fit-content;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .sidebar h3 {
-            color: #60a5fa;
+            color: #f87171;
             font-size: 18px;
             margin-bottom: 20px;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #ef4444;
             padding-left: 10px;
             font-weight: 700;
         }
@@ -145,7 +145,7 @@
         .animated-services-list li {
             padding: 12px 15px;
             margin-bottom: 10px;
-            background: rgba(30, 41, 59, 0.8);
+            background: rgba(40, 10, 10, 0.8);
             border-radius: 10px;
             font-size: 14px;
             color: #e2e8f0;
@@ -158,15 +158,15 @@
             gap: 10px;
         }
         .animated-services-list li i {
-            color: #3b82f6;
+            color: #ef4444;
             transition: 0.3s;
         }
         .animated-services-list li:hover {
-            background: #1d4ed8;
+            background: #dc2626;
             color: #ffffff;
             transform: translateX(8px);
-            border-left: 3px solid #60a5fa;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+            border-left: 3px solid #f87171;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
         }
         .animated-services-list li:hover i {
             color: #ffffff;
@@ -175,7 +175,7 @@
         /* Content Area */
         .section-title {
             margin: 25px 0 15px 0;
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #ef4444;
             padding-left: 12px;
             font-size: 22px;
             color: #ffffff;
@@ -186,7 +186,7 @@
             text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         .section-title i {
-            color: #3b82f6;
+            color: #ef4444;
         }
 
         .grid {
@@ -198,25 +198,25 @@
 
         /* Cards */
         .card {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(20, 5, 5, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.25);
+            border: 1px solid rgba(239, 68, 68, 0.25);
             transition: all 0.3s ease;
             position: relative;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
         .card:hover {
             transform: translateY(-8px);
-            border-color: #3b82f6;
-            box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
-            background: rgba(15, 23, 42, 0.95);
+            border-color: #ef4444;
+            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4);
+            background: rgba(20, 5, 5, 0.95);
         }
         .card-icon {
             font-size: 35px;
-            color: #3b82f6;
+            color: #ef4444;
             margin-bottom: 15px;
         }
         .card h3 {
@@ -226,14 +226,14 @@
             font-weight: 600;
         }
         .card p {
-            color: #60a5fa;
+            color: #f87171;
             font-weight: 700;
             font-size: 19px;
             margin-bottom: 20px;
         }
 
         .btn {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -243,23 +243,23 @@
             font-weight: 600;
             font-size: 15px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
         }
         .btn:hover {
-            background: linear-gradient(135deg, #1d4ed8, #1e40af);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.7);
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.7);
             transform: scale(1.02);
         }
 
         /* Payment Info Box */
         .payment-box {
-            background: rgba(15, 23, 42, 0.88);
+            background: rgba(20, 5, 5, 0.88);
             backdrop-filter: blur(10px);
-            border: 2px dashed #3b82f6;
+            border: 2px dashed #ef4444;
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 35px;
@@ -267,7 +267,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .payment-box h3 {
-            color: #60a5fa;
+            color: #f87171;
             margin-bottom: 12px;
             font-size: 20px;
             display: flex;
@@ -281,21 +281,21 @@
             color: #cbd5e1;
         }
         .payment-box span {
-            color: #38bdf8;
+            color: #fca5a5;
             font-weight: 700;
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(239, 68, 68, 0.15);
             padding: 3px 8px;
             border-radius: 6px;
         }
 
         /* Contact Section */
         .contact-section {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(20, 5, 5, 0.85);
             backdrop-filter: blur(10px);
             padding: 35px;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -335,20 +335,20 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 8, 20, 0.90);
+            background: rgba(20, 5, 5, 0.90);
             backdrop-filter: blur(10px);
             justify-content: center;
             align-items: center;
             z-index: 2000;
         }
         .modal-content {
-            background: #0f172a;
+            background: #180505;
             padding: 30px;
             border-radius: 16px;
             width: 90%;
             max-width: 450px;
-            border: 1px solid #3b82f6;
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.5);
+            border: 1px solid #ef4444;
+            box-shadow: 0 0 35px rgba(239, 68, 68, 0.5);
             animation: modalPop 0.3s ease;
         }
         @keyframes modalPop {
@@ -356,7 +356,7 @@
             100% { transform: scale(1); opacity: 1; }
         }
         .modal-content h3 {
-            color: #60a5fa;
+            color: #f87171;
             margin-bottom: 8px;
             font-size: 22px;
         }
@@ -364,8 +364,8 @@
             width: 100%;
             padding: 14px;
             margin: 12px 0;
-            background: #050814;
-            border: 1px solid #334155;
+            background: #0c0202;
+            border: 1px solid #451a1a;
             color: white;
             border-radius: 10px;
             font-size: 15px;
@@ -373,8 +373,8 @@
             transition: 0.3s;
         }
         .modal-content input:focus, .modal-content select:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+            border-color: #ef4444;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
         }
         .close-btn {
             background: #ef4444;
@@ -413,7 +413,7 @@
         <div class="payment-box" id="payment">
             <h3><i class="fa-solid fa-circle-check"></i> Payment Methods & Details</h3>
             <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
-            <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
+            <p style="font-size: 14px; color: #fca5a5; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
         </div>
 
         <!-- Main Layout -->
@@ -500,8 +500,8 @@
         <div class="contact-section" id="contact">
             <h3>Get in Touch with Chathu Store</h3>
             <div class="contact-details">
-                <p><i class="fa-solid fa-phone" style="color: #3b82f6;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
-                <p><i class="fa-solid fa-clock" style="color: #3b82f6;"></i> Fast 24/7 Service Support via WhatsApp</p>
+                <p><i class="fa-solid fa-phone" style="color: #ef4444;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
+                <p><i class="fa-solid fa-clock" style="color: #ef4444;"></i> Fast 24/7 Service Support via WhatsApp</p>
             </div>
             <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
                 <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp
@@ -514,7 +514,7 @@
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <h3>Complete Your Order</h3>
-            <p id="selectedItemName" style="color: #60a5fa; margin: 10px 0; font-weight: 600;"></p>
+            <p id="selectedItemName" style="color: #f87171; margin: 10px 0; font-weight: 600;"></p>
             
             <input type="text" id="customerName" placeholder="Your Name / In-Game UID / Social Link">
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
