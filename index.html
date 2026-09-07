@@ -16,9 +16,25 @@
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
+
+        /* Custom Scrollbar for sleek mouse experience */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050814;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #60a5fa;
+        }
+
         body {
-            /* Background changed from black tint to a glowing Red/Dark Red overlay */
-            background: linear-gradient(rgba(20, 5, 5, 0.75), rgba(10, 2, 2, 0.85)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            /* Wallpaper with a slight dark red/amber touch to enhance red wallpaper eyes/horns */
+            background: linear-gradient(rgba(20, 5, 8, 0.78), rgba(5, 8, 20, 0.92)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -26,56 +42,65 @@
             overflow-x: hidden;
         }
 
-        /* Top Bar & Header */
+        /* Top Bar & Header with Electric Blue Glowing Theme */
         header {
-            background: rgba(20, 5, 5, 0.85);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(12px);
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 2px solid #ef4444;
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+            border-bottom: 2px solid #3b82f6;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
             position: relative;
+            animation: fadeInDown 0.8s ease;
         }
         header h1 {
             color: #ffffff;
             font-size: 38px;
             font-weight: 800;
             letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(239, 68, 68, 0.9);
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
             margin-bottom: 5px;
         }
         header p {
-            color: #fca5a5;
+            color: #93c5fd;
             font-size: 15px;
             font-weight: 500;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar (Tabs) in Electric Blue with Mouse Hover Animations */
         nav {
-            background: rgba(20, 5, 5, 0.92);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(12px);
             display: flex;
             justify-content: center;
             padding: 15px;
-            gap: 25px;
+            gap: 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+            border-bottom: 2px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
         nav a {
             color: #cbd5e1;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
-            transition: 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             gap: 8px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
         nav a:hover {
-            color: #f87171;
-            text-shadow: 0 0 10px rgba(248, 113, 113, 0.6);
+            color: #ffffff;
+            background: #2563eb;
+            border-color: #60a5fa;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
         }
 
         .container {
@@ -86,14 +111,15 @@
 
         /* Welcome Banner */
         .welcome-banner {
-            background: linear-gradient(135deg, rgba(185, 28, 28, 0.85), rgba(220, 38, 38, 0.85), rgba(239, 68, 68, 0.85));
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.88), rgba(37, 99, 235, 0.88), rgba(96, 165, 250, 0.88));
             backdrop-filter: blur(10px);
             padding: 40px 20px;
             border-radius: 16px;
             text-align: center;
             margin-bottom: 35px;
-            box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 35px rgba(37, 99, 235, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: zoomIn 0.8s ease;
         }
         .welcome-banner h2 {
             font-size: 32px;
@@ -101,11 +127,11 @@
             margin-bottom: 10px;
             font-weight: 800;
             letter-spacing: 1px;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            text-shadow: 0 0 15px rgba(0,0,0,0.6);
         }
         .welcome-banner p {
             font-size: 17px;
-            color: #fee2e2;
+            color: #dbeafe;
         }
 
         /* Main Layout */
@@ -123,19 +149,19 @@
 
         /* Animated Left Sidebar Services */
         .sidebar {
-            background: rgba(20, 5, 5, 0.85);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 16px;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             height: fit-content;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
         .sidebar h3 {
-            color: #f87171;
+            color: #60a5fa;
             font-size: 18px;
             margin-bottom: 20px;
-            border-left: 4px solid #ef4444;
+            border-left: 4px solid #3b82f6;
             padding-left: 10px;
             font-weight: 700;
         }
@@ -145,7 +171,7 @@
         .animated-services-list li {
             padding: 12px 15px;
             margin-bottom: 10px;
-            background: rgba(40, 10, 10, 0.8);
+            background: rgba(30, 41, 59, 0.8);
             border-radius: 10px;
             font-size: 14px;
             color: #e2e8f0;
@@ -158,24 +184,25 @@
             gap: 10px;
         }
         .animated-services-list li i {
-            color: #ef4444;
+            color: #3b82f6;
             transition: 0.3s;
         }
         .animated-services-list li:hover {
-            background: #dc2626;
+            background: #1d4ed8;
             color: #ffffff;
-            transform: translateX(8px);
-            border-left: 3px solid #f87171;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+            transform: translateX(10px);
+            border-left: 3px solid #60a5fa;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
         }
         .animated-services-list li:hover i {
             color: #ffffff;
+            transform: scale(1.2);
         }
 
         /* Content Area */
         .section-title {
             margin: 25px 0 15px 0;
-            border-left: 4px solid #ef4444;
+            border-left: 4px solid #3b82f6;
             padding-left: 12px;
             font-size: 22px;
             color: #ffffff;
@@ -186,7 +213,7 @@
             text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         .section-title i {
-            color: #ef4444;
+            color: #3b82f6;
         }
 
         .grid {
@@ -196,28 +223,33 @@
             margin-bottom: 35px;
         }
 
-        /* Cards */
+        /* Glowing Blue Cards with Mouse Hover Zoom Effect */
         .card {
-            background: rgba(20, 5, 5, 0.85);
+            background: rgba(15, 23, 42, 0.88);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
-            border: 1px solid rgba(239, 68, 68, 0.25);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
         .card:hover {
-            transform: translateY(-8px);
-            border-color: #ef4444;
-            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.4);
-            background: rgba(20, 5, 5, 0.95);
+            transform: translateY(-10px) scale(1.02);
+            border-color: #60a5fa;
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5);
+            background: rgba(15, 23, 42, 0.96);
         }
         .card-icon {
-            font-size: 35px;
-            color: #ef4444;
+            font-size: 38px;
+            color: #3b82f6;
             margin-bottom: 15px;
+            transition: 0.3s;
+        }
+        .card:hover .card-icon {
+            color: #60a5fa;
+            transform: scale(1.15) rotate(5deg);
         }
         .card h3 {
             font-size: 18px;
@@ -226,14 +258,16 @@
             font-weight: 600;
         }
         .card p {
-            color: #f87171;
+            color: #60a5fa;
             font-weight: 700;
             font-size: 19px;
             margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
+        /* Buttons with Smooth Hover Animation */
         .btn {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -242,32 +276,37 @@
             width: 100%;
             font-weight: 600;
             font-size: 15px;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 8px;
         }
         .btn:hover {
-            background: linear-gradient(135deg, #b91c1c, #991b1b);
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.7);
-            transform: scale(1.02);
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.8);
+            transform: translateY(-2px);
         }
 
         /* Payment Info Box */
         .payment-box {
-            background: rgba(20, 5, 5, 0.88);
+            background: rgba(15, 23, 42, 0.90);
             backdrop-filter: blur(10px);
-            border: 2px dashed #ef4444;
+            border: 2px dashed #3b82f6;
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 35px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .payment-box:hover {
+            border-color: #60a5fa;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
         }
         .payment-box h3 {
-            color: #f87171;
+            color: #60a5fa;
             margin-bottom: 12px;
             font-size: 20px;
             display: flex;
@@ -281,21 +320,21 @@
             color: #cbd5e1;
         }
         .payment-box span {
-            color: #fca5a5;
+            color: #38bdf8;
             font-weight: 700;
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(56, 189, 248, 0.15);
             padding: 3px 8px;
             border-radius: 6px;
         }
 
         /* Contact Section */
         .contact-section {
-            background: rgba(20, 5, 5, 0.85);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(10px);
             padding: 35px;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -321,13 +360,13 @@
             font-weight: 700;
             font-size: 16px;
             margin-top: 20px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
         }
         .whatsapp-contact-btn:hover {
             background: #16a34a;
-            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.6);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.7);
+            transform: translateY(-3px) scale(1.03);
         }
 
         /* Modal Styles */
@@ -335,28 +374,28 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(20, 5, 5, 0.90);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 8, 20, 0.88);
+            backdrop-filter: blur(12px);
             justify-content: center;
             align-items: center;
             z-index: 2000;
         }
         .modal-content {
-            background: #180505;
+            background: #0f172a;
             padding: 30px;
             border-radius: 16px;
             width: 90%;
             max-width: 450px;
-            border: 1px solid #ef4444;
-            box-shadow: 0 0 35px rgba(239, 68, 68, 0.5);
-            animation: modalPop 0.3s ease;
+            border: 1px solid #3b82f6;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+            animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes modalPop {
-            0% { transform: scale(0.9); opacity: 0; }
+            0% { transform: scale(0.8); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
         }
         .modal-content h3 {
-            color: #f87171;
+            color: #60a5fa;
             margin-bottom: 8px;
             font-size: 22px;
         }
@@ -364,8 +403,8 @@
             width: 100%;
             padding: 14px;
             margin: 12px 0;
-            background: #0c0202;
-            border: 1px solid #451a1a;
+            background: #050814;
+            border: 1px solid #334155;
             color: white;
             border-radius: 10px;
             font-size: 15px;
@@ -373,8 +412,8 @@
             transition: 0.3s;
         }
         .modal-content input:focus, .modal-content select:focus {
-            border-color: #ef4444;
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
         }
         .close-btn {
             background: #ef4444;
@@ -383,6 +422,16 @@
         }
         .close-btn:hover {
             background: #dc2626;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
@@ -413,7 +462,7 @@
         <div class="payment-box" id="payment">
             <h3><i class="fa-solid fa-circle-check"></i> Payment Methods & Details</h3>
             <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
-            <p style="font-size: 14px; color: #fca5a5; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
+            <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
         </div>
 
         <!-- Main Layout -->
@@ -500,8 +549,8 @@
         <div class="contact-section" id="contact">
             <h3>Get in Touch with Chathu Store</h3>
             <div class="contact-details">
-                <p><i class="fa-solid fa-phone" style="color: #ef4444;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
-                <p><i class="fa-solid fa-clock" style="color: #ef4444;"></i> Fast 24/7 Service Support via WhatsApp</p>
+                <p><i class="fa-solid fa-phone" style="color: #3b82f6;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
+                <p><i class="fa-solid fa-clock" style="color: #3b82f6;"></i> Fast 24/7 Service Support via WhatsApp</p>
             </div>
             <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
                 <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp
@@ -514,7 +563,7 @@
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <h3>Complete Your Order</h3>
-            <p id="selectedItemName" style="color: #f87171; margin: 10px 0; font-weight: 600;"></p>
+            <p id="selectedItemName" style="color: #60a5fa; margin: 10px 0; font-weight: 600;"></p>
             
             <input type="text" id="customerName" placeholder="Your Name / In-Game UID / Social Link">
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
@@ -547,7 +596,7 @@
         function sendOrder() {
             let name = document.getElementById("customerName").value;
             let phone = document.getElementById("customerPhone").value;
-            let payment = document.getElementById("paymentMethod").value;
+            let payment = document.getElementById("paymentMethod-select") ? document.getElementById("paymentMethod-select").value : document.getElementById("paymentMethod").value;
             let myWhatsApp = "94750565097"; 
 
             if(name === "" || phone === "") {
