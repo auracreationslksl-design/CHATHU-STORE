@@ -215,7 +215,7 @@
 
         /* Section Titles */
         .section-title {
-            margin: 30px 0 15px 0;
+            margin: 40px 0 15px 0;
             padding-left: 10px;
             font-size: 20px;
             color: #ffffff;
@@ -234,7 +234,11 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-bottom: 30px;
+        }
+
+        /* BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE */
+        .section-spacer {
+            height: 100px;
         }
 
         .card {
@@ -308,7 +312,7 @@
             border: 1px solid rgba(59, 130, 246, 0.4);
             padding: 22px;
             border-radius: 14px;
-            margin: 30px 0;
+            margin: 50px 0 30px 0;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
@@ -469,10 +473,10 @@
                 </ul>
             </div>
 
-            <!-- Content Area: Diamond Store First, Then Scroll down to Pro Accounts -->
+            <!-- Content Area -->
             <div class="content-area">
                 
-                <!-- 1. Diamond Store Section (Gem Limit & Price) -->
+                <!-- 1. Diamond Store Section -->
                 <div class="section-title reveal" id="topup"><i class="fa-solid fa-fire"></i> Free Fire Diamond Store</div>
                 <div class="grid reveal">
                     <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
@@ -525,6 +529,9 @@
                     </div>
                 </div>
 
+                <!-- BIG GAP BETWEEN DIAMOND STORE AND ACCOUNT STORE -->
+                <div class="section-spacer"></div>
+
                 <!-- 2. Pro Gaming Accounts Store Section (4,000LKR - 150,000LKR) -->
                 <div class="section-title reveal" id="accounts"><i class="fa-solid fa-shield-halved"></i> Pro Gaming Account Store (4,000LKR - 150,000LKR)</div>
                 <div class="grid reveal">
@@ -563,7 +570,7 @@
                 </div>
 
                 <!-- Social Media Promotions Section -->
-                <div class="section-title reveal" id="promotions"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
+                <div class="section-title reveal" id="promotions" style="margin-top: 60px;"><i class="fa-solid fa-chart-line"></i> Social Media Promotions</div>
                 <div class="grid reveal">
                     <div class="card" onclick="openCheckout('TikTok Promotion Package', 'From LKR 500')">
                         <div class="card-icon"><i class="fa-brands fa-tiktok"></i></div>
