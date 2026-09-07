@@ -33,7 +33,7 @@
         }
 
         body {
-            background: linear-gradient(rgba(20, 5, 8, 0.85), rgba(5, 8, 20, 0.95)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            background: linear-gradient(90deg, rgba(5, 8, 20, 0.95) 20%, rgba(20, 5, 8, 0.6) 70%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -74,45 +74,43 @@
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
         }
 
-        /* Full Width Hero Section (Home) - No Box, Pure Text Design */
+        /* Full Width Hero Section - Left Aligned Text */
         .hero-section {
             height: 100vh;
             width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.7)), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 80px;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.85) 35%, rgba(15, 23, 42, 0.3) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
         }
         .hero-content {
-            max-width: 900px;
-            animation: fadeInZoom 1.2s ease;
+            max-width: 700px;
+            animation: fadeInLeft 1.2s ease;
         }
         .hero-content h1 {
             font-size: 55px;
             color: #ffffff;
             margin-bottom: 10px;
             font-weight: 800;
-            letter-spacing: 3px;
-            text-shadow: 0 0 30px rgba(59, 130, 246, 0.9), 0 0 60px rgba(239, 68, 68, 0.5);
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
         }
         .hero-content h2 {
             font-size: 32px;
             color: #60a5fa;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
         }
         .hero-content p {
             font-size: 18px;
             color: #cbd5e1;
             margin-bottom: 35px;
             line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
         .explore-btn {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
@@ -162,11 +160,13 @@
             .main-layout {
                 grid-template-columns: 1fr;
             }
+            .hero-section {
+                padding: 0 20px;
+                align-items: center;
+                text-align: center;
+            }
             .hero-content h1 {
                 font-size: 38px;
-            }
-            .hero-content h2 {
-                font-size: 24px;
             }
         }
 
@@ -421,9 +421,9 @@
             background: #dc2626;
         }
 
-        @keyframes fadeInZoom {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
     </style>
 </head>
@@ -439,7 +439,7 @@
         <a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a>
     </nav>
 
-    <!-- Full Width Hero Section (Home) - Pure Text -->
+    <!-- Full Width Hero Section (Home) - Left Aligned -->
     <section class="hero-section" id="home">
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
