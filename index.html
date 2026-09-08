@@ -316,8 +316,7 @@
         /* 2. Diamond & Account Store Quick Cards (Top Hub Section) */
         .services-section-wrapper {
             max-width: 1250px;
-            margin: 140px auto 0 auto;
-            padding: 0 20px;
+            margin: 200px auto 0 auto;
         }
         .services-showcase {
             display: grid;
@@ -372,6 +371,9 @@
         }
 
         /* 3. Social Media Promotion Services Section */
+        .spaced-section {
+            margin-top: 220px;
+        }
         .promo-services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -417,7 +419,7 @@
 
         /* 6. Customer Reviews (Unlimited Infinite Marquee with Pause on Hover) */
         .reviews-section {
-            margin: 140px 0 30px 0;
+            margin: 220px 0 30px 0;
             overflow: hidden;
             background: rgba(15, 23, 42, 0.7);
             padding: 20px 0;
@@ -462,7 +464,7 @@
             border: 1px solid rgba(59, 130, 246, 0.4);
             padding: 35px;
             border-radius: 20px;
-            margin: 140px 0 30px 0;
+            margin: 220px 0 30px 0;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -501,7 +503,7 @@
             padding: 45px;
             border-radius: 20px;
             text-align: center;
-            margin-top: 140px;
+            margin-top: 220px;
             box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
             border: 1px solid rgba(59, 130, 246, 0.3);
         }
@@ -644,7 +646,7 @@
         </div>
 
         <!-- 3. SOCIAL MEDIA PROMOTION SERVICES SECTION -->
-        <div style="margin-top: 140px;" id="services">
+        <div class="spaced-section" id="services">
             <div class="section-header reveal"><i class="fa-solid fa-bullhorn"></i> Social Media Promotion Services</div>
             <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">Boost your social presence with real, active engagement & fast delivery!</p>
             
@@ -683,7 +685,7 @@
         </div>
 
         <!-- 4. FREE FIRE DIAMOND STORE -->
-        <div id="diamond-store" style="margin-top: 140px;">
+        <div class="spaced-section" id="diamond-store">
             <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store</div>
             <div class="grid reveal">
                 <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
@@ -737,8 +739,8 @@
             </div>
         </div>
 
-        <!-- 5. PRO GAMING ACCOUNT STORE (මෙන්න මේකට උඩින් ලොකු gap එකක් දමා ඇත - margin-top: 250px) -->
-        <div id="account-store" style="margin-top: 250px;">
+        <!-- 5. PRO GAMING ACCOUNT STORE -->
+        <div class="spaced-section" id="account-store">
             <div class="section-header reveal"><i class="fa-solid fa-user-shield"></i> Pro Gaming Account Store</div>
             <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">Price Range: LKR 4,000 - 150,000 (Fully Secure & Verified)</p>
             <div class="grid reveal" style="grid-template-columns: repeat(4, 1fr);">
@@ -852,7 +854,9 @@
             setTimeout(() => { modal.style.display = "none"; }, 300);
         }
 
+        let orderSent = false;
         function sendOrder() {
+            if (orderSent) return;
             let name = document.getElementById("customerName");
             let phone = document.getElementById("customerPhone");
             let payment = document.getElementById("paymentMethod");
@@ -860,15 +864,17 @@
 
             if(!name || !phone || !payment) return;
 
-            if(name.value === "" || phone.value === "") {
+            if(name.value.trim() === "" || phone.value.trim() === "") {
                 alert("කරුණාකර ඔබේ නම/විස්තරය සහ WhatsApp අංකය ඇතුළත් කරන්න!");
                 return;
             }
 
+            orderSent = true;
             let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem}%0A*Price:* ${currentPrice}%0A*Details / UID:* ${name.value}%0A*Contact Number:* ${phone.value}%0A*Payment Type:* ${payment.value}`;
             
             let whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsApp}&text=${message}`;
             window.location.href = whatsappUrl;
+            setTimeout(() => { orderSent = false; }, 2000);
         }
 
         // Scroll Reveal Animation Script
