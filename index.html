@@ -89,7 +89,7 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             list-style: none;
         }
         .nav-links a {
@@ -122,7 +122,7 @@
             transform: translateY(-2px);
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
             nav { padding: 15px 20px; }
             .nav-links { display: none; }
         }
@@ -212,6 +212,94 @@
         @keyframes pulseGlow {
             from { filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.5)); }
             to { filter: drop-shadow(0 0 15px rgba(56, 189, 248, 1)); }
+        }
+
+        /* Flash Sale & Countdown Bar */
+        .flash-sale-bar {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.4));
+            border: 1px solid rgba(239, 68, 68, 0.6);
+            border-radius: 16px;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .flash-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fca5a5;
+        }
+        .flash-title i {
+            color: #ef4444;
+            animation: bounceIcon 1s infinite alternate;
+        }
+        @keyframes bounceIcon {
+            from { transform: translateY(0); }
+            to { transform: translateY(-4px); }
+        }
+        .countdown-timers {
+            display: flex;
+            gap: 12px;
+        }
+        .timer-box {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            padding: 6px 12px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 50px;
+        }
+        .timer-box span {
+            display: block;
+            font-weight: 800;
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .timer-box small {
+            font-size: 10px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        /* Live Search Bar Styling */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+            position: relative;
+        }
+        .search-container input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 15px;
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        .search-container input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            background: rgba(15, 23, 42, 0.95);
+        }
+        .search-container i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #38bdf8;
+            font-size: 18px;
         }
 
         /* Grid Layout */
@@ -500,6 +588,86 @@
             box-shadow: 0 12px 30px rgba(34, 197, 94, 0.7);
         }
 
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 25px auto 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .faq-item {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: #38bdf8;
+        }
+        .faq-question {
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            color: #f8fafc;
+        }
+        .faq-question i {
+            color: #38bdf8;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            padding: 0 25px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 20px 25px;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.6);
+            z-index: 1500;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: floatWhatsApp 3s infinite ease-in-out;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.9);
+        }
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
         /* Customer Reviews (Marquee) */
         .reviews-section {
             margin-top: 220px;
@@ -731,6 +899,11 @@
 </head>
 <body>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20need%20assistance!" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- Navigation Bar -->
     <nav>
         <a href="#home" class="nav-logo"><i class="fa-solid fa-gamepad"></i> CHATHU STORE</a>
@@ -740,6 +913,7 @@
             <li><a href="#services"><i class="fa-solid fa-bullhorn"></i> Promotions</a></li>
             <li><a href="#diamond-store"><i class="fa-solid fa-gem"></i> Diamonds</a></li>
             <li><a href="#account-store"><i class="fa-solid fa-user-shield"></i> Accounts</a></li>
+            <li><a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
             <li><a href="#reviews"><i class="fa-solid fa-star"></i> Reviews</a></li>
             <li><a href="#payment"><i class="fa-solid fa-wallet"></i> EZ Cash</a></li>
             <li><a href="#contact"><i class="fa-solid fa-headset"></i> Contact</a></li>
@@ -751,19 +925,37 @@
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
             <h2>Ultimate Gaming & Digital Hub 🔥</h2>
-            <p>Fast Free Fire Diamond Top-ups, Pro Gaming Accounts & Social Media Promotions (TikTok, YouTube, Instagram, Facebook, Discord).</p>
+            <p>Fast Free Fire Diamond Top-ups (Within 30 Mins), Pro Gaming Accounts & Social Media Promotions (TikTok, YouTube, Instagram, Facebook, Discord).</p>
         </div>
     </section>
 
     <div class="container">
         
+        <!-- Flash Sale / Countdown Timer Bar -->
+        <div class="flash-sale-bar reveal">
+            <div class="flash-title">
+                <i class="fa-solid fa-fire fa-lg"></i> Special Flash Sale Ending Soon!
+            </div>
+            <div class="countdown-timers">
+                <div class="timer-box"><span id="hours">05</span><small>Hours</small></div>
+                <div class="timer-box"><span id="minutes">42</span><small>Mins</small></div>
+                <div class="timer-box"><span id="seconds">18</span><small>Secs</small></div>
+            </div>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="search-container reveal">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="liveSearch" placeholder="Search for diamonds, memberships, or promo packages..." onkeyup="filterItems()">
+        </div>
+
         <!-- 2. DIAMOND & ACCOUNT STORE CARDS (Quick Showcase Hub) -->
         <div class="services-section-wrapper reveal" id="store-cards">
             <div class="services-showcase">
                 <a href="#diamond-store" class="service-box-pro">
                     <i class="fa-solid fa-gem"></i>
                     <h3>Diamond Store</h3>
-                    <p>Instant Free Fire Diamonds & Memberships with Fast Delivery.</p>
+                    <p>Instant Free Fire Diamonds & Memberships within 30 minutes delivery.</p>
                 </a>
                 <a href="#account-store" class="service-box-pro">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -778,32 +970,32 @@
             <div class="section-header reveal"><i class="fa-solid fa-bullhorn"></i> Social Media Promotion Services</div>
             <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">Boost your social presence with real, active engagement & fast delivery!</p>
             
-            <div class="promo-services-grid reveal">
-                <div class="promo-box" onclick="openCheckout('TikTok Promotion Package', 'LKR 1,500 upwards')">
+            <div class="promo-services-grid reveal searchable-grid">
+                <div class="promo-box searchable-item" data-name="TikTok Promotion Package" onclick="openCheckout('TikTok Promotion Package', 'LKR 1,500 upwards')">
                     <i class="fa-brands fa-tiktok" style="color: #ff0050;"></i>
                     <h4>TikTok Promotion</h4>
                     <p>Views, Likes, Followers & Live Streams Boost.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
-                <div class="promo-box" onclick="openCheckout('YouTube Promotion Package', 'LKR 2,500 upwards')">
+                <div class="promo-box searchable-item" data-name="YouTube Promotion Package" onclick="openCheckout('YouTube Promotion Package', 'LKR 2,500 upwards')">
                     <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
                     <h4>YouTube Promotion</h4>
                     <p>Subscribers, Watch Time, Likes & Video Views.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
-                <div class="promo-box" onclick="openCheckout('Instagram Promotion Package', 'LKR 1,500 upwards')">
+                <div class="promo-box searchable-item" data-name="Instagram Promotion Package" onclick="openCheckout('Instagram Promotion Package', 'LKR 1,500 upwards')">
                     <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
                     <h4>Instagram Promotion</h4>
                     <p>Followers, Reel Views, Post Likes & Story Reach.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
-                <div class="promo-box" onclick="openCheckout('Facebook Promotion Package', 'LKR 2,000 upwards')">
+                <div class="promo-box searchable-item" data-name="Facebook Promotion Package" onclick="openCheckout('Facebook Promotion Package', 'LKR 2,000 upwards')">
                     <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
                     <h4>Facebook Promotion</h4>
                     <p>Page Followers, Post Likes, Video Views & Shares.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
-                <div class="promo-box" onclick="openCheckout('Discord Promotion Package', 'LKR 2,000 upwards')">
+                <div class="promo-box searchable-item" data-name="Discord Promotion Package" onclick="openCheckout('Discord Promotion Package', 'LKR 2,000 upwards')">
                     <i class="fa-brands fa-discord" style="color: #5865f2;"></i>
                     <h4>Discord Promotion</h4>
                     <p>Server Members, Online Boosters & Active Chatters.</p>
@@ -814,9 +1006,9 @@
 
         <!-- 4. FREE FIRE DIAMOND STORE -->
         <div class="spaced-section" id="diamond-store">
-            <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store</div>
-            <div class="grid reveal">
-                <div class="card" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
+            <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store (Delivery within 30 Mins)</div>
+            <div class="grid reveal searchable-grid">
+                <div class="card searchable-item" data-name="Free Fire 100 Diamonds" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250')">
                     <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
                     <div>
                         <h3>100 Diamonds</h3>
@@ -824,7 +1016,7 @@
                     </div>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
+                <div class="card searchable-item" data-name="Free Fire 310 Diamonds" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750')">
                     <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
                     <div>
                         <h3>310 Diamonds</h3>
@@ -832,7 +1024,7 @@
                     </div>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
+                <div class="card searchable-item" data-name="Free Fire 520 Diamonds" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250')">
                     <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
                     <div>
                         <h3>520 Diamonds</h3>
@@ -840,7 +1032,7 @@
                     </div>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
+                <div class="card searchable-item" data-name="Free Fire Weekly Membership" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480')">
                     <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
                     <div>
                         <h3>Weekly Member</h3>
@@ -848,7 +1040,7 @@
                     </div>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
+                <div class="card searchable-item" data-name="Free Fire Monthly Membership" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850')">
                     <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
                     <div>
                         <h3>Monthly Member</h3>
@@ -856,7 +1048,7 @@
                     </div>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="card" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
+                <div class="card searchable-item" data-name="Free Fire Weekly Lite" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150')">
                     <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
                     <div>
                         <h3>Weekly Lite</h3>
@@ -885,9 +1077,56 @@
             </div>
         </div>
 
+        <!-- 6. FAQ DROPDOWN SECTION -->
+        <div class="spaced-section" id="faq">
+            <div class="section-header reveal"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</div>
+            
+            <div class="faq-container reveal">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Free Fire Diamonds ලබා ගැනීමට කොපමණ කාලයක් ගතවේද?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        මුදල් ගෙවීම තහවුරු කළ පසු විනාඩි 30ක් (30 Mins) ඇතුළත ඔබගේ Free Fire UID එකට ඩයමන්ඩ්ස් හෝ membership එක ලැබෙයි.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Pro Gaming Accounts මිලදී ගන්නේ කෙසේද?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        අපගේ Account Store බැනර් එකේ ඇති "Contact via WhatsApp" බොත්තම ක්ලික් කිරීමෙන් හෝ ඉහත දැක්වෙන අංකයට WhatsApp පණිවිඩයක් එවීමෙන් ඔබට අවශ්‍ය බජට් එකට ගැලපෙන account එක ලබා ගත හැක.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>EZ Cash මඟින් මුදල් ගෙවන්නේ කෙසේද?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට (076-482-8776) මුදල් යවා, එහි slip එක හෝ receipt එක WhatsApp (075-0565097) එකට එවන්න.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Social Media Promotions විශ්වාසදායකද?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        ඔව්, 100% ක් සැබෑ engagement සහ වේගවත් සේවාවක් ලබා දෙන අතර TikTok, YouTube, Instagram සහ Facebook ප්‍රවර්ධන සේවාවන් ඉතා ආරක්ෂිතව ක්‍රියාත්මක වේ.
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- 6. CUSTOMER REVIEWS (Unlimited Infinite Marquee - Right to Left with Tab Cards) -->
+    <!-- 7. CUSTOMER REVIEWS (Unlimited Infinite Marquee - Right to Left with Tab Cards) -->
     <div class="reviews-section reveal" id="reviews">
         <div style="text-align: center; margin-bottom: 20px;">
             <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Reviews</h3>
@@ -901,7 +1140,7 @@
                     </div>
                     <span class="badge">Diamonds</span>
                 </div>
-                <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 5න්. 100% Trusted Store එකක්."</p>
+                <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 30න් ඇතුළත. 100% Trusted Store එකක්."</p>
                 <div class="review-tab-footer">
                     <h4>Nimesh</h4>
                     <span>Gampaha</span>
@@ -943,7 +1182,7 @@
                     </div>
                     <span class="badge">Top-up</span>
                 </div>
-                <p>"Super fast service, weekly membership එක දාගත්තා විනාඩි 2න්. Thank you bro!"</p>
+                <p>"Super fast service, weekly membership එක දාගත්තා ඉක්මනින්ම. Thank you bro!"</p>
                 <div class="review-tab-footer">
                     <h4>Sahan</h4>
                     <span>Galle</span>
@@ -972,7 +1211,7 @@
                     </div>
                     <span class="badge">Diamonds</span>
                 </div>
-                <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 5න්. 100% Trusted Store එකක්."</p>
+                <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 30න් ඇතුළත. 100% Trusted Store එකක්."</p>
                 <div class="review-tab-footer">
                     <h4>Nimesh</h4>
                     <span>Gampaha</span>
@@ -1014,7 +1253,7 @@
                     </div>
                     <span class="badge">Top-up</span>
                 </div>
-                <p>"Super fast service, weekly membership එක දාගත්තා විනාඩි 2න්. Thank you bro!"</p>
+                <p>"Super fast service, weekly membership එක දාගත්තා ඉක්මනින්ම. Thank you bro!"</p>
                 <div class="review-tab-footer">
                     <h4>Sahan</h4>
                     <span>Galle</span>
@@ -1038,11 +1277,11 @@
     </div>
 
     <div class="container">
-        <!-- 7. PAYMENT DETAILS / EZ CASH -->
+        <!-- 8. PAYMENT DETAILS / EZ CASH -->
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
-            <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
-            <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
+            <p>Send Money via EZ Cash to Number: <span>076-482-8776</span></p>
+            <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash අංකයට (076-482-8776) යවා, එහි විස්තර WhatsApp අංකයට (075-0565097) එවන්න.</p>
         </div>
     </div>
 
@@ -1050,8 +1289,9 @@
     <div class="contact-section reveal" id="contact">
         <h3>Get in Touch with Chathu Store</h3>
         <div class="contact-details">
-            <p><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> Hotlines / EZ Cash: <b>075-0565097</b> / <b>076-482-8776</b></p>
-            <p><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> Fast 24/7 Customer Support via WhatsApp</p>
+            <p><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> WhatsApp Number: <b>075-0565097</b></p>
+            <p><i class="fa-solid fa-wallet" style="color: #38bdf8;"></i> EZ Cash Number: <b>076-482-8776</b></p>
+            <p><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> Fast Diamond Delivery within 30 Mins via WhatsApp Support</p>
         </div>
         <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
             <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp: 075-0565097
@@ -1068,11 +1308,11 @@
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
             
             <select id="paymentMethod">
-                <option value="EZ Cash (075-0565097 / 076-482-8776)">EZ Cash Payment (075-0565097 / 076-482-8776)</option>
+                <option value="EZ Cash (076-482-8776)">EZ Cash Payment to: 076-482-8776</option>
                 <option value="Bank Transfer / Other">Other Payment Method</option>
             </select>
 
-            <button class="btn" onclick="sendOrder()"><i class="fa-brands fa-whatsapp"></i> Confirm & Send to WhatsApp</button>
+            <button class="btn" onclick="sendOrder()"><i class="fa-brands fa-whatsapp"></i> Confirm & Send to WhatsApp (075-0565097)</button>
             <button class="btn close-btn" onclick="closeCheckout()">Cancel</button>
         </div>
     </div>
@@ -1118,6 +1358,56 @@
             window.location.href = whatsappUrl;
             setTimeout(() => { orderSent = false; }, 2000);
         }
+
+        // FAQ Toggle Script
+        function toggleFaq(element) {
+            let item = element.parentElement;
+            let allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(i => {
+                if(i !== item) {
+                    i.classList.remove('active');
+                }
+            });
+            
+            item.classList.toggle('active');
+        }
+
+        // Live Search Filter Script
+        function filterItems() {
+            let input = document.getElementById('liveSearch').value.toLowerCase();
+            let items = document.querySelectorAll('.searchable-item');
+
+            items.forEach(item => {
+                let name = item.getAttribute('data-name').toLowerCase();
+                if(name.includes(input)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        // Flash Sale Countdown Timer Script
+        function updateCountdown() {
+            let hoursElem = document.getElementById('hours');
+            let minsElem = document.getElementById('minutes');
+            let secsElem = document.getElementById('seconds');
+            
+            let totalSecs = parseInt(hoursElem.innerText) * 3600 + parseInt(minsElem.innerText) * 60 + parseInt(secsElem.innerText);
+            
+            if(totalSecs > 0) {
+                totalSecs--;
+                let h = Math.floor(totalSecs / 3600);
+                let m = Math.floor((totalSecs % 3600) / 60);
+                let s = totalSecs % 60;
+                
+                hoursElem.innerText = h < 10 ? '0' + h : h;
+                minsElem.innerText = m < 10 ? '0' + m : m;
+                secsElem.innerText = s < 10 ? '0' + s : s;
+            }
+        }
+        setInterval(updateCountdown, 1000);
 
         // Scroll Reveal Animation Script
         window.addEventListener('scroll', revealOnScroll);
