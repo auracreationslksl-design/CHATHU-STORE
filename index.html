@@ -417,69 +417,44 @@
             margin-bottom: 15px;
         }
 
-        /* 6. Customer Reviews Cards Section (New Grid Layout with large gap) */
-        .reviews-section-grid {
+        /* 6. Customer Reviews (Unlimited Infinite Marquee Right to Left) with 220px margin-top */
+        .reviews-section {
             margin-top: 220px;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-        .review-card {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 16px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.7);
+            padding: 25px 0;
+            border-top: 1px solid rgba(59, 130, 246, 0.3);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
             position: relative;
         }
-        .review-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: #38bdf8;
-            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.4);
-            background: rgba(15, 23, 42, 0.95);
+        .reviews-section:hover .marquee-track {
+            animation-play-state: paused;
         }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 14px;
-            margin-bottom: 12px;
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarqueeRightToLeft 30s linear infinite;
+            gap: 25px;
         }
-        .review-card p {
+        .review-chip {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 14px 25px;
+            border-radius: 14px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
             color: #cbd5e1;
             font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-style: italic;
+            white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-top: 1px solid rgba(59, 130, 246, 0.2);
-            padding-top: 15px;
+        .review-chip:hover {
+            transform: scale(1.05);
+            border-color: #38bdf8;
+            color: #ffffff;
         }
-        .review-author i {
-            font-size: 24px;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            padding: 10px;
-            border-radius: 50%;
-        }
-        .author-info h4 {
-            color: #f8fafc;
-            font-size: 15px;
-            font-weight: 600;
-        }
-        .author-info span {
-            color: #94a3b8;
-            font-size: 12px;
+        @keyframes scrollMarqueeRightToLeft {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
 
         /* 7. EZ Cash Payment Details Box */
@@ -804,81 +779,31 @@
             </div>
         </div>
 
-        <!-- 6. CUSTOMER REVIEWS (Grid Cards Layout) -->
-        <div class="reviews-section-grid spaced-section" id="reviews">
-            <div class="section-header reveal"><i class="fa-solid fa-star"></i> Customer Reviews</div>
-            <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">What our valued customers say about Chathu Store services!</p>
-            
-            <div class="reviews-grid reveal">
-                <div class="review-card">
-                    <div>
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 5න්. 100% Trusted Store එකක්."</p>
-                    </div>
-                    <div class="review-author">
-                        <i class="fa-solid fa-user"></i>
-                        <div class="author-info">
-                            <h4>Nimesh</h4>
-                            <span>Gampaha</span>
-                        </div>
-                    </div>
-                </div>
+    </div>
 
-                <div class="review-card">
-                    <div>
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Account එක මාර ආරක්ෂිතයි. කිසිම ප්‍රශ්නයක් නැතුව login වෙලා වැඩ ටික කරගත්තා."</p>
-                    </div>
-                    <div class="review-author">
-                        <i class="fa-solid fa-user"></i>
-                        <div class="author-info">
-                            <h4>Kasun</h4>
-                            <span>Kandy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div>
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>"Best Diamond Store & TikTok Promotions in SL! Super fast service, highly recommended!"</p>
-                    </div>
-                    <div class="review-author">
-                        <i class="fa-solid fa-user"></i>
-                        <div class="author-info">
-                            <h4>Tharindu</h4>
-                            <span>Colombo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 6. CUSTOMER REVIEWS (Unlimited Infinite Marquee Right to Left) -->
+    <div class="reviews-section reveal" id="reviews">
+        <div class="marquee-track">
+            <div class="review-chip">⭐ "Fast Delivery Bro! 100% Trusted Store." - <b>Nimesh, Gampaha</b></div>
+            <div class="review-chip">🔥 "Account එක මාර ආරක්ෂිතයි, විනාඩි 5න් ලැබුණා." - <b>Kasun, Kandy</b></div>
+            <div class="review-chip">💎 "Best Diamond Store & TikTok Promotions in SL!" - <b>Tharindu, Colombo</b></div>
+            <div class="review-chip">🚀 "Super fast service, highly recommended!" - <b>Sahan, Galle</b></div>
+            <div class="review-chip">💥 "YouTube & Facebook promotions වැඩ නියමටම කරනවා!" - <b>Ravindu, Matara</b></div>
+            <div class="review-chip">⭐ "Fast Delivery Bro! 100% Trusted Store." - <b>Nimesh, Gampaha</b></div>
+            <div class="review-chip">🔥 "Account එක මාර ආරක්ෂිතයි, විනාඩි 5න් ලැබුණා." - <b>Kasun, Kandy</b></div>
+            <div class="review-chip">💎 "Best Diamond Store & TikTok Promotions in SL!" - <b>Tharindu, Colombo</b></div>
+            <div class="review-chip">🚀 "Super fast service, highly recommended!" - <b>Sahan, Galle</b></div>
+            <div class="review-chip">💥 "YouTube & Facebook promotions වැඩ නියමටම කරනවා!" - <b>Ravindu, Matara</b></div>
         </div>
+    </div>
 
+    <div class="container">
         <!-- 7. PAYMENT DETAILS / EZ CASH -->
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
             <p>Send Money via EZ Cash to: <span>075-0565097</span> / <span>076-482-8776</span></p>
             <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash මඟින් ඉහත අංකයට යවා, Order එකේදී ලැබෙන විස්තර WhatsApp එකට එවන්න.</p>
         </div>
-
     </div>
 
     <!-- Contact Section -->
