@@ -30,9 +30,9 @@
             box-shadow: 0 0 10px #38bdf8;
         }
 
-        /* Wallpaper with Cyberpunk Overlay */
+        /* Wallpaper with Lighter Cyberpunk Overlay */
         body {
-            background: linear-gradient(180deg, rgba(10, 15, 30, 0.75) 0%, rgba(15, 23, 42, 0.85) 50%, rgba(10, 15, 30, 0.95) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            background: linear-gradient(180deg, rgba(20, 30, 55, 0.45) 0%, rgba(25, 38, 65, 0.55) 50%, rgba(20, 30, 55, 0.65) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -577,7 +577,7 @@
             margin: 0;
         }
 
-        /* Interactive Hub Section (Calculator, UID Verifier & --- NEW: Order Tracking Tool ---) */
+        /* Interactive Hub Section (Calculator, UID Verifier & Order Tracking Tool) */
         .interactive-hub {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -1168,7 +1168,7 @@
 
     <div class="container">
         
-        <!-- --- NEW 1: LIVE SERVER STATUS & STOCK BADGE BAR --- -->
+        <!-- --- LIVE SERVER STATUS & STOCK BADGE BAR --- -->
         <div class="server-stock-status-bar reveal">
             <div class="status-badge-item">
                 <div class="pulse-dot"></div>
@@ -1184,7 +1184,7 @@
             </div>
         </div>
 
-        <!-- --- NEW 2: LOYALTY / DISCOUNT BADGE BANNER --- -->
+        <!-- --- LOYALTY / DISCOUNT BADGE BANNER --- -->
         <div class="loyalty-banner reveal">
             <div class="loyalty-content">
                 <i class="fa-solid fa-ticket"></i>
@@ -1230,7 +1230,7 @@
             </div>
         </div>
 
-        <!-- INTERACTIVE PRICE CALCULATOR, UID VERIFIER & --- NEW 3: ORDER TRACKING TOOL --- -->
+        <!-- INTERACTIVE PRICE CALCULATOR, UID VERIFIER & ORDER TRACKING TOOL -->
         <div class="interactive-hub reveal" id="interactive">
             <!-- Price Calculator -->
             <div class="calc-box">
@@ -1256,7 +1256,7 @@
                 <div class="verifier-status" id="verifierStatus"></div>
             </div>
 
-            <!-- --- NEW 3: ORDER TRACKING TOOL --- -->
+            <!-- ORDER TRACKING TOOL -->
             <div class="tracker-box">
                 <h3><i class="fa-solid fa-truck-fast"></i> Order Tracking Tool</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-bottom: 10px;">Enter your WhatsApp number to check status:</p>
@@ -1409,7 +1409,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට (076-482-8776) මුදල් යවා, එහි slip එක හෝ receipt එක WhatsApp (075-0565097) එකට එවන්න.
+                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට (076-482-8776) මුදල් යවා, EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය. එමෙන්ම එහි slip එක හෝ receipt එක WhatsApp (075-0565097) එකට එවන්න.
                     </div>
                 </div>
 
@@ -1582,6 +1582,7 @@
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
             <p>Send Money via EZ Cash to Number: <span>076-482-8776</span></p>
+            <p style="color: #ff99b3; font-weight: 600; margin: 10px 0;">EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
             <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash අංකයට (076-482-8776) යවා, එහි විස්තර WhatsApp අංකයට (075-0565097) එවන්න.</p>
         </div>
     </div>
@@ -1592,6 +1593,7 @@
         <div class="contact-details">
             <p><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> WhatsApp Number: <b>075-0565097</b></p>
             <p><i class="fa-solid fa-wallet" style="color: #38bdf8;"></i> EZ Cash Number: <b>076-482-8776</b></p>
+            <p style="color: #ff99b3; font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
             <p><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> Fast Diamond Delivery within 30 Mins via WhatsApp Support</p>
         </div>
         <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
@@ -1604,12 +1606,13 @@
         <div class="modal-content">
             <h3>Complete Your Order</h3>
             <p id="selectedItemName" style="color: #38bdf8; margin: 10px 0; font-weight: 600; font-size: 15px; text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);"></p>
+            <p style="color: #ff99b3; font-size: 13px; margin-bottom: 10px;">* EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
             
             <input type="text" id="customerName" placeholder="Your Name / In-Game UID / Social Link">
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
             
             <select id="paymentMethod">
-                <option value="EZ Cash (076-482-8776)">EZ Cash Payment to: 076-482-8776</option>
+                <option value="EZ Cash (076-482-8776)">EZ Cash Payment to: 076-482-8776 (+LKR 50 extra)</option>
                 <option value="Bank Transfer / Other">Other Payment Method</option>
             </select>
 
@@ -1695,7 +1698,7 @@
             statusDiv.innerText = "Checking UID " + uid + "... (Verified! Valid Free Fire Account)";
         }
 
-        // --- NEW: ORDER TRACKING SCRIPT ---
+        // ORDER TRACKING SCRIPT
         function trackOrder() {
             let phoneNo = document.getElementById('trackInput').value.trim();
             let trackerStatus = document.getElementById('trackerStatus');
