@@ -17,7 +17,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Custom Scrollbar */
+        /* Custom Scrollbar with Cyber Neon Glow */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -25,19 +25,51 @@
             background: #050814;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(180deg, #3b82f6, #38bdf8);
             border-radius: 4px;
+            box-shadow: 0 0 10px #38bdf8;
         }
 
-        /* Wallpaper */
+        /* Wallpaper with Brighter Cyberpunk & Red Glow Overlay */
         body {
-            background: linear-gradient(180deg, rgba(10, 15, 30, 0.7) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(10, 15, 30, 0.9) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
+            background: linear-gradient(180deg, rgba(10, 15, 30, 0.45) 0%, rgba(15, 23, 42, 0.55) 50%, rgba(10, 15, 30, 0.70) 100%), url('https://preview.redd.it/anime-girl-demon-horn-red-eyes-4k-wallpaper-3840x2160-v0-g2hgw3a9n94f1.jpeg?width=1080&crop=smart&auto=webp&s=a397abe7352035a98a67a17d1ce62dc8e2fee4d1');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: #ffffff;
             overflow-x: hidden;
+            filter: brightness(1.15) saturate(1.2); /* Wallpaper එකේ Light ගතිය සහ Red Colour එක හොඳට කැපී පෙනෙන්න සකසා ඇත */
+        }
+
+        /* --- NEON BLUE CYBERPUNK ANIMATION & GLOW EFFECTS --- */
+        @keyframes neonPulseGlow {
+            0% {
+                border-color: rgba(56, 189, 248, 0.4);
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 5px rgba(56, 189, 248, 0.2);
+            }
+            50% {
+                border-color: rgba(56, 189, 248, 1);
+                box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), 0 0 45px rgba(59, 130, 246, 0.5), inset 0 0 12px rgba(56, 189, 248, 0.6);
+            }
+            100% {
+                border-color: rgba(56, 189, 248, 0.4);
+                box-shadow: 0 0 10px rgba(59, 130, 246, 0.3), inset 0 0 5px rgba(56, 189, 248, 0.2);
+            }
+        }
+
+        @keyframes cyberTextPulse {
+            0% {
+                text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(56, 189, 248, 0.4);
+            }
+            100% {
+                text-shadow: 0 0 25px rgba(56, 189, 248, 1), 0 0 50px rgba(59, 130, 246, 0.9), 0 0 75px rgba(37, 99, 235, 0.8);
+            }
+        }
+
+        @keyframes cyberFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
         }
 
         /* Navigation Bar */
@@ -52,8 +84,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.25);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(56, 189, 248, 0.2);
             animation: slideDown 0.8s ease;
         }
 
@@ -71,7 +103,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.9);
             transition: transform 0.3s ease;
         }
         .nav-logo:hover {
@@ -79,7 +111,7 @@
         }
         .nav-logo i {
             color: #38bdf8;
-            animation: rotateIcon 4s infinite linear;
+            animation: rotateIcon 4s infinite linear, neonPulseGlow 2s infinite alternate;
         }
         @keyframes rotateIcon {
             0% { transform: rotate(0deg); }
@@ -111,6 +143,7 @@
             bottom: -4px;
             left: 0;
             background: #38bdf8;
+            box-shadow: 0 0 10px #38bdf8;
             transition: width 0.3s ease;
         }
         .nav-links a:hover::after, .nav-links a.active::after {
@@ -118,7 +151,7 @@
         }
         .nav-links a:hover, .nav-links a.active {
             color: #38bdf8;
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
             transform: translateY(-2px);
         }
 
@@ -148,18 +181,14 @@
             margin-bottom: 12px;
             font-weight: 800;
             letter-spacing: 1px;
-            text-shadow: 0 0 40px rgba(59, 130, 246, 0.9);
-            animation: glowText 3s infinite alternate;
-        }
-        @keyframes glowText {
-            from { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
-            to { text-shadow: 0 0 40px rgba(56, 189, 248, 1), 0 0 10px rgba(255, 255, 255, 0.8); }
+            animation: cyberTextPulse 3s infinite alternate;
         }
         .hero-content h2 {
             font-size: 26px;
-            color: #60a5fa;
+            color: #38bdf8;
             margin-bottom: 20px;
             font-weight: 700;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
         }
         .hero-content p {
             font-size: 16px;
@@ -190,7 +219,7 @@
             transform: translateY(0);
         }
 
-        /* Section Titles */
+        /* Section Titles with Neon Pulse Glow */
         .section-header {
             margin: 0 0 30px 0;
             text-align: center;
@@ -201,23 +230,19 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            text-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+            text-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
             letter-spacing: 0.5px;
         }
         .section-header i {
             color: #38bdf8;
             font-size: 30px;
-            animation: pulseGlow 2s infinite alternate;
-        }
-        @keyframes pulseGlow {
-            from { filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.5)); }
-            to { filter: drop-shadow(0 0 15px rgba(56, 189, 248, 1)); }
+            animation: neonPulseGlow 2s infinite alternate;
         }
 
-        /* Flash Sale & Countdown Bar */
+        /* Flash Sale & Countdown Bar with Cyber Glow */
         .flash-sale-bar {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.4));
-            border: 1px solid rgba(239, 68, 68, 0.6);
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(37, 99, 235, 0.3));
+            animation: neonPulseGlow 3s infinite alternate;
             border-radius: 16px;
             padding: 15px 25px;
             display: flex;
@@ -225,7 +250,6 @@
             align-items: center;
             margin-bottom: 35px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -235,15 +259,12 @@
             gap: 10px;
             font-weight: 700;
             font-size: 16px;
-            color: #fca5a5;
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
         }
         .flash-title i {
-            color: #ef4444;
-            animation: bounceIcon 1s infinite alternate;
-        }
-        @keyframes bounceIcon {
-            from { transform: translateY(0); }
-            to { transform: translateY(-4px); }
+            color: #38bdf8;
+            animation: cyberFloat 1.5s infinite alternate;
         }
         .countdown-timers {
             display: flex;
@@ -251,7 +272,8 @@
         }
         .timer-box {
             background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(239, 68, 68, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.6);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
             padding: 6px 12px;
             border-radius: 8px;
             text-align: center;
@@ -262,6 +284,7 @@
             font-weight: 800;
             font-size: 16px;
             color: #ffffff;
+            text-shadow: 0 0 8px #38bdf8;
         }
         .timer-box small {
             font-size: 10px;
@@ -269,7 +292,7 @@
             text-transform: uppercase;
         }
 
-        /* Live Search Bar Styling */
+        /* Live Search Bar Styling with Neon Glow */
         .search-container {
             max-width: 600px;
             margin: 0 auto 35px auto;
@@ -280,17 +303,17 @@
             padding: 16px 20px 16px 50px;
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 30px;
             color: #ffffff;
             font-size: 15px;
             outline: none;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5), inset 0 0 8px rgba(56, 189, 248, 0.2);
             transition: all 0.3s ease;
         }
         .search-container input:focus {
             border-color: #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.8), inset 0 0 12px rgba(56, 189, 248, 0.5);
             background: rgba(15, 23, 42, 0.95);
         }
         .search-container i {
@@ -300,6 +323,7 @@
             transform: translateY(-50%);
             color: #38bdf8;
             font-size: 18px;
+            filter: drop-shadow(0 0 8px #38bdf8);
         }
 
         /* Grid Layout */
@@ -320,7 +344,7 @@
             .grid { grid-template-columns: 1fr; }
         }
 
-        /* Cards */
+        /* Cards with Cyber Neon Pulse Hover */
         .card {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
@@ -328,7 +352,7 @@
             border-radius: 14px;
             padding: 18px 12px;
             text-align: center;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(0,0,0,0.5);
@@ -343,6 +367,7 @@
             position: absolute;
             bottom: 0; left: 0; width: 100%; height: 3px;
             background: linear-gradient(90deg, #2563eb, #38bdf8);
+            box-shadow: 0 0 12px #38bdf8;
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -350,19 +375,20 @@
         .card:hover {
             transform: translateY(-10px) scale(1.03);
             border-color: #38bdf8;
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.6);
+            animation: neonPulseGlow 1.5s infinite alternate;
             background: rgba(15, 23, 42, 0.95);
         }
         .card-icon {
             font-size: 28px;
-            color: #3b82f6;
+            color: #38bdf8;
             margin-bottom: 10px;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
             transition: transform 0.4s ease, color 0.4s ease;
         }
         .card:hover .card-icon {
             color: #38bdf8;
             transform: scale(1.25) translateY(-5px) rotate(8deg);
-            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
+            filter: drop-shadow(0 0 18px rgba(56, 189, 248, 1));
         }
         .card h3 {
             font-size: 13px;
@@ -371,17 +397,17 @@
             font-weight: 600;
         }
         .card p {
-            color: #60a5fa;
+            color: #38bdf8;
             font-weight: 700;
             font-size: 14px;
             margin-bottom: 12px;
-            text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
         }
 
         .btn {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
-            border: none;
+            border: 1px solid rgba(56, 189, 248, 0.5);
             padding: 8px 10px;
             border-radius: 8px;
             cursor: pointer;
@@ -389,7 +415,7 @@
             font-weight: 600;
             font-size: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4), 0 0 10px rgba(56, 189, 248, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -397,8 +423,9 @@
         }
         .btn:hover {
             background: linear-gradient(135deg, #1d4ed8, #38bdf8);
-            box-shadow: 0 6px 18px rgba(56, 189, 248, 0.7);
+            box-shadow: 0 6px 22px rgba(56, 189, 248, 0.8), 0 0 15px rgba(56, 189, 248, 0.9);
             transform: translateY(-3px) scale(1.02);
+            border-color: #38bdf8;
         }
 
         /* Top Hub Section */
@@ -416,14 +443,14 @@
         .service-box-pro {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 20px;
             padding: 30px 25px;
             text-align: center;
             text-decoration: none;
             color: white;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(56, 189, 248, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -433,19 +460,18 @@
         }
         .service-box-pro:hover {
             transform: translateY(-10px) scale(1.04);
-            border-color: #38bdf8;
-            box-shadow: 0 20px 45px rgba(59, 130, 246, 0.6);
+            animation: neonPulseGlow 1.5s infinite alternate;
             background: rgba(15, 23, 42, 0.9);
         }
         .service-box-pro i {
             font-size: 45px;
-            color: #3b82f6;
-            filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8));
+            color: #38bdf8;
+            filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.9));
             transition: transform 0.4s ease;
         }
         .service-box-pro:hover i {
             transform: scale(1.25) rotate(8deg);
-            color: #38bdf8;
+            filter: drop-shadow(0 0 25px rgba(56, 189, 248, 1));
         }
         .service-box-pro h3 {
             font-size: 20px;
@@ -471,10 +497,10 @@
         .calc-box, .verifier-box {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(56, 189, 248, 0.2);
         }
         .calc-box h3, .verifier-box h3 {
             color: #38bdf8;
@@ -483,28 +509,36 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
         }
         .calc-box select, .verifier-box input {
             width: 100%;
             padding: 12px 15px;
             margin: 10px 0;
             background: rgba(5, 8, 20, 0.8);
-            border: 1px solid rgba(59, 130, 246, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             color: white;
             border-radius: 10px;
             font-size: 14px;
             outline: none;
+            box-shadow: inset 0 0 8px rgba(56, 189, 248, 0.2);
+        }
+        .calc-box select:focus, .verifier-box input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.7), inset 0 0 10px rgba(56, 189, 248, 0.4);
         }
         .calc-result {
             margin-top: 15px;
             font-size: 18px;
             font-weight: 700;
-            color: #60a5fa;
-            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.15);
             padding: 12px;
             border-radius: 10px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
             text-align: center;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
         }
         .verifier-status {
             margin-top: 15px;
@@ -529,7 +563,7 @@
         .promo-box {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 16px;
             padding: 25px 20px;
             text-align: center;
@@ -540,14 +574,14 @@
         }
         .promo-box:hover {
             transform: translateY(-8px) scale(1.03);
-            border-color: #38bdf8;
-            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.4);
+            animation: neonPulseGlow 1.5s infinite alternate;
             background: rgba(15, 23, 42, 0.95);
         }
         .promo-box i {
             font-size: 40px;
             margin-bottom: 15px;
             transition: transform 0.4s ease;
+            filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.8));
         }
         .promo-box:hover i {
             transform: scale(1.2) rotate(10deg);
@@ -568,54 +602,47 @@
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.85));
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 2px solid rgba(56, 189, 248, 0.6);
+            border: 2px solid rgba(56, 189, 248, 0.7);
             border-radius: 24px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 15px 50px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(56, 189, 248, 0.3);
+            animation: neonPulseGlow 3s infinite alternate;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
             margin-top: 25px;
         }
-        .account-store-banner-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
-            transform: rotate(30deg);
-            pointer-events: none;
-        }
         .account-store-banner-card:hover {
             transform: translateY(-8px) scale(1.02);
-            border-color: #38bdf8;
-            box-shadow: 0 25px 60px rgba(56, 189, 248, 0.6);
+            box-shadow: 0 25px 65px rgba(56, 189, 248, 0.8), inset 0 0 30px rgba(56, 189, 248, 0.5);
         }
         .account-store-banner-card .store-icon-glow {
             font-size: 55px;
             color: #38bdf8;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.9));
-            animation: pulseGlow 2s infinite alternate;
+            filter: drop-shadow(0 0 20px rgba(56, 189, 248, 1));
+            animation: cyberFloat 2s infinite alternate;
         }
         .account-store-banner-card h3 {
             font-size: 28px;
             color: #ffffff;
             margin-bottom: 12px;
             font-weight: 800;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.9);
         }
         .account-store-banner-card .price-range-badge {
             display: inline-block;
-            background: rgba(56, 189, 248, 0.2);
+            background: rgba(56, 189, 248, 0.25);
             color: #38bdf8;
             font-size: 18px;
             font-weight: 700;
             padding: 8px 24px;
             border-radius: 30px;
-            border: 1px solid rgba(56, 189, 248, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.7);
             margin-bottom: 18px;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
         }
         .account-store-banner-card p {
             font-size: 16px;
@@ -627,7 +654,7 @@
         .account-store-banner-card .whatsapp-direct-btn {
             background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
-            border: none;
+            border: 1px solid rgba(34, 197, 94, 0.6);
             padding: 14px 35px;
             border-radius: 14px;
             cursor: pointer;
@@ -637,13 +664,13 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5), 0 0 15px rgba(34, 197, 94, 0.4);
             text-decoration: none;
         }
         .account-store-banner-card .whatsapp-direct-btn:hover {
             background: linear-gradient(135deg, #16a34a, #15803d);
             transform: translateY(-3px) scale(1.04);
-            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.7);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.8), 0 0 25px rgba(34, 197, 94, 0.7);
         }
 
         /* FAQ Section */
@@ -657,13 +684,14 @@
         .faq-item {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 14px;
             overflow: hidden;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
-        .faq-item:hover {
+        .faq-item.active, .faq-item:hover {
             border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
         .faq-question {
             padding: 18px 25px;
@@ -677,6 +705,7 @@
         }
         .faq-question i {
             color: #38bdf8;
+            filter: drop-shadow(0 0 8px #38bdf8);
             transition: transform 0.3s ease;
         }
         .faq-item.active .faq-question i {
@@ -697,7 +726,7 @@
             transition: max-height 0.4s ease-in-out;
         }
 
-        /* Floating WhatsApp Button */
+        /* Floating WhatsApp Button with Cyber Glow */
         .floating-whatsapp {
             position: fixed;
             bottom: 30px;
@@ -711,19 +740,15 @@
             justify-content: center;
             align-items: center;
             font-size: 32px;
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.6);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.7), 0 0 20px rgba(34, 197, 94, 0.6);
             z-index: 1500;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: floatWhatsApp 3s infinite ease-in-out;
+            animation: cyberFloat 3s infinite ease-in-out;
         }
         .floating-whatsapp:hover {
             transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.9);
-        }
-        @keyframes floatWhatsApp {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.9), 0 0 30px rgba(34, 197, 94, 0.9);
         }
 
         /* Live Recent Purchase Toast Notification */
@@ -733,10 +758,10 @@
             left: 30px;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(56, 189, 248, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.7);
             border-radius: 12px;
             padding: 12px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(56, 189, 248, 0.4);
             z-index: 1500;
             display: flex;
             align-items: center;
@@ -750,6 +775,7 @@
         .purchase-toast i {
             color: #38bdf8;
             font-size: 22px;
+            filter: drop-shadow(0 0 10px #38bdf8);
         }
         .purchase-toast div h4 {
             font-size: 13px;
@@ -757,7 +783,7 @@
         }
         .purchase-toast div p {
             font-size: 12px;
-            color: #94a3b8;
+            color: #38bdf8;
         }
 
         /* Customer Reviews (Marquee) */
@@ -766,8 +792,9 @@
             overflow: hidden;
             background: rgba(15, 23, 42, 0.7);
             padding: 30px 0;
-            border-top: 1px solid rgba(59, 130, 246, 0.3);
-            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+            border-top: 1px solid rgba(56, 189, 248, 0.4);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.15);
             position: relative;
         }
         .reviews-section:hover .marquee-track {
@@ -781,12 +808,12 @@
         }
         .review-tab-card {
             background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 16px;
             padding: 20px 25px;
             min-width: 300px;
             max-width: 340px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 10px rgba(56, 189, 248, 0.2);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -795,7 +822,7 @@
         .review-tab-card:hover {
             transform: translateY(-5px) scale(1.02);
             border-color: #38bdf8;
-            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.4);
+            box-shadow: 0 12px 35px rgba(56, 189, 248, 0.6), 0 0 20px rgba(56, 189, 248, 0.5);
         }
         .review-tab-header {
             display: flex;
@@ -806,15 +833,17 @@
         .review-tab-header .stars {
             color: #f59e0b;
             font-size: 13px;
+            filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
         }
         .review-tab-header .badge {
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(56, 189, 248, 0.2);
             color: #38bdf8;
             font-size: 11px;
             padding: 3px 8px;
             border-radius: 6px;
             font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
         }
         .review-tab-card p {
             color: #cbd5e1;
@@ -824,7 +853,7 @@
             font-style: italic;
         }
         .review-tab-footer {
-            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            border-top: 1px solid rgba(56, 189, 248, 0.25);
             padding-top: 10px;
             display: flex;
             justify-content: space-between;
@@ -845,28 +874,28 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* EZ Cash Payment Details Box */
+        /* EZ Cash Payment Details Box with Cyber Glow */
         .payment-box {
             background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.5);
             padding: 35px;
             border-radius: 20px;
             margin-top: 220px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 25px rgba(56, 189, 248, 0.3);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .payment-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 50px rgba(56, 189, 248, 0.6), 0 0 35px rgba(56, 189, 248, 0.6);
             border-color: #38bdf8;
         }
         .payment-box h3 {
-            color: #60a5fa;
+            color: #38bdf8;
             margin-bottom: 15px;
             font-size: 24px;
-            text-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
         }
         .payment-box p {
             font-size: 16px;
@@ -876,10 +905,11 @@
         .payment-box span {
             color: #38bdf8;
             font-weight: 700;
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(56, 189, 248, 0.2);
             padding: 6px 14px;
             border-radius: 8px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
             display: inline-block;
             margin: 2px 4px;
         }
@@ -892,13 +922,14 @@
             border-radius: 20px;
             text-align: center;
             margin-top: 220px;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(56, 189, 248, 0.25);
+            border: 1px solid rgba(56, 189, 248, 0.4);
         }
         .contact-section h3 {
             color: #ffffff;
             margin-bottom: 12px;
             font-size: 26px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
         }
         .contact-details p {
             font-size: 16px;
@@ -911,6 +942,7 @@
             gap: 12px;
             background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
+            border: 1px solid rgba(34, 197, 94, 0.6);
             padding: 15px 35px;
             border-radius: 14px;
             text-decoration: none;
@@ -918,15 +950,15 @@
             font-size: 16px;
             margin-top: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5), 0 0 20px rgba(34, 197, 94, 0.5);
         }
         .whatsapp-contact-btn:hover {
             background: linear-gradient(135deg, #16a34a, #15803d);
             transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.7);
+            box-shadow: 0 12px 35px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.8);
         }
 
-        /* Pop-up Checkout Modal */
+        /* Pop-up Checkout Modal with Cyber Neon Glow */
         .modal {
             display: none;
             position: fixed;
@@ -946,8 +978,8 @@
             border-radius: 20px;
             width: 90%;
             max-width: 440px;
-            border: 1px solid rgba(59, 130, 246, 0.5);
-            box-shadow: 0 0 50px rgba(59, 130, 246, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.7), inset 0 0 20px rgba(56, 189, 248, 0.3);
             transform: scale(0.8) translateY(20px);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -958,22 +990,24 @@
             margin-bottom: 15px;
             font-size: 22px;
             font-weight: 700;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
         }
         .modal-content input, .modal-content select {
             width: 100%;
             padding: 14px;
             margin: 12px 0;
             background: rgba(5, 8, 20, 0.8);
-            border: 1px solid rgba(51, 65, 85, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             color: white;
             border-radius: 12px;
             font-size: 15px;
             outline: none;
+            box-shadow: inset 0 0 8px rgba(56, 189, 248, 0.2);
             transition: all 0.3s ease;
         }
         .modal-content input:focus, .modal-content select:focus {
             border-color: #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.8), inset 0 0 12px rgba(56, 189, 248, 0.5);
             background: rgba(5, 8, 20, 0.95);
         }
         .file-upload-group {
@@ -989,9 +1023,10 @@
         .close-btn {
             background: linear-gradient(135deg, #ef4444, #dc2626);
             margin-top: 12px;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.5), 0 0 10px rgba(239, 68, 68, 0.4);
         }
-        .close-btn:hover { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+        .close-btn:hover { background: linear-gradient(135deg, #dc2626, #b91c1c); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.8); }
 
         @keyframes fadeInLeft {
             from { opacity: 0; transform: translateX(-50px); }
@@ -1111,31 +1146,31 @@
             
             <div class="promo-services-grid reveal searchable-grid">
                 <div class="promo-box searchable-item" data-name="TikTok Promotion Package" onclick="openCheckout('TikTok Promotion Package', 'LKR 1,500 upwards')">
-                    <i class="fa-brands fa-tiktok" style="color: #ff0050;"></i>
+                    <i class="fa-brands fa-tiktok" style="color: #38bdf8;"></i>
                     <h4>TikTok Promotion</h4>
                     <p>Views, Likes, Followers & Live Streams Boost.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="YouTube Promotion Package" onclick="openCheckout('YouTube Promotion Package', 'LKR 2,500 upwards')">
-                    <i class="fa-brands fa-youtube" style="color: #ff0000;"></i>
+                    <i class="fa-brands fa-youtube" style="color: #38bdf8;"></i>
                     <h4>YouTube Promotion</h4>
                     <p>Subscribers, Watch Time, Likes & Video Views.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Instagram Promotion Package" onclick="openCheckout('Instagram Promotion Package', 'LKR 1,500 upwards')">
-                    <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+                    <i class="fa-brands fa-instagram" style="color: #38bdf8;"></i>
                     <h4>Instagram Promotion</h4>
                     <p>Followers, Reel Views, Post Likes & Story Reach.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Facebook Promotion Package" onclick="openCheckout('Facebook Promotion Package', 'LKR 2,000 upwards')">
-                    <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
+                    <i class="fa-brands fa-facebook" style="color: #38bdf8;"></i>
                     <h4>Facebook Promotion</h4>
                     <p>Page Followers, Post Likes, Video Views & Shares.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Discord Promotion Package" onclick="openCheckout('Discord Promotion Package', 'LKR 2,000 upwards')">
-                    <i class="fa-brands fa-discord" style="color: #5865f2;"></i>
+                    <i class="fa-brands fa-discord" style="color: #38bdf8;"></i>
                     <h4>Discord Promotion</h4>
                     <p>Server Members, Online Boosters & Active Chatters.</p>
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
@@ -1268,7 +1303,7 @@
     <!-- 7. CUSTOMER REVIEWS (Marquee) -->
     <div class="reviews-section reveal" id="reviews">
         <div style="text-align: center; margin-bottom: 20px;">
-            <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Reviews</h3>
+            <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Reviews</h3>
         </div>
         <div class="marquee-track">
             <!-- First Set of Review Tabs -->
@@ -1441,7 +1476,7 @@
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <h3>Complete Your Order</h3>
-            <p id="selectedItemName" style="color: #60a5fa; margin: 10px 0; font-weight: 600; font-size: 15px;"></p>
+            <p id="selectedItemName" style="color: #38bdf8; margin: 10px 0; font-weight: 600; font-size: 15px; text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);"></p>
             
             <input type="text" id="customerName" placeholder="Your Name / In-Game UID / Social Link">
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
