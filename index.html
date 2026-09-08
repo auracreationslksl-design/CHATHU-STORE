@@ -39,7 +39,7 @@
             background-repeat: no-repeat;
             color: #ffffff;
             overflow-x: hidden;
-            filter: brightness(1.15) saturate(1.2); /* Wallpaper එකේ Light ගතිය සහ Red Colour එක හොඳට කැපී පෙනෙන්න සකසා ඇත */
+            filter: brightness(1.15) saturate(1.2);
         }
 
         /* --- NEON BLUE CYBERPUNK ANIMATION & GLOW EFFECTS --- */
@@ -913,6 +913,18 @@
             display: inline-block;
             margin: 2px 4px;
         }
+        .ez-extra-note {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fca5a5;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+        }
 
         /* Contact Section */
         .contact-section {
@@ -1282,7 +1294,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට (076-482-8776) මුදල් යවා, එහි slip එක හෝ receipt එක WhatsApp (075-0565097) එකට එවන්න.
+                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට (076-482-8776) මුදල් යවන විට අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය. ඉන්පසු එහි slip එක හෝ receipt එක WhatsApp (075-0565097) එකට එවන්න.
                     </div>
                 </div>
 
@@ -1455,7 +1467,10 @@
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
             <p>Send Money via EZ Cash to Number: <span>076-482-8776</span></p>
-            <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash අංකයට (076-482-8776) යවා, එහි විස්තර WhatsApp අංකයට (075-0565097) එවන්න.</p>
+            <div class="ez-extra-note">
+                <i class="fa-solid fa-triangle-exclamation"></i> EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.
+            </div>
+            <p style="font-size: 14px; color: #94a3b8; margin-top: 15px;">*මුදල් EZ Cash අංකයට යවා, එහි විස්තර WhatsApp අංකයට (075-0565097) එවන්න.</p>
         </div>
     </div>
 
@@ -1464,7 +1479,7 @@
         <h3>Get in Touch with Chathu Store</h3>
         <div class="contact-details">
             <p><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> WhatsApp Number: <b>075-0565097</b></p>
-            <p><i class="fa-solid fa-wallet" style="color: #38bdf8;"></i> EZ Cash Number: <b>076-482-8776</b></p>
+            <p><i class="fa-solid fa-wallet" style="color: #38bdf8;"></i> EZ Cash Number: <b>076-482-8776</b> <span style="color: #fca5a5; font-size: 13px;">(+LKR 50 extra)</span></p>
             <p><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> Fast Diamond Delivery within 30 Mins via WhatsApp Support</p>
         </div>
         <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
@@ -1482,7 +1497,7 @@
             <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
             
             <select id="paymentMethod">
-                <option value="EZ Cash (076-482-8776)">EZ Cash Payment to: 076-482-8776</option>
+                <option value="EZ Cash (076-482-8776) + LKR 50 Extra">EZ Cash Payment to: 076-482-8776 (+ LKR 50 Extra)</option>
                 <option value="Bank Transfer / Other">Other Payment Method</option>
             </select>
 
