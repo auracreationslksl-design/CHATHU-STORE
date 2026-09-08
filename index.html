@@ -168,12 +168,18 @@
             .hero-content h1 { font-size: 38px; }
         }
 
-        /* Services Showcase */
+        /* Services Showcase Section (Directly after Home) */
+        .services-section-wrapper {
+            max-width: 1250px;
+            margin: 20px auto 40px auto;
+            padding: 0 20px;
+        }
         .services-showcase {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 900px;
+            margin: 0 auto;
         }
         .service-box-pro {
             background: rgba(15, 23, 42, 0.75);
@@ -222,7 +228,7 @@
 
         .container {
             max-width: 1250px;
-            margin: 50px auto;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
@@ -555,6 +561,7 @@
         <a href="#home" class="nav-logo"><i class="fa-solid fa-gamepad"></i> CHATHU STORE</a>
         <ul class="nav-links">
             <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#how-to-buy"><i class="fa-solid fa-circle-question"></i> How to Buy</a></li>
             <li><a href="#diamond-store"><i class="fa-solid fa-gem"></i> Diamond Store</a></li>
             <li><a href="#account-store"><i class="fa-solid fa-user-shield"></i> Account Store</a></li>
             <li><a href="#payment"><i class="fa-solid fa-wallet"></i> EZ Cash</a></li>
@@ -562,30 +569,55 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Home) -->
     <section class="hero-section" id="home">
         <div class="hero-content">
             <h1>CHATHU STORE</h1>
             <h2>Ultimate Gaming & Digital Hub 🔥</h2>
-            <p>Fast Free Fire Diamond Top-ups & Verified Pro Gaming Accounts (Price Range: LKR 4,000 - 150,000). Select your service category below to proceed:</p>
-            
-            <div class="services-showcase">
-                <a href="#diamond-store" class="service-box-pro">
-                    <i class="fa-solid fa-gem"></i>
-                    <h3>Diamond Store</h3>
-                    <p>Instant Free Fire Diamonds & Memberships with Fast Delivery.</p>
-                </a>
-                <a href="#account-store" class="service-box-pro">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Account Store</h3>
-                    <p>Pro Gaming Accounts (LKR 4,000 - 150,000) Fully Secure.</p>
-                </a>
-            </div>
+            <p>Fast Free Fire Diamond Top-ups & Verified Pro Gaming Accounts (Price Range: LKR 4,000 - 150,000).</p>
         </div>
     </section>
 
+    <!-- Services Section (Right after Home Section) -->
+    <div class="services-section-wrapper reveal">
+        <div class="services-showcase">
+            <a href="#diamond-store" class="service-box-pro">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Diamond Store</h3>
+                <p>Instant Free Fire Diamonds & Memberships with Fast Delivery.</p>
+            </a>
+            <a href="#account-store" class="service-box-pro">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Account Store</h3>
+                <p>Pro Gaming Accounts (LKR 4,000 - 150,000) Fully Secure.</p>
+            </a>
+        </div>
+    </div>
+
     <div class="container">
         
+        <!-- HOW TO BUY GUIDE (Placed right before Diamond Store) -->
+        <div class="reveal" id="how-to-buy" style="margin: 40px 0 60px 0;">
+            <div class="section-header" style="margin-bottom: 25px;"><i class="fa-solid fa-circle-question"></i> How to Buy? (මිලදී ගන්නේ කෙසේද?)</div>
+            <div class="guide-container">
+                <div class="guide-box">
+                    <i class="fa-solid fa-mouse-pointer" style="font-size: 28px; color: #38bdf8; margin-bottom: 12px;"></i>
+                    <h4 style="color: #fff; margin-bottom: 8px;">1. Select Item</h4>
+                    <p style="color: #94a3b8; font-size: 13px;">ඔබට අවශ්‍ය Diamonds හෝ Account එක තෝරාගෙන 'Buy Now' ක්ලික් කරන්න.</p>
+                </div>
+                <div class="guide-box">
+                    <i class="fa-solid fa-wallet" style="font-size: 28px; color: #38bdf8; margin-bottom: 12px;"></i>
+                    <h4 style="color: #fff; margin-bottom: 8px;">2. Make Payment</h4>
+                    <p style="color: #94a3b8; font-size: 13px;">පහත සඳහන් EZ Cash අංකයට මුදල් යවා විස්තර තබාගන්න.</p>
+                </div>
+                <div class="guide-box">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 28px; color: #22c55e; margin-bottom: 12px;"></i>
+                    <h4 style="color: #fff; margin-bottom: 8px;">3. Send to WhatsApp</h4>
+                    <p style="color: #94a3b8; font-size: 13px;">පොප්-අප් එක හරහා WhatsApp වෙත විස්තර යවා ක්ෂණිකව භාණ්ඩය ලබාගන්න.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- DIAMOND STORE -->
         <div id="diamond-store">
             <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store</div>
@@ -681,35 +713,13 @@
             </div>
         </div>
 
-        <!-- CUSTOMER REVIEWS TICKER (Added After Account Store) -->
+        <!-- CUSTOMER REVIEWS TICKER -->
         <div class="reviews-section reveal">
             <div class="marquee-track">
                 <div class="review-chip">⭐ "Fast Delivery Bro! 100% Trusted Store." - <b>Nimesh, Gampaha</b></div>
-                <div class="review-chip">🔥 "Account එක මාර ασφάλ, විනාඩි 5න් ලැබුණා." - <b>Kasun, Kandy</b></div>
+                <div class="review-chip">🔥 "Account එක මාර ආරක්ෂිතයි, විනාඩි 5න් ලැබුණා." - <b>Kasun, Kandy</b></div>
                 <div class="review-chip">💎 "Best Diamond Store in Sri Lanka!" - <b>Tharindu, Colombo</b></div>
                 <div class="review-chip">🚀 "Super fast service, highly recommended!" - <b>Sahan, Galle</b></div>
-            </div>
-        </div>
-
-        <!-- HOW TO BUY GUIDE (Added Before Payment) -->
-        <div class="reveal" style="margin: 60px 0;">
-            <div class="section-header" style="margin-bottom: 25px;"><i class="fa-solid fa-circle-question"></i> How to Buy? (මිලදී ගන්නේ කෙසේද?)</div>
-            <div class="guide-container">
-                <div class="guide-box">
-                    <i class="fa-solid fa-mouse-pointer" style="font-size: 28px; color: #38bdf8; margin-bottom: 12px;"></i>
-                    <h4 style="color: #fff; margin-bottom: 8px;">1. Select Item</h4>
-                    <p style="color: #94a3b8; font-size: 13px;">ඔබට අවශ්‍ය Diamonds හෝ Account එක තෝරාගෙන 'Buy Now' ක්ලික් කරන්න.</p>
-                </div>
-                <div class="guide-box">
-                    <i class="fa-solid fa-wallet" style="font-size: 28px; color: #38bdf8; margin-bottom: 12px;"></i>
-                    <h4 style="color: #fff; margin-bottom: 8px;">2. Make Payment</h4>
-                    <p style="color: #94a3b8; font-size: 13px;">පහත සඳහන් EZ Cash අංකයට මුදල් යවා විස්තර තබාගන්න.</p>
-                </div>
-                <div class="guide-box">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 28px; color: #22c55e; margin-bottom: 12px;"></i>
-                    <h4 style="color: #fff; margin-bottom: 8px;">3. Send to WhatsApp</h4>
-                    <p style="color: #94a3b8; font-size: 13px;">පොප්-අප් එක හරහා WhatsApp වෙත විස්තර යවා ක්ෂණිකව භාණ්ඩය ලබාගන්න.</p>
-                </div>
             </div>
         </div>
 
