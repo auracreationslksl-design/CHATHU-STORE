@@ -1709,7 +1709,7 @@
             </select>
 
             <div class="file-upload-group">
-                <label for="paymentSlip"><i class="fa-solid fa-image"></i> Upload EZ Cash Slip / Receipt (Optional):</label>
+                <label for="paymentSlip"><i class="fa-solid fa-image"></i> Upload EZ Cash Slip / Receipt (Mandatory for EZ Cash):</label>
                 <input type="file" id="paymentSlip" accept="image/*" style="padding: 8px;">
             </div>
 
@@ -1776,8 +1776,16 @@
                 uidText = `%0A*Free Fire UID:* ${uid.value}`;
             }
 
+            // EZ Cash Slip Validation Check
+            if (payment.value.includes("EZ Cash")) {
+                if (!slipInput.files || !slipInput.files[0]) {
+                    alert("කරුණාකර EZ Cash Slip එකක් Upload කරන්න!");
+                    return;
+                }
+            }
+
             orderSent = true;
-            let slipAttachedText = (slipInput.files && slipInput.files[0]) ? "%0A*Payment Slip:* [Attached / Sent via Chat]" : "";
+            let slipAttachedText = (slipInput.files && slipInput.files[0]) ? "%0A*Payment Slip:* [Attached / Uploaded]" : "";
             let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem}%0A*Price:* ${currentPrice}%0A*Details:* ${name.value}${uidText}%0A*Contact Number:* ${phone.value}%0A*Payment Type:* ${payment.value}${slipAttachedText}`;
             
             let whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsApp}&text=${message}`;
