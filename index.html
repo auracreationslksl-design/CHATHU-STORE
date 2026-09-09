@@ -486,9 +486,7 @@
             margin-bottom: 12px;
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
             transition: transform 0.3s ease;
-        }
-        .card:hover p {
-            transform: scale(1.05);
+            display: none; /* Price hidden on buy now cards as requested */
         }
 
         /* Micro-interaction for all buttons */
@@ -1392,6 +1390,11 @@
                     <option value="480">Free Fire: Weekly Membership (LKR 480)</option>
                     <option value="1850">Free Fire: Monthly Membership (LKR 1,850)</option>
                     <option value="150">Free Fire: Weekly Lite (LKR 150)</option>
+                    <option value="2150">TikTok Promotion (LKR 2,150)</option>
+                    <option value="3500">YouTube Promotion (LKR 3,500)</option>
+                    <option value="4500">Instagram Promotion (LKR 4,500)</option>
+                    <option value="3500">Facebook Promotion (LKR 3,500)</option>
+                    <option value="2750">Discord Promotion (LKR 2,750)</option>
                 </select>
                 <div class="calc-result" id="calcResult">Estimated: LKR 250</div>
             </div>
@@ -1421,35 +1424,40 @@
             <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">Boost your social presence with real, active engagement & fast delivery!</p>
             
             <div class="promo-services-grid reveal searchable-grid">
-                <div class="promo-box searchable-item" data-name="TikTok Promotion Package" onclick="openCheckout('TikTok Promotion Package', 'LKR 1,500 upwards', false)">
+                <div class="promo-box searchable-item" data-name="TikTok Promotion Package" onclick="openCheckout('TikTok Promotion Package', 'LKR 2,150', false)">
                     <i class="fa-brands fa-tiktok" style="color: #38bdf8;"></i>
                     <h4>TikTok Promotion</h4>
                     <p>Views, Likes, Followers & Live Streams Boost.</p>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 2,150</p>
+                    <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="promo-box searchable-item" data-name="YouTube Promotion Package" onclick="openCheckout('YouTube Promotion Package', 'LKR 2,500 upwards', false)">
+                <div class="promo-box searchable-item" data-name="YouTube Promotion Package" onclick="openCheckout('YouTube Promotion Package', 'LKR 3,500', false)">
                     <i class="fa-brands fa-youtube" style="color: #38bdf8;"></i>
                     <h4>YouTube Promotion</h4>
                     <p>Subscribers, Watch Time, Likes & Video Views.</p>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 3,500</p>
+                    <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="promo-box searchable-item" data-name="Instagram Promotion Package" onclick="openCheckout('Instagram Promotion Package', 'LKR 1,500 upwards', false)">
+                <div class="promo-box searchable-item" data-name="Instagram Promotion Package" onclick="openCheckout('Instagram Promotion Package', 'LKR 4,500', false)">
                     <i class="fa-brands fa-instagram" style="color: #38bdf8;"></i>
                     <h4>Instagram Promotion</h4>
                     <p>Followers, Reel Views, Post Likes & Story Reach.</p>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 4,500</p>
+                    <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="promo-box searchable-item" data-name="Facebook Promotion Package" onclick="openCheckout('Facebook Promotion Package', 'LKR 2,000 upwards', false)">
+                <div class="promo-box searchable-item" data-name="Facebook Promotion Package" onclick="openCheckout('Facebook Promotion Package', 'LKR 3,500', false)">
                     <i class="fa-brands fa-facebook" style="color: #38bdf8;"></i>
                     <h4>Facebook Promotion</h4>
                     <p>Page Followers, Post Likes, Video Views & Shares.</p>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 3,500</p>
+                    <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
-                <div class="promo-box searchable-item" data-name="Discord Promotion Package" onclick="openCheckout('Discord Promotion Package', 'LKR 2,000 upwards', false)">
+                <div class="promo-box searchable-item" data-name="Discord Promotion Package" onclick="openCheckout('Discord Promotion Package', 'LKR 2,750', false)">
                     <i class="fa-brands fa-discord" style="color: #38bdf8;"></i>
                     <h4>Discord Promotion</h4>
                     <p>Server Members, Online Boosters & Active Chatters.</p>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 2,750</p>
+                    <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
             </div>
         </div>
@@ -1568,7 +1576,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        ඔව්, 100% ක් සැබෑ engagement සහ වේගවත් සේවාවක් ලබා දෙන අතර TikTok, YouTube, Instagram සහ Facebook ප්‍රවර්ධන සේවාවන් ඉතා ආරක්ෂිතව ක්‍රියාත්මක වේ.
+                        ඔව්, 100% ක් සැබෑ engagement සහ වේගවත් සේවාවක් ලබා දෙන අතර TikTok, YouTube, Instagram, Facebook සහ Discord ප්‍රවර්ධන සේවාවන් ඉතා ආරක්ෂිතව ක්‍රියාත්මක වේ.
                     </div>
                 </div>
             </div>
@@ -1755,7 +1763,7 @@
         <div class="modal-content">
             <h3>Complete Your Order</h3>
             <p id="selectedItemName" style="color: #38bdf8; margin: 10px 0; font-weight: 600; font-size: 15px; text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);"></p>
-            <p style="color: #ff99b3; font-size: 13px; margin-bottom: 10px;">* EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
+            <p style="color: #ff99b3; font-size: 13px; margin-bottom: 5px;">* EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
             
             <input type="text" id="customerName" placeholder="Your Name / Social Link">
             
@@ -1791,7 +1799,8 @@
             currentPrice = price;
             requiresUID = needUID;
             
-            document.getElementById("selectedItemName").innerText = item + " (" + price + ")";
+            // Price is now displayed inside the pop-up modal when clicked as requested
+            document.getElementById("selectedItemName").innerText = item + " - Price: " + price;
             
             // Show or hide UID input field based on whether it's a Free Fire item
             let uidContainer = document.getElementById("uidFieldContainer");
@@ -1849,7 +1858,7 @@
 
             orderSent = true;
             let slipAttachedText = (slipInput.files && slipInput.files[0]) ? "%0A*Payment Slip:* [Attached / Uploaded]" : "";
-            let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem}%0A*Price:* ${currentPrice}%0A*Details:* ${name.value}${uidText}%0A*Contact Number:* ${phone.value}%0A*Payment Type:* ${payment.value}${slipAttachedText}`;
+            let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem} (${currentPrice})%0A*Details:* ${name.value}${uidText}%0A*Contact Number:* ${phone.value}%0A*Payment Type:* ${payment.value}${slipAttachedText}`;
             
             let whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsApp}&text=${message}`;
             window.location.href = whatsappUrl;
@@ -1952,6 +1961,7 @@
             items.forEach(item => {
                 let name = item.getAttribute('data-name').toLowerCase();
                 if(name.includes(input)) {
+                    item.style.pyearyleStyle = ""; // reset
                     item.style.display = "";
                 } else {
                     item.style.display = "none";
