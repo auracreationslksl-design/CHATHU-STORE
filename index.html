@@ -870,11 +870,20 @@
             transition: max-height 0.4s ease-in-out;
         }
 
-        /* Floating WhatsApp Button with Cyber Glow */
-        .floating-whatsapp {
+        /* Floating Social Media Buttons (WhatsApp, Discord, TikTok Group Container) */
+        .floating-social-container {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1500;
+            align-items: center;
+        }
+
+        /* Floating WhatsApp Button with Cyber Glow */
+        .floating-whatsapp {
             background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
             width: 60px;
@@ -885,7 +894,6 @@
             align-items: center;
             font-size: 32px;
             box-shadow: 0 8px 25px rgba(34, 197, 94, 0.7), 0 0 20px rgba(34, 197, 94, 0.6);
-            z-index: 1500;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: cyberFloat 3s infinite ease-in-out;
@@ -895,6 +903,52 @@
             box-shadow: 0 12px 35px rgba(34, 197, 94, 0.9), 0 0 35px rgba(34, 197, 94, 0.9);
         }
         .floating-whatsapp:active {
+            transform: scale(0.95);
+        }
+
+        /* Floating Discord Button */
+        .floating-discord {
+            background: linear-gradient(135deg, #5865F2, #4752C4);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.7), 0 0 15px rgba(88, 101, 242, 0.6);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-discord:hover {
+            transform: scale(1.15) rotate(-10deg);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.9), 0 0 25px rgba(88, 101, 242, 0.9);
+        }
+        .floating-discord:active {
+            transform: scale(0.95);
+        }
+
+        /* Floating TikTok Button */
+        .floating-tiktok {
+            background: linear-gradient(135deg, #000000, #25f4ee);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            box-shadow: 0 6px 20px rgba(37, 244, 238, 0.5), 0 0 15px rgba(37, 244, 238, 0.4);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-tiktok:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 10px 30px rgba(37, 244, 238, 0.8), 0 0 25px rgba(37, 244, 238, 0.8);
+        }
+        .floating-tiktok:active {
             transform: scale(0.95);
         }
 
@@ -1211,10 +1265,19 @@
 </head>
 <body>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20need%20assistance!" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- Floating Social Media Buttons Container (Discord & TikTok placed above WhatsApp) -->
+    <div class="floating-social-container">
+        <a href="https://discord.com" class="floating-discord" target="_blank" title="Visit Discord Server">
+            <i class="fa-brands fa-discord"></i>
+        </a>
+        <!-- TikTok Button updated with target profile link -->
+        <a href="https://www.tiktok.com/@chathulive4?is_from_webapp=1&sender_device=pc" class="floating-tiktok" target="_blank" title="Visit TikTok Profile">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20need%20assistance!" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- Live Recent Purchase Toast -->
     <div class="purchase-toast" id="purchaseToast">
@@ -1898,7 +1961,6 @@
 
         // Scroll Reveal Animation Script
         window.addEventListener('scroll', revealOnScroll);
-
         function revealOnScroll() {
             let reveals = document.querySelectorAll('.reveal');
             for(let i = 0; i < reveals.length; i++) {
@@ -1910,6 +1972,7 @@
                 }
             }
         }
+        revealOnScroll();
     </script>
 </body>
 </html>
