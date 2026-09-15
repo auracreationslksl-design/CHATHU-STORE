@@ -57,6 +57,22 @@
             }
         }
 
+        /* VIP Special Highlight Glow (Gold/Cyan Enhanced Neon) */
+        @keyframes vipSpecialGlow {
+            0% {
+                border-color: rgba(245, 158, 11, 0.6);
+                box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 8px rgba(245, 158, 11, 0.3);
+            }
+            50% {
+                border-color: rgba(245, 158, 11, 1);
+                box-shadow: 0 0 35px rgba(245, 158, 11, 0.9), 0 0 60px rgba(56, 189, 248, 0.6), inset 0 0 15px rgba(245, 158, 11, 0.8);
+            }
+            100% {
+                border-color: rgba(245, 158, 11, 0.6);
+                box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 8px rgba(245, 158, 11, 0.3);
+            }
+        }
+
         @keyframes cyberTextPulse {
             0% {
                 text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(56, 189, 248, 0.4);
@@ -256,7 +272,7 @@
             transform: scale(1.2) rotate(10deg);
         }
 
-        /* --- TRUST BADGES BAR (FEATURE 3) --- */
+        /* --- TRUST BADGES BAR --- */
         .trust-badges-bar {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -408,33 +424,30 @@
         /* Grid Layout */
         .grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             justify-content: center;
         }
 
-        @media (max-width: 1300px) {
-            .grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 768px) {
+        @media (max-width: 1100px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             .grid { grid-template-columns: 1fr; }
         }
 
-        /* Cards with Cyber Neon Pulse Hover & Micro-interactions */
+        /* --- Diamond Store Screen-Matched Package Card Design --- */
         .card {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-radius: 14px;
-            padding: 18px 12px;
+            border-radius: 20px;
+            padding: 30px 20px;
             text-align: center;
             border: 1px solid rgba(56, 189, 248, 0.3);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -457,36 +470,90 @@
             animation: neonPulseGlow 1.5s infinite alternate;
             background: rgba(15, 23, 42, 0.95);
         }
+
+        /* --- VIP SPECIAL HIGHLIGHT CARDS (Gold/Cyan Special Glow matching image) --- */
+        .card.vip-special-highlight {
+            border: 2px solid rgba(245, 158, 11, 0.9);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(120, 53, 15, 0.4));
+            animation: vipSpecialGlow 2s infinite alternate;
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+        }
+        .card.vip-special-highlight::after {
+            background: linear-gradient(90deg, #f59e0b, #38bdf8);
+            transform: scaleX(1);
+        }
+        .card.vip-special-highlight .card-icon {
+            color: #f59e0b;
+            filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.9));
+        }
+
+        /* VIP Exclusive Badge Header on Card */
+        .vip-badge-tag {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+            letter-spacing: 0.5px;
+        }
+
         .card-icon {
-            font-size: 28px;
+            font-size: 38px;
             color: #38bdf8;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.4s ease;
         }
         .card:hover .card-icon {
-            color: #38bdf8;
             transform: scale(1.35) translateY(-6px) rotate(10deg);
             filter: drop-shadow(0 0 18px rgba(56, 189, 248, 1));
         }
         .card h3 {
-            font-size: 13px;
+            font-size: 20px;
             margin-bottom: 6px;
             color: #f8fafc;
-            font-weight: 600;
+            font-weight: 700;
             transition: color 0.3s ease;
         }
         .card:hover h3 {
             color: #38bdf8;
         }
-        .card p {
+        .card-price {
             color: #38bdf8;
-            font-weight: 700;
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-weight: 800;
+            font-size: 20px;
+            margin-bottom: 18px;
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
-            transition: transform 0.3s ease;
-            display: none; /* Price hidden on buy now cards as requested */
+        }
+        .card.vip-special-highlight .card-price {
+            color: #f59e0b;
+            text-shadow: 0 0 12px rgba(245, 158, 11, 0.8);
+        }
+
+        /* Feature checklist item list inside card */
+        .card-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0 10px;
+        }
+        .card-features li {
+            font-size: 13px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-features li i {
+            color: #22c55e;
+            font-size: 12px;
         }
 
         /* Micro-interaction for all buttons */
@@ -494,20 +561,21 @@
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
             border: 1px solid rgba(56, 189, 248, 0.5);
-            padding: 8px 10px;
-            border-radius: 8px;
+            padding: 12px 15px;
+            border-radius: 12px;
             cursor: pointer;
             width: 100%;
-            font-weight: 600;
-            font-size: 12px;
+            font-weight: 700;
+            font-size: 14px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4), 0 0 10px rgba(56, 189, 248, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
         }
         .btn::before {
             content: '';
@@ -525,8 +593,16 @@
             transform: translateY(-3px) scale(1.03);
             border-color: #38bdf8;
         }
-        .btn:active {
-            transform: translateY(1px) scale(0.97);
+        .card.vip-special-highlight .btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border-color: rgba(245, 158, 11, 0.8);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
+            color: #000;
+        }
+        .card.vip-special-highlight .btn:hover {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #fff;
+            box-shadow: 0 6px 22px rgba(245, 158, 11, 0.8);
         }
 
         /* Top Hub Section */
@@ -594,7 +670,7 @@
             color: #cbd5e1;
         }
 
-        /* Interactive Hub Section (Calculator, UID Verifier & Order Tracking Tool) */
+        /* Interactive Hub Section */
         .interactive-hub {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -721,7 +797,7 @@
             margin-bottom: 15px;
         }
 
-        /* PRO GAMING ACCOUNT STORE - FULL BANNER TAB STYLING */
+        /* PRO GAMING ACCOUNT STORE BANNER */
         .account-store-banner-card {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.85));
             backdrop-filter: blur(20px);
@@ -868,7 +944,7 @@
             transition: max-height 0.4s ease-in-out;
         }
 
-        /* Floating Social Media Buttons (WhatsApp, Discord, TikTok Group Container) */
+        /* Floating Social Media Buttons */
         .floating-social-container {
             position: fixed;
             bottom: 30px;
@@ -879,8 +955,6 @@
             z-index: 1500;
             align-items: center;
         }
-
-        /* Floating WhatsApp Button with Cyber Glow */
         .floating-whatsapp {
             background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
@@ -900,11 +974,6 @@
             transform: scale(1.18) rotate(12deg);
             box-shadow: 0 12px 35px rgba(34, 197, 94, 0.9), 0 0 35px rgba(34, 197, 94, 0.9);
         }
-        .floating-whatsapp:active {
-            transform: scale(0.95);
-        }
-
-        /* Floating Discord Button */
         .floating-discord {
             background: linear-gradient(135deg, #5865F2, #4752C4);
             color: white;
@@ -923,11 +992,6 @@
             transform: scale(1.15) rotate(-10deg);
             box-shadow: 0 10px 30px rgba(88, 101, 242, 0.9), 0 0 25px rgba(88, 101, 242, 0.9);
         }
-        .floating-discord:active {
-            transform: scale(0.95);
-        }
-
-        /* Floating TikTok Button */
         .floating-tiktok {
             background: linear-gradient(135deg, #000000, #25f4ee);
             color: white;
@@ -945,9 +1009,6 @@
         .floating-tiktok:hover {
             transform: scale(1.15) rotate(10deg);
             box-shadow: 0 10px 30px rgba(37, 244, 238, 0.8), 0 0 25px rgba(37, 244, 238, 0.8);
-        }
-        .floating-tiktok:active {
-            transform: scale(0.95);
         }
 
         /* Live Recent Purchase Toast Notification */
@@ -975,10 +1036,6 @@
             color: #38bdf8;
             font-size: 22px;
             filter: drop-shadow(0 0 10px #38bdf8);
-            transition: transform 0.3s ease;
-        }
-        .purchase-toast:hover i {
-            transform: scale(1.2) rotate(15deg);
         }
         .purchase-toast div h4 {
             font-size: 13px;
@@ -1017,7 +1074,7 @@
             min-width: 300px;
             max-width: 340px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 10px rgba(56, 189, 248, 0.2);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -1046,11 +1103,6 @@
             border-radius: 6px;
             font-weight: 600;
             border: 1px solid rgba(56, 189, 248, 0.4);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
-            transition: transform 0.3s ease;
-        }
-        .review-tab-card:hover .badge {
-            transform: scale(1.08);
         }
         .review-tab-card p {
             color: #cbd5e1;
@@ -1081,7 +1133,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* EZ Cash Payment Details Box with Cyber Glow */
+        /* Payment Details Box */
         .payment-box {
             background: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(15px);
@@ -1091,7 +1143,7 @@
             margin-top: 180px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 25px rgba(56, 189, 248, 0.3);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.4s ease;
         }
         .payment-box:hover {
             transform: translateY(-5px);
@@ -1119,12 +1171,6 @@
             box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
             display: inline-block;
             margin: 2px 4px;
-            transition: all 0.3s ease;
-        }
-        .payment-box span:hover {
-            transform: scale(1.08);
-            background: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
         }
 
         /* Contact Section */
@@ -1137,11 +1183,6 @@
             margin-top: 180px;
             box-shadow: 0 -10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(56, 189, 248, 0.25);
             border: 1px solid rgba(56, 189, 248, 0.4);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .contact-section:hover {
-            border-color: #38bdf8;
-            box-shadow: 0 -12px 45px rgba(0,0,0,0.8), 0 0 40px rgba(56, 189, 248, 0.4);
         }
         .contact-section h3 {
             color: #ffffff;
@@ -1153,11 +1194,6 @@
             font-size: 16px;
             margin: 10px 0;
             color: #cbd5e1;
-            transition: transform 0.2s ease;
-        }
-        .contact-details p:hover {
-            transform: scale(1.01);
-            color: #ffffff;
         }
         .whatsapp-contact-btn {
             display: inline-flex;
@@ -1180,11 +1216,8 @@
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 12px 35px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.8);
         }
-        .whatsapp-contact-btn:active {
-            transform: translateY(1px) scale(0.97);
-        }
 
-        /* Pop-up Checkout Modal with Cyber Neon Glow */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -1263,12 +1296,11 @@
 </head>
 <body>
 
-    <!-- Floating Social Media Buttons Container (Discord & TikTok placed above WhatsApp) -->
+    <!-- Floating Social Media Buttons -->
     <div class="floating-social-container">
         <a href="https://discord.com" class="floating-discord" target="_blank" title="Visit Discord Server">
             <i class="fa-brands fa-discord"></i>
         </a>
-        <!-- TikTok Button updated with target profile link -->
         <a href="https://www.tiktok.com/@chathulive4?is_from_webapp=1&sender_device=pc" class="floating-tiktok" target="_blank" title="Visit TikTok Profile">
             <i class="fa-brands fa-tiktok"></i>
         </a>
@@ -1314,7 +1346,7 @@
 
     <div class="container">
         
-        <!-- --- FEATURE 3: TRUST BADGES & SECURE PAYMENT BAR --- -->
+        <!-- Trust Badges Bar -->
         <div class="trust-badges-bar reveal">
             <div class="trust-badge-card">
                 <i class="fa-solid fa-shield-check"></i>
@@ -1339,7 +1371,7 @@
             </div>
         </div>
 
-        <!-- --- LIVE SERVER STATUS & STOCK BADGE BAR --- -->
+        <!-- Live Server Status & Stock Badge Bar -->
         <div class="server-stock-status-bar reveal">
             <div class="status-badge-item">
                 <div class="pulse-dot"></div>
@@ -1361,7 +1393,7 @@
             <input type="text" id="liveSearch" placeholder="Search for diamonds, memberships, or promo packages..." onkeyup="filterItems()">
         </div>
 
-        <!-- 2. DIAMOND & ACCOUNT STORE CARDS (Quick Showcase Hub) -->
+        <!-- Store Cards Showcase -->
         <div class="services-section-wrapper reveal" id="store-cards">
             <div class="services-showcase">
                 <a href="#diamond-store" class="service-box-pro">
@@ -1377,29 +1409,37 @@
             </div>
         </div>
 
-        <!-- INTERACTIVE PRICE CALCULATOR, UID VERIFIER & ORDER TRACKING TOOL -->
+        <!-- Interactive Hub -->
         <div class="interactive-hub reveal" id="interactive">
             <!-- Price Calculator -->
             <div class="calc-box">
                 <h3><i class="fa-solid fa-calculator"></i> Price Calculator</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-bottom: 10px;">Select package to calculate price:</p>
                 <select id="calcPackage" onchange="calculatePrice()">
-                    <option value="250">Free Fire: 100 Diamonds (LKR 250)</option>
-                    <option value="750">Free Fire: 310 Diamonds (LKR 750)</option>
-                    <option value="1250">Free Fire: 520 Diamonds (LKR 1,250)</option>
-                    <option value="480">Free Fire: Weekly Membership (LKR 480)</option>
-                    <option value="1850">Free Fire: Monthly Membership (LKR 1,850)</option>
-                    <option value="150">Free Fire: Weekly Lite (LKR 150)</option>
-                    <option value="2150">TikTok Promotion (LKR 2,150)</option>
-                    <option value="3500">YouTube Promotion (LKR 3,500)</option>
-                    <option value="4500">Instagram Promotion (LKR 4,500)</option>
-                    <option value="3500">Facebook Promotion (LKR 3,500)</option>
-                    <option value="2750">Discord Promotion (LKR 2,750)</option>
+                    <option value="100">Free Fire: 25 Diamonds (Rs. 100)</option>
+                    <option value="320">Free Fire: 100 Diamonds (Rs. 320)</option>
+                    <option value="800">Free Fire: 310 Diamonds (Rs. 800)</option>
+                    <option value="1520">Free Fire: 520 Diamonds (Rs. 1,520)</option>
+                    <option value="3080">Free Fire: 1060 Diamonds (Rs. 3,080)</option>
+                    <option value="6080">Free Fire: 2180 Diamonds (Rs. 6,080)</option>
+                    <option value="16880">Free Fire: 5600 Diamonds (Rs. 16,880)</option>
+                    <option value="34100">Free Fire: 11500 Diamonds (Rs. 34,100)</option>
+                    <option value="120">Free Fire: Weekly Lite (Rs. 120)</option>
+                    <option value="480">Free Fire: Weekly Member (Rs. 480)</option>
+                    <option value="2750">Free Fire: Monthly Membership (Rs. 2,750)</option>
+                    <option value="8300">Free Fire: Monthly Diamond 3000 (Rs. 8,300)</option>
+                    <option value="13800">Free Fire: Monthly Diamond 5000 (Rs. 13,800)</option>
+                    <option value="22100">Free Fire: Monthly Diamond 8000 (Rs. 22,100)</option>
+                    <option value="1220">Free Fire: Littel Pack (Rs. 1,220)</option>
+                    <option value="3250">Free Fire: VIP Pack (Rs. 3,250)</option>
+                    <option value="3400">Free Fire: VIP Special Pack (Rs. 3,400)</option>
+                    <option value="4680">Free Fire: Big Pack (Rs. 4,680)</option>
+                    <option value="6500">Free Fire: Super VIP Pack (Rs. 6,500)</option>
                 </select>
-                <div class="calc-result" id="calcResult">Estimated: LKR 250</div>
+                <div class="calc-result" id="calcResult">Estimated: Rs. 100</div>
             </div>
 
-            <!-- Auto UID Verifier Mockup -->
+            <!-- Auto UID Verifier -->
             <div class="verifier-box">
                 <h3><i class="fa-solid fa-id-card"></i> UID Verifier</h3>
                 <p style="color: #94a3b8; font-size: 13px; margin-bottom: 10px;">Enter Free Fire UID to verify account:</p>
@@ -1418,7 +1458,7 @@
             </div>
         </div>
 
-        <!-- 3. SOCIAL MEDIA PROMOTION SERVICES SECTION (No UID Required) -->
+        <!-- Social Media Promotion Services Section -->
         <div class="spaced-section" id="services">
             <div class="section-header reveal"><i class="fa-solid fa-bullhorn"></i> Social Media Promotion Services</div>
             <p style="text-align: center; color: #94a3b8; margin-bottom: 25px; font-size: 15px;" class="reveal">Boost your social presence with real, active engagement & fast delivery!</p>
@@ -1428,96 +1468,296 @@
                     <i class="fa-brands fa-tiktok" style="color: #38bdf8;"></i>
                     <h4>TikTok Promotion</h4>
                     <p>Views, Likes, Followers & Live Streams Boost.</p>
-                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 2,150</p>
                     <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="YouTube Promotion Package" onclick="openCheckout('YouTube Promotion Package', 'LKR 3,500', false)">
                     <i class="fa-brands fa-youtube" style="color: #38bdf8;"></i>
                     <h4>YouTube Promotion</h4>
                     <p>Subscribers, Watch Time, Likes & Video Views.</p>
-                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 3,500</p>
                     <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Instagram Promotion Package" onclick="openCheckout('Instagram Promotion Package', 'LKR 4,500', false)">
                     <i class="fa-brands fa-instagram" style="color: #38bdf8;"></i>
                     <h4>Instagram Promotion</h4>
                     <p>Followers, Reel Views, Post Likes & Story Reach.</p>
-                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 4,500</p>
                     <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Facebook Promotion Package" onclick="openCheckout('Facebook Promotion Package', 'LKR 3,500', false)">
                     <i class="fa-brands fa-facebook" style="color: #38bdf8;"></i>
                     <h4>Facebook Promotion</h4>
                     <p>Page Followers, Post Likes, Video Views & Shares.</p>
-                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 3,500</p>
                     <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
                 <div class="promo-box searchable-item" data-name="Discord Promotion Package" onclick="openCheckout('Discord Promotion Package', 'LKR 2,750', false)">
                     <i class="fa-brands fa-discord" style="color: #38bdf8;"></i>
                     <h4>Discord Promotion</h4>
                     <p>Server Members, Online Boosters & Active Chatters.</p>
-                    <p style="color: #38bdf8; font-weight: 700; margin-top: 5px; display: none;">LKR 2,750</p>
                     <button class="btn" style="margin-top: 10px;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
                 </div>
             </div>
         </div>
 
-        <!-- 4. FREE FIRE DIAMOND STORE (UID Mandatory) -->
+        <!-- FREE FIRE DIAMOND STORE (UID Mandatory) - Image Matched Grid & Layout -->
         <div class="spaced-section" id="diamond-store">
-            <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond Store (Delivery within 30 Mins)</div>
+            <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond & Special Packages Store</div>
             <div class="grid reveal searchable-grid">
-                <div class="card searchable-item" data-name="Free Fire 100 Diamonds" onclick="openCheckout('Free Fire: 100 Diamonds', 'LKR 250', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>100 Diamonds</h3>
-                        <p>LKR 250</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                </div>
-                <div class="card searchable-item" data-name="Free Fire 310 Diamonds" onclick="openCheckout('Free Fire: 310 Diamonds', 'LKR 750', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>310 Diamonds</h3>
-                        <p>LKR 750</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                </div>
-                <div class="card searchable-item" data-name="Free Fire 520 Diamonds" onclick="openCheckout('Free Fire: 520 Diamonds', 'LKR 1,250', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                    <div>
-                        <h3>520 Diamonds</h3>
-                        <p>LKR 1,250</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                </div>
-                <div class="card searchable-item" data-name="Free Fire Weekly Membership" onclick="openCheckout('Free Fire: Weekly Membership', 'LKR 480', true)">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                    <div>
-                        <h3>Weekly Member</h3>
-                        <p>LKR 480</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                </div>
-                <div class="card searchable-item" data-name="Free Fire Monthly Membership" onclick="openCheckout('Free Fire: Monthly Membership', 'LKR 1,850', true)">
+                
+                <!-- VIP & Special Packages Grouped Together & Highlighted in Gold/Yellow -->
+                <div class="card vip-special-highlight searchable-item" data-name="Free Fire VIP Special Pack" onclick="openCheckout('Free Fire: VIP Special Pack', 'Rs. 3,400', true)">
+                    <span class="vip-badge-tag">VIP EXCLUSIVE</span>
                     <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
-                    <div>
-                        <h3>Monthly Member</h3>
-                        <p>LKR 1,850</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                    <h3>VIP Special Pack</h3>
+                    <div class="card-price">Rs. 3,400</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> VIP Perks Enabled</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
-                <div class="card searchable-item" data-name="Free Fire Weekly Lite" onclick="openCheckout('Free Fire: Weekly Lite', 'LKR 150', true)">
+
+                <div class="card vip-special-highlight searchable-item" data-name="Free Fire VIP Pack" onclick="openCheckout('Free Fire: VIP Pack', 'Rs. 3,250', true)">
+                    <span class="vip-badge-tag">VIP EXCLUSIVE</span>
+                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <h3>VIP Pack</h3>
+                    <div class="card-price">Rs. 3,250</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> VIP Perks Enabled</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card vip-special-highlight searchable-item" data-name="Free Fire Super VIP Pack" onclick="openCheckout('Free Fire: Super VIP', 'Rs. 6,500', true)">
+                    <span class="vip-badge-tag">VIP EXCLUSIVE</span>
+                    <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Super VIP</h3>
+                    <div class="card-price">Rs. 6,500</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Exclusive Addons</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated VIP Access</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <!-- Standard Diamond & Package Cards -->
+                <div class="card searchable-item" data-name="Free Fire 25 Diamonds" onclick="openCheckout('Free Fire: GEMS 25', 'Rs. 100', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 25</h3>
+                    <div class="card-price">Rs. 100</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Speed</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire 520 Diamonds" onclick="openCheckout('Free Fire: GEMS 520', 'Rs. 1,520', true)">
                     <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <div>
-                        <h3>Weekly Lite</h3>
-                        <p>LKR 150</p>
-                    </div>
-                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                    <h3>GEMS 520</h3>
+                    <div class="card-price">Rs. 1,520</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Speed</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
+
+                <div class="card searchable-item" data-name="Free Fire 100 Diamonds" onclick="openCheckout('Free Fire: GEMS 100', 'Rs. 320', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 100</h3>
+                    <div class="card-price">Rs. 320</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Speed</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire 310 Diamonds" onclick="openCheckout('Free Fire: GEMS 310', 'Rs. 800', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 310</h3>
+                    <div class="card-price">Rs. 800</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Speed</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire 1060 Diamonds" onclick="openCheckout('Free Fire: GEMS 1060', 'Rs. 3,080', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 1060</h3>
+                    <div class="card-price">Rs. 3,080</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Speed</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Diamond 2180" onclick="openCheckout('Free Fire: GEMS 2180', 'Rs. 6,080', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 2180</h3>
+                    <div class="card-price">Rs. 6,080</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Premium Speed</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Monthly Diamond 3000" onclick="openCheckout('Free Fire: MONTHLY DIMAOND 3000', 'Rs. 8,300', true)">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>MONTHLY DIMAOND 3000</h3>
+                    <div class="card-price">Rs. 8,300</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Value Pack</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Monthly Diamond 5000" onclick="openCheckout('Free Fire: MONTHLY DIMAOND 5000', 'Rs. 13,800', true)">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>MONTHLY DIMAOND 5000</h3>
+                    <div class="card-price">Rs. 13,800</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Value Pack</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Monthly Diamond 8000" onclick="openCheckout('Free Fire: MONTHLY DIMAOND 8000', 'Rs. 22,100', true)">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>MONTHLY DIMAOND 8000</h3>
+                    <div class="card-price">Rs. 22,100</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Mega Pack</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Big Pack" onclick="openCheckout('Free Fire: BIG PACK', 'Rs. 4,680', true)">
+                    <div class="card-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3>BIG PACK</h3>
+                    <div class="card-price">Rs. 4,680</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> High Value Bundle</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Littel Pack" onclick="openCheckout('Free Fire: LITTEL PACK', 'Rs. 1,220', true)">
+                    <div class="card-icon"><i class="fa-solid fa-box"></i></div>
+                    <h3>LITTEL PACK</h3>
+                    <div class="card-price">Rs. 1,220</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Special Mini Bundle</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Diamond 5600" onclick="openCheckout('Free Fire: GEMS 5600', 'Rs. 16,880', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 5600</h3>
+                    <div class="card-price">Rs. 16,880</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Jumbo Pack</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Diamond 11500" onclick="openCheckout('Free Fire: GEMS 11500', 'Rs. 34,100', true)">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>GEMS 11500</h3>
+                    <div class="card-price">Rs. 34,100</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Ultimate Mega Topup</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Weekly Lite" onclick="openCheckout('Free Fire: weekly lite', 'Rs. 120', true)">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-day"></i></div>
+                    <h3>weekly lite</h3>
+                    <div class="card-price">Rs. 120</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Budget Weekly Pack</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Weekly Member" onclick="openCheckout('Free Fire: weekly', 'Rs. 480', true)">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>weekly</h3>
+                    <div class="card-price">Rs. 480</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Standard Weekly Member</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Customer Care</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
+                <div class="card searchable-item" data-name="Free Fire Monthly Membership" onclick="openCheckout('Free Fire: Monthly', 'Rs. 2,750', true)">
+                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <h3>Monthly</h3>
+                    <div class="card-price">Rs. 2,750</div>
+                    <ul class="card-features">
+                        <li><i class="fa-solid fa-check"></i> Instant UID Topup</li>
+                        <li><i class="fa-solid fa-check"></i> Fast Delivery Support</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Speed</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
+                </div>
+
             </div>
         </div>
 
-        <!-- 5. PRO GAMING ACCOUNT STORE -->
+        <!-- Pro Gaming Account Store -->
         <div class="spaced-section" id="account-store">
             <div class="section-header reveal"><i class="fa-solid fa-user-shield"></i> Pro Gaming Account Store</div>
             
@@ -1535,7 +1775,7 @@
             </div>
         </div>
 
-        <!-- 6. FAQ DROPDOWN SECTION -->
+        <!-- FAQ Section -->
         <div class="spaced-section" id="faq">
             <div class="section-header reveal"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</div>
             
@@ -1566,7 +1806,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට මුදල් යවා, EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය. එමෙන්ම එහි slip එක හෝ receipt එක WhatsApp (075-056-5097) එකට එවන්න.
+                        අපගේ වෙබ් අඩවියේ සඳහන් EZ Cash අංකයට මුදල් යවා, EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය. එමෙන්ම එමෙන්ම slip එක හෝ receipt එක WhatsApp (075-056-5097) එකට එවන්න.
                     </div>
                 </div>
 
@@ -1584,84 +1824,12 @@
 
     </div>
 
-    <!-- 7. CUSTOMER REVIEWS (Marquee) -->
+    <!-- Customer Reviews (Marquee) -->
     <div class="reviews-section reveal" id="reviews">
         <div style="text-align: center; margin-bottom: 20px;">
             <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Reviews</h3>
         </div>
         <div class="marquee-track">
-            <!-- First Set of Review Tabs -->
-            <div class="review-tab-card">
-                <div class="review-tab-header">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="badge">Diamonds</span>
-                </div>
-                <p>"Fast Delivery Bro! Diamonds ලැබුණා විනාඩි 30න් ඇතුළත. 100% Trusted Store එකක්."</p>
-                <div class="review-tab-footer">
-                    <h4>Nimesh</h4>
-                    <span>Gampaha</span>
-                </div>
-            </div>
-
-            <div class="review-tab-card">
-                <div class="review-tab-header">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="badge">Account Store</span>
-                </div>
-                <p>"Account එක මාර ආරක්ෂිතයි. කිසිම ප්‍රශ්නයක් නැතුව login වෙලා වැඩ ටික කරගත්තා."</p>
-                <div class="review-tab-footer">
-                    <h4>Kasun</h4>
-                    <span>Kandy</span>
-                </div>
-            </div>
-
-            <div class="review-tab-card">
-                <div class="review-tab-header">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="badge">TikTok Promo</span>
-                </div>
-                <p>"Best Diamond Store & TikTok Promotions in SL! Super fast service, highly recommended!"</p>
-                <div class="review-tab-footer">
-                    <h4>Tharindu</h4>
-                    <span>Colombo</span>
-                </div>
-            </div>
-
-            <div class="review-tab-card">
-                <div class="review-tab-header">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="badge">Top-up</span>
-                </div>
-                <p>"Super fast service, weekly membership එක දාගත්තා ඉක්මනින්ම. Thank you bro!"</p>
-                <div class="review-tab-footer">
-                    <h4>Sahan</h4>
-                    <span>Galle</span>
-                </div>
-            </div>
-
-            <div class="review-tab-card">
-                <div class="review-tab-header">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="badge">YouTube Promo</span>
-                </div>
-                <p>"YouTube & Facebook promotions වැඩ නියමටම කරනවා! Channel එක grow කරගන්න පුළුවන් වුණා."</p>
-                <div class="review-tab-footer">
-                    <h4>Ravindu</h4>
-                    <span>Matara</span>
-                </div>
-            </div>
-
-            <!-- Duplicate Set for Seamless Loop -->
             <div class="review-tab-card">
                 <div class="review-tab-header">
                     <div class="stars">
@@ -1735,254 +1903,221 @@
     </div>
 
     <div class="container">
-        <!-- 8. PAYMENT DETAILS / EZ CASH -->
+        <!-- EZ Cash Payment Details Box -->
         <div class="payment-box reveal" id="payment">
             <h3><i class="fa-solid fa-wallet"></i> EZ Cash Payment Details</h3>
             <p>Send Money via EZ Cash to Number: <span>076-482-8776</span></p>
             <p style="color: #ff99b3; font-weight: 600; margin: 10px 0;">EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
             <p style="font-size: 14px; color: #94a3b8; margin-top: 10px;">*මුදල් EZ Cash අංකයට යවා, එහි විස්තර WhatsApp අංකයට (075-056-5097) එවන්න.</p>
         </div>
-    </div>
 
-    <!-- Contact Section -->
-    <div class="contact-section reveal" id="contact">
-        <h3>Get in Touch with Chathu Store</h3>
-        <div class="contact-details">
-            <p><i class="fa-solid fa-phone" style="color: #38bdf8;"></i> WhatsApp Number: <b>075-056-5097</b></p>
-            <p><i class="fa-solid fa-wallet" style="color: #38bdf8;"></i> EZ Cash Number: <b>076-482-8776</b></p>
-            <p style="color: #ff99b3; font-weight: 600;"><i class="fa-solid fa-triangle-exclamation"></i> EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
-            <p><i class="fa-solid fa-clock" style="color: #38bdf8;"></i> Fast Diamond Delivery within 30 Mins via WhatsApp Support</p>
+        <!-- Contact Section -->
+        <div class="contact-section reveal" id="contact">
+            <h3><i class="fa-solid fa-headset"></i> Need Help? Contact Chathu Store</h3>
+            <div class="contact-details">
+                <p>WhatsApp Hotline: <strong>075-056-5097</strong></p>
+                <p>Fast Customer Support & Order Verification Available 24/7</p>
+            </div>
+            <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20need%20more%20information!" class="whatsapp-contact-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-xl"></i> Chat on WhatsApp Now
+            </a>
         </div>
-        <a href="https://wa.me/94750565097?text=Hello%20Chathu%20Store,%20I%20want%20to%20get%20more%20details!" class="whatsapp-contact-btn" target="_blank">
-            <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp: 075-056-5097
-        </a>
     </div>
 
-    <!-- Pop-up Checkout Modal -->
+    <!-- Checkout Modal with UID / Screenshot Upload -->
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
-            <h3>Complete Your Order</h3>
-            <p id="selectedItemName" style="color: #38bdf8; margin: 10px 0; font-weight: 600; font-size: 15px; text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);"></p>
-            <p style="color: #ff99b3; font-size: 13px; margin-bottom: 5px;">* EZ Cash සඳහා මුදල් යැවීමේදී අමතර LKR 50ක් වැඩිපුර යොමු කළ යුතුය.</p>
+            <h3 id="modalTitle">Complete Order</h3>
+            <p id="modalPrice" style="color: #38bdf8; font-weight: 700; margin-bottom: 15px; font-size: 16px;"></p>
             
-            <input type="text" id="customerName" placeholder="Your Name / Social Link">
-            
-            <!-- UID Input Container (Dynamically toggled based on item type) -->
-            <div id="uidFieldContainer" style="display: none;">
-                <input type="text" id="customerUID" placeholder="Enter Free Fire UID (Mandatory)">
-            </div>
+            <form id="checkoutForm" onsubmit="submitOrder(event)">
+                <div id="uidFieldGroup">
+                    <label style="font-size: 13px; color: #94a3b8; display: block; text-align: left; margin-bottom: 5px;">Free Fire UID (Mandatory)</label>
+                    <input type="text" id="orderUID" placeholder="Enter your Game UID" required>
+                </div>
 
-            <input type="text" id="customerPhone" placeholder="Your WhatsApp Number">
-            
-            <select id="paymentMethod">
-                <option value="EZ Cash (076-482-8776)">EZ Cash Payment to: 076-482-8776 (+LKR 50 extra)</option>
-                <option value="Bank Transfer / Other">Other Payment Method</option>
-            </select>
+                <div style="text-align: left;">
+                    <label style="font-size: 13px; color: #94a3b8; display: block; margin-bottom: 5px;">Your WhatsApp Number</label>
+                    <input type="text" id="orderWhatsApp" placeholder="e.g. 07XXXXXXXX" required>
+                </div>
 
-            <div class="file-upload-group">
-                <label for="paymentSlip"><i class="fa-solid fa-image"></i> Upload EZ Cash Slip / Receipt (Mandatory for EZ Cash):</label>
-                <input type="file" id="paymentSlip" accept="image/*" style="padding: 8px;">
-            </div>
+                <div class="file-upload-group">
+                    <label>Upload Payment Receipt / Slip (Optional/EZ Cash)</label>
+                    <input type="file" id="orderSlip" accept="image/*" style="padding: 10px; font-size: 12px;">
+                </div>
 
-            <button class="btn" onclick="sendOrder()"><i class="fa-brands fa-whatsapp"></i> Confirm & Send to WhatsApp (075-056-5097)</button>
-            <button class="btn close-btn" onclick="closeCheckout()">Cancel</button>
+                <button type="submit" class="btn" style="margin-top: 15px;"><i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp</button>
+                <button type="button" class="btn close-btn" onclick="closeCheckout()">Cancel</button>
+            </form>
         </div>
     </div>
 
-    <script>
-        let currentItem = "";
-        let currentPrice = "";
-        let requiresUID = false;
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px 20px; color: #64748b; font-size: 13px; margin-top: 100px; border-top: 1px solid rgba(56,189,248,0.2);">
+        <p>&copy; 2026 CHATHU STORE. All Rights Reserved. Ultimate Gaming & Digital Hub Sri Lanka.</p>
+    </footer>
 
-        function openCheckout(item, price, needUID) {
-            currentItem = item;
-            currentPrice = price;
-            requiresUID = needUID;
+    <!-- JavaScript Interactions & Tools Logic -->
+    <script>
+        // Modal Handling
+        let selectedItemName = '';
+        let selectedItemPrice = '';
+        let requiresUID = true;
+
+        function openCheckout(name, price, needsUID) {
+            selectedItemName = name;
+            selectedItemPrice = price;
+            requiresUID = needsUID;
+
+            document.getElementById('modalTitle').innerText = 'Order: ' + name;
+            document.getElementById('modalPrice').innerText = 'Price: ' + price;
             
-            // Price is now displayed inside the pop-up modal when clicked as requested
-            document.getElementById("selectedItemName").innerText = item + " - Price: " + price;
-            
-            // Show or hide UID input field based on whether it's a Free Fire item
-            let uidContainer = document.getElementById("uidFieldContainer");
+            const uidGroup = document.getElementById('uidFieldGroup');
             if (requiresUID) {
-                uidContainer.style.display = "block";
+                uidGroup.style.display = 'block';
+                document.getElementById('orderUID').required = true;
             } else {
-                uidContainer.style.display = "none";
+                uidGroup.style.display = 'none';
+                document.getElementById('orderUID').required = false;
             }
 
-            let modal = document.getElementById("checkoutModal");
-            modal.style.display = "flex";
-            setTimeout(() => { modal.classList.add("show"); }, 10);
+            const modal = document.getElementById('checkoutModal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
         }
 
         function closeCheckout() {
-            let modal = document.getElementById("checkoutModal");
-            modal.classList.remove("show");
-            setTimeout(() => { modal.style.display = "none"; }, 300);
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
         }
 
-        let orderSent = false;
-        function sendOrder() {
-            if (orderSent) return;
-            let name = document.getElementById("customerName");
-            let phone = document.getElementById("customerPhone");
-            let uid = document.getElementById("customerUID");
-            let payment = document.getElementById("paymentMethod");
-            let slipInput = document.getElementById("paymentSlip");
-            let myWhatsApp = "94750565097";
-
-            if(!name || !phone || !payment) return;
-
-            if(name.value.trim() === "" || phone.value.trim() === "") {
-                alert("කරුණාකර ඔබේ නම/විස්තරය සහ WhatsApp අංකය ඇතුළත් කරන්න!");
-                return;
-            }
-
-            // Check if Free Fire UID is mandatory
-            let uidText = "";
-            if (requiresUID) {
-                if(uid.value.trim() === "") {
-                    alert("කරුණාකර ඔබේ Free Fire UID එක ඇතුළත් කරන්න!");
-                    return;
-                }
-                uidText = `%0A*Free Fire UID:* ${uid.value}`;
-            }
-
-            // EZ Cash Slip Validation Check
-            if (payment.value.includes("EZ Cash")) {
-                if (!slipInput.files || !slipInput.files[0]) {
-                    alert("කරුණාකර EZ Cash Slip එකක් Upload කරන්න!");
-                    return;
-                }
-            }
-
-            orderSent = true;
-            let slipAttachedText = (slipInput.files && slipInput.files[0]) ? "%0A*Payment Slip:* [Attached / Uploaded]" : "";
-            let message = `New Order from CHATHU STORE!%0A%0A*Item:* ${currentItem} (${currentPrice})%0A*Details:* ${name.value}${uidText}%0A*Contact Number:* ${phone.value}%0A*Payment Type:* ${payment.value}${slipAttachedText}`;
+        function submitOrder(e) {
+            e.preventDefault();
+            const whatsappNo = document.getElementById('orderWhatsApp').value;
+            let message = `Hello Chathu Store! I want to order:\n\n*Package:* ${selectedItemName}\n*Price:* ${selectedItemPrice}\n*WhatsApp:* ${whatsappNo}`;
             
-            let whatsappUrl = `https://api.whatsapp.com/send?phone=${myWhatsApp}&text=${message}`;
-            window.location.href = whatsappUrl;
-            setTimeout(() => { orderSent = false; }, 2000);
+            if (requiresUID) {
+                const uid = document.getElementById('orderUID').value;
+                message += `\n*Free Fire UID:* ${uid}`;
+            }
+
+            message += `\n\nI have sent the payment via EZ Cash / Bank Transfer. Please process my order!`;
+
+            const encodedURL = `https://wa.me/94750565097?text=${encodeURIComponent(message)}`;
+            window.open(encodedURL, '_blank');
+            closeCheckout();
+        }
+
+        // Live Search Filter Function
+        function filterItems() {
+            let input = document.getElementById('liveSearch').value.toLowerCase();
+            let searchableGrids = document.querySelectorAll('.searchable-grid');
+
+            searchableGrids.forEach(grid => {
+                let items = grid.querySelectorAll('.searchable-item');
+                items.forEach(item => {
+                    let name = item.getAttribute('data-name').toLowerCase();
+                    if (name.includes(input)) {
+                        item.style.display = "";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
         }
 
         // Price Calculator Function
         function calculatePrice() {
-            let select = document.getElementById('calcPackage');
-            let price = select.value;
-            let text = select.options[select.selectedIndex].text;
-            document.getElementById('calcResult').innerText = "Estimated: LKR " + price;
+            let select = document.getElementById('calcPackage').value;
+            document.getElementById('calcResult').innerText = "Estimated: Rs. " + Number(select).toLocaleString();
         }
 
-        // UID Verifier Function
+        // UID Verifier Simulation Function
         function verifyUID() {
             let uid = document.getElementById('uidInput').value.trim();
             let statusDiv = document.getElementById('verifierStatus');
-            statusDiv.style.display = "block";
-            
-            if(uid === "") {
-                statusDiv.style.background = "rgba(239, 68, 68, 0.2)";
-                statusDiv.style.color = "#fca5a5";
-                statusDiv.style.border = "1px solid rgba(239, 68, 68, 0.4)";
-                statusDiv.innerText = "කරුණාකර නිවැරදි UID එකක් ඇතුළත් කරන්න!";
-                return;
-            }
+            statusDiv.style.display = 'block';
 
-            statusDiv.style.background = "rgba(56, 189, 248, 0.15)";
-            statusDiv.style.color = "#38bdf8";
-            statusDiv.style.border = "1px solid rgba(56, 189, 248, 0.4)";
-            statusDiv.innerText = "Checking UID " + uid + "... (Verified! Valid Free Fire Account)";
+            if (uid.length < 5) {
+                statusDiv.style.background = 'rgba(239, 68, 68, 0.2)';
+                statusDiv.style.border = '1px solid rgba(239, 68, 68, 0.5)';
+                statusDiv.style.color = '#fca5a5';
+                statusDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid Free Fire UID!';
+            } else {
+                statusDiv.style.background = 'rgba(34, 197, 94, 0.2)';
+                statusDiv.style.border = '1px solid rgba(34, 197, 94, 0.5)';
+                statusDiv.style.color = '#4ade80';
+                statusDiv.innerHTML = `<i class="fa-solid fa-circle-check"></i> UID "${uid}" Verified Successfully! Ready for Topup.`;
+            }
         }
 
-        // ORDER TRACKING SCRIPT
+        // Order Tracker Simulation Function
         function trackOrder() {
-            let phoneNo = document.getElementById('trackInput').value.trim();
-            let trackerStatus = document.getElementById('trackerStatus');
-            trackerStatus.style.display = "block";
+            let phone = document.getElementById('trackInput').value.trim();
+            let statusDiv = document.getElementById('trackerStatus');
+            statusDiv.style.display = 'block';
 
-            if(phoneNo === "") {
-                trackerStatus.style.background = "rgba(239, 68, 68, 0.2)";
-                trackerStatus.style.color = "#fca5a5";
-                trackerStatus.style.border = "1px solid rgba(239, 68, 68, 0.4)";
-                trackerStatus.innerText = "කරුණාකර ඔබේ WhatsApp අංකය ඇතුළත් කරන්න!";
-                return;
+            if (phone.length < 9) {
+                statusDiv.style.background = 'rgba(239, 68, 68, 0.2)';
+                statusDiv.style.border = '1px solid rgba(239, 68, 68, 0.5)';
+                statusDiv.style.color = '#fca5a5';
+                statusDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid WhatsApp number!';
+            } else {
+                statusDiv.style.background = 'rgba(56, 189, 248, 0.2)';
+                statusDiv.style.border = '1px solid rgba(56, 189, 248, 0.5)';
+                statusDiv.style.color = '#38bdf8';
+                statusDiv.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Status: Processing / Last order completed successfully!';
             }
-
-            trackerStatus.style.background = "rgba(34, 197, 94, 0.15)";
-            trackerStatus.style.color = "#4ade80";
-            trackerStatus.style.border = "1px solid rgba(34, 197, 94, 0.4)";
-            trackerStatus.innerText = "Status: Processing / Ready for Delivery (Contact via WhatsApp for instant check)";
         }
 
-        // Live Recent Purchase Toast Loop
-        const recentBuyers = [
-            { name: "Nimesh from Gampaha", item: "Bought 310 Diamonds" },
-            { name: "Kasun from Kandy", item: "Bought Weekly Membership" },
-            { name: "Tharindu from Colombo", item: "Bought TikTok Promotion" },
-            { name: "Sahan from Galle", item: "Bought 100 Diamonds" },
-            { name: "Ravindu from Matara", item: "Bought Pro Gaming Account" }
-        ];
-
-        function showRandomToast() {
-            let randomIndex = Math.floor(Math.random() * recentBuyers.length);
-            let buyer = recentBuyers[randomIndex];
-            
-            document.getElementById('toastUser').innerText = buyer.name;
-            document.getElementById('toastItem').innerText = "Just " + buyer.item;
-            
-            let toast = document.getElementById('purchaseToast');
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 4000);
-        }
-
-        setInterval(showRandomToast, 12000);
-
-        // FAQ Toggle Script
+        // FAQ Toggle Function
         function toggleFaq(element) {
-            let item = element.parentElement;
-            let allItems = document.querySelectorAll('.faq-item');
-            
-            allItems.forEach(i => {
-                if(i !== item) {
-                    i.classList.remove('active');
-                }
-            });
-            
-            item.classList.toggle('active');
+            let parent = element.parentElement;
+            parent.classList.toggle('active');
         }
 
-        // Live Search Filter Script
-        function filterItems() {
-            let input = document.getElementById('liveSearch').value.toLowerCase();
-            let items = document.querySelectorAll('.searchable-item');
-
-            items.forEach(item => {
-                let name = item.getAttribute('data-name').toLowerCase();
-                if(name.includes(input)) {
-                    item.style.pyearyleStyle = ""; // reset
-                    item.style.display = "";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-        }
-
-        // Scroll Reveal Animation Script
-        window.addEventListener('scroll', revealOnScroll);
-        function revealOnScroll() {
+        // Scroll Reveal Animation Trigger
+        window.addEventListener('scroll', revealElements);
+        function revealElements() {
             let reveals = document.querySelectorAll('.reveal');
-            for(let i = 0; i < reveals.length; i++) {
+            for (let i = 0; i < reveals.length; i++) {
                 let windowHeight = window.innerHeight;
                 let elementTop = reveals[i].getBoundingClientRect().top;
-                let elementVisible = 100;
-                if(elementTop < windowHeight - elementVisible) {
+                let elementVisible = 120;
+                if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add('active');
                 }
             }
         }
-        revealOnScroll();
+        revealElements();
+
+        // Recent Purchase Toast Loop Notification
+        const toastUsers = [
+            { name: "Nimesh from Gampaha", item: "310 Diamonds" },
+            { name: "Kasun from Kandy", item: "VIP Special Pack" },
+            { name: "Tharindu from Colombo", item: "TikTok Promotion Package" },
+            { name: "Sahan from Galle", item: "Weekly Membership" },
+            { name: "Ravindu from Matara", item: "YouTube Promotion Package" }
+        ];
+
+        let toastIndex = 0;
+        function showPurchaseToast() {
+            const toast = document.getElementById('purchaseToast');
+            document.getElementById('toastUser').innerText = toastUsers[toastIndex].name;
+            document.getElementById('toastItem').innerText = "Just bought " + toastUsers[toastIndex].item;
+
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+
+            toastIndex = (toastIndex + 1) % toastUsers.length;
+        }
+
+        setInterval(showPurchaseToast, 9000);
+        setTimeout(showPurchaseToast, 3000);
     </script>
 </body>
 </html>
+```[cite: 1]
