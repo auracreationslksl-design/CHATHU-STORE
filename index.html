@@ -471,7 +471,7 @@
             background: rgba(15, 23, 42, 0.95);
         }
 
-        /* --- VIP SPECIAL HIGHLIGHT CARDS (Gold/Cyan Special Glow matching image) --- */
+        /* --- VIP SPECIAL HIGHLIGHT CARDS --- */
         .card.vip-special-highlight {
             border: 2px solid rgba(245, 158, 11, 0.9);
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(120, 53, 15, 0.4));
@@ -499,6 +499,27 @@
             margin-bottom: 12px;
             box-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
             letter-spacing: 0.5px;
+        }
+
+        /* Package Image Styling */
+        .card-img-container {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            position: relative;
+        }
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card:hover .card-img-container img {
+            transform: scale(1.12);
         }
 
         .card-icon {
@@ -1502,10 +1523,12 @@
             <div class="section-header reveal"><i class="fa-solid fa-gem"></i> Free Fire Diamond & Special Packages Store</div>
             <div class="grid reveal searchable-grid">
                 
-                <!-- VIP & Special Packages Grouped Together & Highlighted in Gold/Yellow -->
+                <!-- VIP & Special Packages Grouped Together & Highlighted -->
                 <div class="card vip-special-highlight searchable-item" data-name="Free Fire VIP Special Pack" onclick="openCheckout('Free Fire: VIP Special Pack', 'Rs. 3,400', true)">
                     <span class="vip-badge-tag">VIP EXCLUSIVE</span>
-                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0004.jpg" alt="VIP Special Pack">
+                    </div>
                     <h3>VIP Special Pack</h3>
                     <div class="card-price">Rs. 3,400</div>
                     <ul class="card-features">
@@ -1519,7 +1542,9 @@
 
                 <div class="card vip-special-highlight searchable-item" data-name="Free Fire VIP Pack" onclick="openCheckout('Free Fire: VIP Pack', 'Rs. 3,250', true)">
                     <span class="vip-badge-tag">VIP EXCLUSIVE</span>
-                    <div class="card-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0005.jpg" alt="VIP Pack">
+                    </div>
                     <h3>VIP Pack</h3>
                     <div class="card-price">Rs. 3,250</div>
                     <ul class="card-features">
@@ -1533,7 +1558,9 @@
 
                 <div class="card vip-special-highlight searchable-item" data-name="Free Fire Super VIP Pack" onclick="openCheckout('Free Fire: Super VIP', 'Rs. 6,500', true)">
                     <span class="vip-badge-tag">VIP EXCLUSIVE</span>
-                    <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0006.jpg" alt="Super VIP">
+                    </div>
                     <h3>Super VIP</h3>
                     <div class="card-price">Rs. 6,500</div>
                     <ul class="card-features">
@@ -1545,9 +1572,11 @@
                     <button class="btn"><i class="fa-solid fa-cart-shopping"></i> Order Now</button>
                 </div>
 
-                <!-- Standard Diamond & Package Cards -->
+                <!-- Standard Diamond & Package Cards with Images -->
                 <div class="card searchable-item" data-name="Free Fire 25 Diamonds" onclick="openCheckout('Free Fire: GEMS 25', 'Rs. 100', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0007.jpg" alt="GEMS 25">
+                    </div>
                     <h3>GEMS 25</h3>
                     <div class="card-price">Rs. 100</div>
                     <ul class="card-features">
@@ -1560,7 +1589,9 @@
                 </div>
 
                 <div class="card searchable-item" data-name="Free Fire 520 Diamonds" onclick="openCheckout('Free Fire: GEMS 520', 'Rs. 1,520', true)">
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0008.jpg" alt="GEMS 520">
+                    </div>
                     <h3>GEMS 520</h3>
                     <div class="card-price">Rs. 1,520</div>
                     <ul class="card-features">
@@ -1573,7 +1604,9 @@
                 </div>
 
                 <div class="card searchable-item" data-name="Free Fire 100 Diamonds" onclick="openCheckout('Free Fire: GEMS 100', 'Rs. 320', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0009.jpg" alt="GEMS 100">
+                    </div>
                     <h3>GEMS 100</h3>
                     <div class="card-price">Rs. 320</div>
                     <ul class="card-features">
@@ -1586,7 +1619,9 @@
                 </div>
 
                 <div class="card searchable-item" data-name="Free Fire 310 Diamonds" onclick="openCheckout('Free Fire: GEMS 310', 'Rs. 800', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0010.jpg" alt="GEMS 310">
+                    </div>
                     <h3>GEMS 310</h3>
                     <div class="card-price">Rs. 800</div>
                     <ul class="card-features">
@@ -1599,7 +1634,9 @@
                 </div>
 
                 <div class="card searchable-item" data-name="Free Fire 1060 Diamonds" onclick="openCheckout('Free Fire: GEMS 1060', 'Rs. 3,080', true)">
-                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0011.jpg" alt="GEMS 1060">
+                    </div>
                     <h3>GEMS 1060</h3>
                     <div class="card-price">Rs. 3,080</div>
                     <ul class="card-features">
@@ -1716,7 +1753,9 @@
                 </div>
 
                 <div class="card searchable-item" data-name="Free Fire Weekly Lite" onclick="openCheckout('Free Fire: weekly lite', 'Rs. 120', true)">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-day"></i></div>
+                    <div class="card-img-container">
+                        <img src="IMG-20260914-WA0003.jpg" alt="weekly lite">
+                    </div>
                     <h3>weekly lite</h3>
                     <div class="card-price">Rs. 120</div>
                     <ul class="card-features">
@@ -2120,4 +2159,3 @@
     </script>
 </body>
 </html>
-```[cite: 1]
