@@ -1476,7 +1476,288 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
-    </style>
+    
+        /* === MOBILE WALLPAPER + PREMIUM REVIEWS + FOOTER UPGRADE === */
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #050814;
+            background-image:
+                linear-gradient(180deg, rgba(3, 7, 18, .42), rgba(3, 7, 18, .78)),
+                url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2400&q=85');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            isolation: isolate;
+        }
+        /* On phones, fixed backgrounds are unreliable; use a full-screen fixed layer instead. */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg, rgba(3, 7, 18, .42), rgba(3, 7, 18, .80)),
+                url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2400&q=85') center / cover no-repeat;
+            transform: translateZ(0);
+        }
+        .reviews-section {
+            margin-top: clamp(70px, 10vw, 150px);
+            padding: clamp(28px, 5vw, 52px) 0;
+            background: linear-gradient(135deg, rgba(5, 12, 28, .94), rgba(10, 26, 48, .88));
+            border-top: 1px solid rgba(56,189,248,.65);
+            border-bottom: 1px solid rgba(56,189,248,.65);
+            box-shadow: 0 0 45px rgba(0,0,0,.4), inset 0 0 35px rgba(56,189,248,.08);
+        }
+        .reviews-section > div:first-child { padding: 0 18px; }
+        .reviews-section > div:first-child h3 {
+            font-size: clamp(22px, 3.4vw, 34px) !important;
+            letter-spacing: .4px;
+            margin: 0 auto 8px;
+            line-height: 1.3;
+            background: linear-gradient(90deg, #fff, #7dd3fc, #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: reviewTitleShine 4s linear infinite;
+        }
+        .reviews-section > div:first-child h3 i {
+            -webkit-text-fill-color: #38bdf8;
+            filter: drop-shadow(0 0 10px rgba(56,189,248,.85));
+        }
+        .reviews-section > div:first-child::after {
+            content: "Real feedback • Trusted service • Customer satisfaction";
+            display: block;
+            margin: 10px auto 24px;
+            color: #9fb7ce;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+        .marquee-track {
+            gap: 20px;
+            padding: 10px 0 18px;
+            animation: scrollMarqueeRightToLeft 32s linear infinite;
+            will-change: transform;
+        }
+        .review-tab-card {
+            min-width: 270px;
+            width: min(320px, 82vw);
+            max-width: 320px;
+            padding: 22px;
+            border-radius: 18px;
+            background: linear-gradient(145deg, rgba(10,24,45,.98), rgba(8,14,29,.96));
+            border: 1px solid rgba(56,189,248,.42);
+            box-shadow: 0 12px 30px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.04);
+            position: relative;
+            transition: border-color .35s ease, box-shadow .35s ease, transform .35s ease;
+        }
+        .review-tab-card::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(130deg, rgba(56,189,248,.75), transparent 40%, rgba(129,140,248,.55));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: .6;
+        }
+        .review-tab-card:hover {
+            transform: translateY(-7px);
+            border-color: #7dd3fc;
+            box-shadow: 0 18px 42px rgba(0,0,0,.5), 0 0 24px rgba(56,189,248,.2);
+        }
+        .review-tab-card p { line-height: 1.7; }
+        @keyframes reviewTitleShine { to { background-position: 200% center; } }
+        .aura-site-footer {
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+            text-align: center;
+            background: rgba(2, 6, 18, .96);
+            border-top: 1px solid rgba(56,189,248,.45);
+            box-shadow: 0 -10px 35px rgba(0,0,0,.28);
+        }
+        .aura-site-footer::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            width: min(420px, 75%);
+            height: 2px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, transparent, #38bdf8, #818cf8, transparent);
+            box-shadow: 0 0 18px rgba(56,189,248,.8);
+        }
+        .aura-site-footer p {
+            margin: 5px auto;
+            color: #9fb0c5;
+            font-size: 12px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+        .aura-site-footer .footer-copy { color: #dbeafe; }
+        .aura-site-footer .footer-credit {
+            color: #7dd3fc;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+                background-position: center top;
+            }
+            body::before {
+                background-position: center center;
+                background-size: cover;
+            }
+            .hero-section {
+                min-height: 78svh;
+                padding: 48px 18px;
+            }
+            .hero-content { width: 100%; }
+            .hero-content h1 {
+                font-size: clamp(29px, 8vw, 38px);
+                line-height: 1.2;
+                overflow-wrap: anywhere;
+            }
+            .hero-content h2 { font-size: clamp(19px, 5vw, 25px); }
+            .hero-content p { font-size: 14px; }
+            .container { padding-left: 14px; padding-right: 14px; }
+            .section-header { font-size: clamp(22px, 6vw, 30px); gap: 9px; }
+            .review-tab-card { min-width: 260px; padding: 18px; }
+            .marquee-track { animation-duration: 38s; }
+            .floating-social-container { right: 14px; bottom: 18px; }
+            .floating-whatsapp { width: 54px; height: 54px; font-size: 28px; }
+            .purchase-toast { left: 12px; right: 78px; bottom: 16px; max-width: calc(100vw - 100px); }
+        }
+        @media (max-width: 380px) {
+            .review-tab-card { min-width: 245px; }
+            .reviews-section > div:first-child h3 { font-size: 21px !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+    
+        /* FINAL FIX: supplied monochrome wallpaper, transparent review strip, mobile responsive */
+        html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+        body {
+            background: #050711 !important;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image:
+                linear-gradient(180deg, rgba(3, 7, 18, .32), rgba(3, 7, 18, .62)),
+                url("data:image/jpeg;base64,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");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: translateZ(0);
+        }
+        /* Remove the large rectangular panel around the reviews */
+        #reviews.reviews-section {
+            margin: clamp(36px, 6vw, 82px) 0;
+            padding: clamp(24px, 4vw, 42px) 0;
+            width: 100%;
+            max-width: 100%;
+            background: transparent !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            overflow: hidden;
+        }
+        #reviews.reviews-section > div:first-child {
+            padding: 0 14px;
+        }
+        #reviews .marquee-track {
+            width: max-content;
+            max-width: none;
+            will-change: transform;
+        }
+        #reviews .review-tab-card {
+            flex-shrink: 0;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(5, 12, 28, .82);
+        }
+        @media (max-width: 768px) {
+            body::before {
+                background-position: 52% center;
+                background-size: cover;
+            }
+            #reviews.reviews-section {
+                margin: 30px 0;
+                padding: 24px 0;
+            }
+            #reviews .marquee-track { gap: 14px; }
+            #reviews .review-tab-card {
+                min-width: min(76vw, 290px);
+                max-width: min(76vw, 290px);
+                box-sizing: border-box;
+            }
+            #reviews h3 {
+                font-size: clamp(19px, 5.4vw, 26px) !important;
+                line-height: 1.35;
+            }
+            .aura-site-footer { overflow-wrap: anywhere; }
+        }
+        @media (max-width: 420px) {
+            #reviews .review-tab-card {
+                min-width: 78vw;
+                max-width: 78vw;
+            }
+        }
+
+        /* FINAL MOBILE + CONTINUOUS REVIEW MARQUEE FIX */
+        html, body { min-height:100%; width:100%; max-width:100%; overflow-x:clip; }
+        body { min-height:100svh; background:#050711 !important; }
+        body::before {
+            position:fixed !important; inset:0 !important; width:100vw; height:100vh; height:100svh;
+            background-size:cover !important; background-position:center center !important;
+            background-repeat:no-repeat !important;
+        }
+        #reviews.reviews-section {
+            display:block; position:relative; isolation:isolate;
+            width:100%; max-width:100%; margin:clamp(28px,5vw,64px) 0 !important;
+            padding:clamp(22px,4vw,38px) 0 !important;
+            background:transparent !important; border:0 !important; outline:0 !important;
+            box-shadow:none !important; border-radius:0 !important; overflow:hidden !important;
+        }
+        #reviews.reviews-section::before, #reviews.reviews-section::after {content:none !important; display:none !important;}
+        #reviews .marquee-track {
+            display:flex !important; flex-wrap:nowrap !important; width:max-content !important; max-width:none !important;
+            gap:18px !important; animation:reviewEndlessScroll 72s linear infinite !important;
+            animation-play-state:running !important; transform:translate3d(0,0,0); will-change:transform;
+        }
+        #reviews:hover .marquee-track, #reviews:focus-within .marquee-track {animation-play-state:running !important;}
+        #reviews .review-tab-card {flex:0 0 290px !important; width:290px !important; max-width:290px !important; min-width:0 !important; margin:0 !important; box-sizing:border-box; }
+        @keyframes reviewEndlessScroll { from {transform:translate3d(0,0,0);} to {transform:translate3d(-50%,0,0);} }
+        @media (max-width:768px) {
+            body::before {background-size:cover !important; background-position:center center !important;}
+            #reviews.reviews-section {margin:24px 0 !important; padding:20px 0 !important;}
+            #reviews .marquee-track {gap:14px !important; animation-duration:64s !important;}
+            #reviews .review-tab-card {flex:0 0 78vw !important; width:78vw !important; max-width:320px !important;}
+            #reviews h3 {font-size:clamp(18px,5vw,25px) !important; line-height:1.4 !important; padding:0 12px;}
+        }
+        @media (prefers-reduced-motion:reduce) {#reviews .marquee-track {animation-duration:64s !important;}}
+</style>
 </head>
 <body>
 
@@ -1947,7 +2228,7 @@
     <!-- Customer Reviews (Unlimited Infinite Marquee) -->
     <div class="reviews-section reveal" id="reviews">
         <div style="text-align: center; margin-bottom: 20px;">
-            <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Unlimited Reviews</h3>
+            <h3 style="color: #ffffff; font-size: 24px; font-weight: 700; text-shadow: 0 0 15px rgba(56, 189, 248, 0.8);"><i class="fa-solid fa-star" style="color: #38bdf8;"></i> Customer Reviews • Unlimited Feedback</h3>
         </div>
         <div class="marquee-track">
             <!-- Review Set 1 -->
@@ -2115,7 +2396,14 @@
     </div>
 
     <!-- JavaScript functionality -->
-    <script>
+    
+    <!-- Premium site footer -->
+    <footer class="aura-site-footer" aria-label="Website copyright and design credit">
+        <p class="footer-copy">© 2026 AURA NET.LK. All Rights Reserved.</p>
+        <p class="footer-credit">Designed &amp; Developed by AURA NET.LK Agency</p>
+    </footer>
+
+<script>
         // Scroll Reveal Animation Observer
         window.addEventListener('scroll', revealElements);
         function revealElements() {
@@ -2304,6 +2592,22 @@
 
         setInterval(showPurchaseToast, 10000);
         setTimeout(showPurchaseToast, 3000);
+    </script>
+
+    <script>
+    (function(){
+      function prepareInfiniteReviews(){
+        const track=document.querySelector('#reviews .marquee-track');
+        if(!track || track.dataset.infiniteReady==='1') return;
+        const originals=Array.from(track.children);
+        if(!originals.length) return;
+        // Current markup already contains a duplicate set; clone one full set if there are too few cards.
+        if(originals.length < 8){ originals.forEach(card=>track.appendChild(card.cloneNode(true))); }
+        track.dataset.infiniteReady='1';
+      }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',prepareInfiniteReviews);
+      else prepareInfiniteReviews();
+    })();
     </script>
 </body>
 </html>
